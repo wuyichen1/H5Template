@@ -4,22 +4,21 @@
  */
 export default {
   /** 返回按钮背景图 */
-  backImage: '/icon_back_nav.png',
-  // backImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_back.png',
+  backImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_icon_back_nav.png',
   /** 返回图片大小 */
   backImageSize: {
     width: '24px',
     height: '24px'
   },
   /** 顶部右侧举报图片 */
-  reportImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_report.png',
+  reportImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_icon_more_nav.png',
   /** 举报图标大小 */
   reportImageSize: {
     width: '24px', //图标宽度
     height: '24px', //图标高度
   },
   /** 点赞图标 */
-  likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_like.png',
+  likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
 
   /** 点赞图标大小 */
   unlikeImageSize: {
@@ -64,7 +63,7 @@ export default {
     color: 'rgba(255, 255, 255, 0.8)',
     placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
     /** 右侧发送图标 */
-    sendIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_send_icon.png',
+    sendIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_send_bg.png',
     sendIconWidth: '21px',
     sendIconHeight: '21px',
   },
@@ -201,7 +200,7 @@ export default {
     addIconWidth: '20px',
     addIconHeight: '20px',
     /** 留言图标 */
-    messageIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/video_comments.png',
+    messageIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_chat.png',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
