@@ -7,15 +7,15 @@ export default {
   backImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_icon_back_nav.png',
   /** 返回图片大小 */
   backImageSize: {
-    width: '24px',
-    height: '24px'
+    width: '35px',
+    height: '35px'
   },
   /** 顶部右侧举报图片 */
   reportImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_icon_more_nav.png',
   /** 举报图标大小 */
   reportImageSize: {
-    width: '24px', //图标宽度
-    height: '24px', //图标高度
+    width: '35px', //图标宽度
+    height: '35px', //图标高度
   },
   /** 点赞图标 */
   likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
