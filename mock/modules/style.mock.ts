@@ -4,7 +4,8 @@
  */
 export default {
   /** 返回按钮背景图 */
-  backImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_back.png',
+  backImage: 'assets/images/icon_back_nav.png',
+  // backImage: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_back.png',
   /** 返回图片大小 */
   backImageSize: {
     width: '24px',
