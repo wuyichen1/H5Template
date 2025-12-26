@@ -102,7 +102,7 @@ export default {
   /** 高亮按钮样式 */
   highlightBtnStyle: {
     color: 'rgba(255, 255, 255, 1)',
-    backgroundColor: 'linear-gradient(122.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+    backgroundColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
@@ -120,7 +120,7 @@ export default {
     /** 发送背景色 */
     sendBgColor: '#434044',
     /** 接收背景色 */
-    receiveBgColor: 'linear-gradient(122.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+    receiveBgColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
     // receiveBgColor: 'linear-gradient(157.71deg, rgba(255, 94, 135, 1) 0%, rgba(71, 252, 255, 1) 100%)'
   },
   /** 举报按钮 */
@@ -154,7 +154,8 @@ export default {
       width: '227px',
       height: '56px',
       color: 'rgba(255, 255, 255, 1)',
-      rightIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_chat_arr.png',
+      rightIcon: null,
+      // rightIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_chat_arr.png',
       rightIconWidth: '21px',
       rightIconHeight: '21px',
     },
@@ -206,7 +207,7 @@ export default {
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_like_post.png',
+    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
     avatarWidth: '48px',
     avatarHeight: '48px',
     /** 按钮样式 */
@@ -229,11 +230,11 @@ export default {
     addIconWidth: '20px',
     addIconHeight: '20px',
     /** 留言图标 */
-    messageIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/video_comments.png',
+    messageIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_chat.png',
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_like_post.png',
+    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
     likeIconWidth: '40px',
     likeIconHeight: '40px',
     /** 顶部数据样式 */
@@ -336,7 +337,7 @@ export default {
       height: '100px',
       borderRadius: '24px',
       backgroundColor: 'rgba(35, 30, 36, 1)',
-      selectedColor: 'linear-gradient(122.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+      selectedColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
     }
   }
 } satisfies Window['styleJson']
