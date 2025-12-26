@@ -177,7 +177,7 @@ export default {
       bgImageStyle: {
         width: '280px',
         height: '210px',
-        bgImg: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_ai_pay_bg.png',
+        bgImg: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_dialog_bg.png',
       }
     }
   },
