@@ -266,6 +266,8 @@ interface Window {
     chatViewStyle: GeneralStyle & {
       /** 描述文本颜色 */
       textCorlor: string
+      /** 文本居中 */
+      textAlign: 'center' | 'left' | 'right'
       /** 按钮 */
       btnStyle: {
         width: string

@@ -64,8 +64,8 @@ export default {
     placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
     /** 右侧发送图标 */
     sendIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_send_bg.png',
-    sendIconWidth: '50px',
-    sendIconHeight: '50px',
+    sendIconWidth: '46px',
+    sendIconHeight: '46px',
   },
   /** 表单标题样式 */
   formTitleStyle: {
@@ -148,6 +148,7 @@ export default {
   chatViewStyle: {
     /** 描述文本颜色 */
     textCorlor: 'rgba(255, 255, 255, 0.6)',
+    textAlign: 'center',
     backgroundColor: '#0e080f',
     btnStyle: {
       width: '227px',
