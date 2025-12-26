@@ -125,7 +125,15 @@
             height: 'var(--back-image-height)',
           }"
         />
-        <span v-if="showTitle" ml-2 ai-user-name>{{ title }}</span>
+        <!-- <span v-if="showTitle" ml-2 ai-user-name>{{ title }}</span> -->
+        <span
+          v-if="showTitle"
+          ml-2
+          ai-user-name
+          :style="{ fontSize: 'var(--ai-user-name-font-size, 18px)' }"
+        >
+          {{ title }}
+        </span>
       </div>
     </template>
     <template #right>
