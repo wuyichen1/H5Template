@@ -64,8 +64,8 @@ export default {
     placeholderCorlor: 'rgba(255, 255, 255, 0.4)',
     /** 右侧发送图标 */
     sendIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_send_bg.png',
-    sendIconWidth: '21px',
-    sendIconHeight: '21px',
+    sendIconWidth: '50px',
+    sendIconHeight: '50px',
   },
   /** 表单标题样式 */
   formTitleStyle: {
