@@ -18,7 +18,7 @@ export default {
     height: '35px', //图标高度
   },
   /** 点赞图标 */
-  likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
+  likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_white.png',
 
   /** 点赞图标大小 */
   unlikeImageSize: {
@@ -207,7 +207,7 @@ export default {
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
+    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_white.png',
     avatarWidth: '48px',
     avatarHeight: '48px',
     /** 按钮样式 */
@@ -234,7 +234,7 @@ export default {
     messageIconWidth: '40px',
     messageIconHeight: '40px',
     /** 点赞图标 */
-    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_pink.png',
+    likeIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/zoryo_like_white.png',
     likeIconWidth: '40px',
     likeIconHeight: '40px',
     /** 顶部数据样式 */
