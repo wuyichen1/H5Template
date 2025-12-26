@@ -102,11 +102,7 @@ export default {
   /** 高亮按钮样式 */
   highlightBtnStyle: {
     color: 'rgba(255, 255, 255, 1)',
-<<<<<<< HEAD
     backgroundColor: 'linear-gradient(105.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
-=======
-    backgroundColor: 'linear-gradient(201.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
->>>>>>> e92e8c972103d44eb7a54bff5dcf1c3850365709
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
@@ -124,7 +120,7 @@ export default {
     /** 发送背景色 */
     sendBgColor: '#434044',
     /** 接收背景色 */
-    receiveBgColor: 'linear-gradient(201.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+    receiveBgColor: 'linear-gradient(105.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
     // receiveBgColor: 'linear-gradient(157.71deg, rgba(255, 94, 135, 1) 0%, rgba(71, 252, 255, 1) 100%)'
   },
   /** 举报按钮 */
@@ -339,11 +335,7 @@ export default {
       height: '100px',
       borderRadius: '24px',
       backgroundColor: 'rgba(35, 30, 36, 1)',
-<<<<<<< HEAD
       selectedColor: 'linear-gradient(105.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
-=======
-      selectedColor: 'linear-gradient(201.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
->>>>>>> e92e8c972103d44eb7a54bff5dcf1c3850365709
     }
   }
 } satisfies Window['styleJson']
