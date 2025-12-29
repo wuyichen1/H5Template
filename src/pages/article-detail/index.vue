@@ -183,7 +183,7 @@
 
   .comment-item {
     flex-shrink: 0;
-    width: 280px;
+    width: 180px;
   }
 
   .comment-content {
