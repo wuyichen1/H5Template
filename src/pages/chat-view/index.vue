@@ -45,7 +45,7 @@
     <div class="text-center w-full top-34vh absolute">
       <ul p-layout-padding>
         <!-- 增加一个图片显示 -->
-        <van-image :src="ChatBotImage" fit="cover" class="chat-bot-image" />
+        <van-image :src="ChatBotImage" fit="contain" class="chat-bot-image" />
         <li ai-input-title style="font-size: 26px; font-weight: 700;">{{ winChatBotDesc.title }}</li>
         <li
           ai-text-desc
@@ -114,8 +114,8 @@
   }
 
   .chat-bot-image {
-    width: 130px;
-    height: 130px;
+    width: 135px;
+    height: 135px;
     margin-bottom: 10px;
   }
 
