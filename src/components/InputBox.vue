@@ -69,6 +69,10 @@
 
       :deep(.van-field__body) {
         height: 100%;
+        //----
+        display: flex;
+        align-items: center;
+        //----
 
         input {
           color: var(--ai-field-input-text-color);
@@ -80,6 +84,18 @@
           }
         }
       }
+      // ---
+      :deep(.van-field__button) {
+        margin: 0;
+        padding: 0;
+        margin-right: 0;
+
+        > div {
+          margin: 0;
+          padding: 0;
+        }
+      }
+      // ---
     }
   }
 </style>
