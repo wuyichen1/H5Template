@@ -4,13 +4,16 @@
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useWindow } from '@/hooks/useWindow'
+  import { useUserStore } from '@/stores'
+  import { detailId } from '@/hooks/useDetail'
 
   defineOptions({
     name: 'ArticleDetail'
   })
 
-  const { detailLikeIcon, likeIcon } = useAppImgStyle()
+  const { detailLikeIcon, likeIcon, reportIcon } = useAppImgStyle()
   const { winPublishImageListData } = useWindow()
+  const { userInfo } = useUserStore()
   const {
     loding,
     dynamicInfo,
@@ -20,6 +23,14 @@
     onLike,
     onSend
   } = useDetail()
+
+  // 举报弹框
+  const isReport = ref(false)
+
+  const handleReport = (userId: string) => {
+    isReport.value = true
+    detailId.value = userId
+  }
 </script>
 
 <template>
@@ -90,10 +101,43 @@
 
       <van-divider content-position="left">Comments</van-divider>
 
-      <comment-card
-        :list="commentList"
-        class="article-comment-card_box"
-      />
+      <div class="article-comment-card_box">
+        <empty v-if="commentList.length === 0" />
+        <div class="comment-scroll-container">
+          <div
+            v-for="(item, index) in commentList"
+            :key="index"
+            class="comment-item"
+          >
+            <div class="comment-content">
+              <ul flex items-center justify-between>
+                <li flex items-center>
+                  <van-image
+                    round
+                    ai-avatar
+                    :src="item?.avator || Head"
+                    fit="cover"
+                  />
+                  <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
+                </li>
+                <li v-if="userInfo.userId !== item.userId" flex items-center>
+                  <van-image 
+                    :src="reportIcon"
+                    :style="{
+                      width: 'var(--report-image-width)',
+                      height: 'var(--report-image-height)'
+                    }"
+                    @click="handleReport(item.userId)"
+                  />
+                </li>
+              </ul>
+              <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <report-box v-model:show="isReport" />
 
       <input-box @send="onSend" />
     </div>
@@ -114,5 +158,42 @@
 
   .article-comment-card_box {
     padding-bottom: calc(80px + var(--ai-view-padding-bottom));
+  }
+
+  .comment-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 200px;
+    gap: 12px;
+    padding-bottom: 10px;
+    
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+    }
+  }
+
+  .comment-item {
+    flex-shrink: 0;
+    width: 280px;
+    height: 100%;
+  }
+
+  .comment-content {
+    height: 100%;
+    padding: 16px;
+    background: var(--ai-fill-bg-color, #f5f5f5);
+    border-radius: var(--ai-rounded, 8px);
+    display: flex;
+    flex-direction: column;
   } 
 </style>
