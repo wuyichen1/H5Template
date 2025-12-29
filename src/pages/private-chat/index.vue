@@ -130,7 +130,7 @@
     >
       <template #left>
         <div flex items-center>
-          <van-image :src="LeftIcon" h-6 w-6 />
+          <van-image :src="LeftIcon" h-[38px] w-[38px] />
           <van-image
             round
             mx-3
@@ -152,8 +152,8 @@
         />
         <van-image
           :src="RightMore"
-          h-6
-          w-6
+          h-[38px]
+          w-[38px]
           @click="
             () => {
               detailId = viewInfo.userId
