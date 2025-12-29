@@ -11,7 +11,7 @@
     name: 'ChatView'
   })
 
-  const { chatBtnIcon, chatBgImage } = useAppImgStyle()
+  const { chatBgImage } = useAppImgStyle()
   const { winUserData, winUserListData, winChatBotDesc } = useWindow()
   const { userInfo } = useUserStore()
   const { jumpToRecharge, appParams, jumpToChatDetail } = useJump()
