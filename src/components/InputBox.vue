@@ -90,7 +90,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding-left: 16px;
+        padding-left: 0px;
         padding-right: 0;
 
         input {
