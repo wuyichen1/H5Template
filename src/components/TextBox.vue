@@ -18,10 +18,15 @@ const props = withDefaults(defineProps<{
 
 <template>
   <div class="text-box">
-    <van-field v-model="message" :rows="props.rows" type="textarea" :maxlength="props.maxlength"
-               placeholder="Please enter" show-word-limit
-/>
-    <!-- :style="{ background: props.bg }" -->
+    <van-field
+      v-model="message"
+      :rows="props.rows"
+      type="textarea"
+      :maxlength="props.maxlength"
+      placeholder="Please enter"
+      show-word-limit
+      :style="{ '--text-box-bg': props.bg }"
+    />
   </div>
 </template>
 
@@ -32,7 +37,7 @@ const props = withDefaults(defineProps<{
   }
 
   :deep(.van-cell) {
-    background: var(--ai-form-rich-text-bg-color);
+    background: var(--text-box-bg, var(--ai-form-rich-text-bg-color));
 
     textarea {
       color: var(--ai-form-rich-text-text-color);
