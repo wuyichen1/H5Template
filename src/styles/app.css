@@ -3,30 +3,24 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   background: var(--van-gray-1);
   font-size: var(--van-font-size-lg);
   color-scheme: light;
 }
-
 html.dark {
   background: #222;
   color-scheme: dark;
 }
-
 #app {
   height: 100%;
   position: relative;
   background: #0e080f;
 }
-
 ::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
-
-// 通用数字显示
 .public-number {
   margin-top: 4px;
   font-size: 20px;
@@ -35,49 +29,33 @@ html.dark {
   line-height: 21.2px;
   text-align: center;
   vertical-align: top;
-  background: linear-gradient(201.44deg, 
-  rgba(28, 123, 255, 1) 0%, 
-  rgba(0, 0, 0, 1) 51.28%, 
-  rgba(255, 129, 51, 1) 100%);
-  // background: linear-gradient(150deg,
-  //     rgb(71, 252, 255) 0%,
-  //     rgb(255, 94, 135) 100%);
+  background: linear-gradient(201.44deg, #1c7bff 0%, #000000 51.28%, #ff8133 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-
   -webkit-text-stroke: 1px #fff;
 }
-
-// 通用输入框
 .public-input {
   border-radius: var(--ai-input-text-border-radius);
   background: var(--ai-input-text-bg-color) !important;
-
-  input {
-    color: var(--ai-input-text-color);
-
-    &::placeholder {
-      color: var(--ai-input-text-placeholder-text-color);
-      font-size: var(--ai-input-text-font-size);
-      font-weight: var(--ai-input-text-font-weight);
-    }
-  }
 }
-
-// 按钮触底
+.public-input input {
+  color: var(--ai-input-text-color);
+}
+.public-input input::placeholder {
+  color: var(--ai-input-text-placeholder-text-color);
+  font-size: var(--ai-input-text-font-size);
+  font-weight: var(--ai-input-text-font-weight);
+}
 .public-btoom-btn {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   opacity: 1;
-  background: linear-gradient(0deg,
-      rgba(14, 8, 15, 0.8) 0%,
-      rgba(14, 8, 15, 0) 100%);
-
-  .public_btn {
-    margin-bottom: calc(10px + var(--ai-view-padding-bottom));
-  }
+  background: linear-gradient(0deg, rgba(14, 8, 15, 0.8) 0%, rgba(14, 8, 15, 0) 100%);
+}
+.public-btoom-btn .public_btn {
+  margin-bottom: calc(10px + var(--ai-view-padding-bottom));
 }
