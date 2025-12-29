@@ -49,7 +49,7 @@
         <li ai-input-title style="font-size: 26px; font-weight: 700;">{{ winChatBotDesc.title }}</li>
         <li
           ai-text-desc
-          class="mt-7 !text-[var(--ai-chat-view-text-color)] content_box"
+          class="mt-7 !text-[var(--ai-chat-view-text-color)] content_box text-center"
         >
           {{ winChatBotDesc.content }}
         </li>
@@ -103,7 +103,6 @@
     height: 100vh;
     overflow-y: auto;
     .content_box {
-      background: var(--ai-chat-view-bg-color);
       padding-bottom: calc(50px + var(--ai-view-padding-bottom));
     }
   }
