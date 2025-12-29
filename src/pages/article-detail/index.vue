@@ -89,8 +89,8 @@
           />
           <span mt-1 ai-user-name>{{ dynamicInfo?.name }}</span>
         </li>
-        <li ml-5 class="w-[60%]">
-          <span ai-text-desc>{{ dynamicInfo?.dynamicDesc }}</span>
+        <li ml-5 class="desc-container">
+          <span ai-text-desc class="desc-text">{{ dynamicInfo?.dynamicDesc }}</span>
           <p flex flex-wrap>
             <span mr-2 mt-4 px-3 ai-tag-btn>
               #{{
@@ -208,5 +208,16 @@
     bottom: 8px;
     right: 12px;
     cursor: pointer;
-  } 
+  }
+
+  .desc-container {
+    width: auto;
+  }
+
+  .desc-text {
+    white-space: nowrap;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: inline-block;
+  }
 </style>
