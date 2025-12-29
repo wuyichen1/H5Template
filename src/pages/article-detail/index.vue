@@ -188,7 +188,7 @@
 
   .comment-content {
     padding: 16px;
-    background:  #282329;
+    background:  #282329d1;
     border-radius: var(--ai-rounded, 8px);
     display: flex;
     flex-direction: column;
