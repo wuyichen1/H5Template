@@ -189,7 +189,7 @@
   .comment-item {
     flex-shrink: 0;
     width: 180px;
-    padding-bottom: 12px;
+    padding-bottom: 15px;
   }
 
   .comment-content {
@@ -203,7 +203,7 @@
 
   .report-icon {
     position: absolute;
-    bottom: 12px;
+    bottom: 8px;
     right: 12px;
     cursor: pointer;
   } 
