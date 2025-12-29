@@ -55,6 +55,7 @@
     .input--width {
       width: var(--ai-field-input-width);
       padding-bottom: calc(10px + var(--ai-view-padding-bottom));
+      padding-left: 16px !important;
     }
 
     .send-icon {
@@ -76,7 +77,7 @@
       font-size: var(--ai-field-input-font-size);
       font-weight: var(--ai-field-input-font-weight);
       background: var(--ai-field-input-bg-color);
-      padding-left: 16px;
+      // padding-left: 16px !important;
 
       // 移除 van-cell 的默认 padding
       :deep(.van-cell) {
