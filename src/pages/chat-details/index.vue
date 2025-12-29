@@ -2,7 +2,7 @@
   import axios from 'axios'
   import CryptoJS from 'crypto-js'
   import { useUserStore } from '@/stores'
-  import chatIcon from '@/assets/public/ai_chat_icon.png'
+  import ChatIcon from '@/assets/public/ai_chat_icon.png'
 
   defineOptions({
     name: 'ChatDetails'
@@ -128,23 +128,23 @@
         <li @click="onSend('I\'m feeling great today.')">
           <span>I'm feeling great today.</span>
           <van-image
-            src="chatIcon"
-            :style="{ width: '24px', height: '24px' }"
+            :src="ChatIcon"
+            :style="{ width: '14px', height: '14px' }"
           />
         </li>
         <li @click="onSend('Do you like reading?')">
           <span>Do you like reading?</span>
           <van-image
-            src="chatIcon"
-            :style="{ width: '24px', height: '24px' }"
+            :src="ChatIcon"
+            :style="{ width: '14px', height: '14px' }"
           />
         </li>
         <li @click="onSend('Can you comfort me?')">
           <span>Can you comfort me?</span>
           <!-- <van-icon name="chat-o" /> -->
           <van-image
-            src="chatIcon"
-            :style="{ width: '24px', height: '24px' }"
+            :src="ChatIcon"
+            :style="{ width: '14px', height: '14px' }"
           />
         </li>
       </ul>
