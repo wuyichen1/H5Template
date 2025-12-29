@@ -1,6 +1,8 @@
 <script setup lang="ts">
-  import LeftIcon from '@/assets/nav-bar/back.svg'
-  import RightMore from '@/assets/nav-bar/more.svg'
+  import LeftIcon from '@/assets/nav-bar/zoryo_icon_back_nav.png'
+  import RightMore from '@/assets/nav-bar/zoryo_icon_more_nav.png'
+  // import LeftIcon from '@/assets/nav-bar/back.svg'
+  // import RightMore from '@/assets/nav-bar/more.svg'
   import Head from '@/assets/public/Head.png'
   import ImgIcon from '@/assets/public/img-icon.png'
   import VideoIcon from '@/assets/public/video-icon.png'
