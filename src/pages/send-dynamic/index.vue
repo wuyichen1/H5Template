@@ -136,6 +136,8 @@
     li {
       flex-shrink: 0;
       white-space: nowrap;
+      padding-left: 6px;
+      padding-right: 6px;
     }
   }
 </style>
