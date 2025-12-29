@@ -128,4 +128,8 @@
     min-height: 100vh;
     background: var(--ai-edit-bg-color);
   }
+
+  .public-input {
+    background: #011733 !important;
+  }
 </style>
