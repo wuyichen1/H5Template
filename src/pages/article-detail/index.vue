@@ -124,16 +124,19 @@
                 
               </ul>
               <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
-              <li v-if="userInfo.userId !== item.userId" flex items-center>
+              <div 
+                v-if="userInfo.userId !== item.userId" 
+                class="report-icon"
+                @click="handleReport(item.userId)"
+              >
                 <van-image 
                   :src="reportIcon"
                   :style="{
-                    width: 'var(--report-image-width)',
-                    height: 'var(--report-image-height)'
+                    width: '24px',
+                    height: '24px'
                   }"
-                  @click="handleReport(item.userId)"
                 />
-              </li>
+              </div>
             </div>
           </div>
         </div>
@@ -194,5 +197,13 @@
     border-radius: 18px;
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+
+  .report-icon {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    cursor: pointer;
   } 
 </style>
