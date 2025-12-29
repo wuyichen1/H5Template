@@ -43,7 +43,7 @@
     <van-image :src="ChatBack" fit="cover" class="top-back" />
     <div class="text-center w-full top-34vh absolute">
       <ul p-layout-padding>
-        <li ai-input-title>{{ winChatBotDesc.title }}</li>
+        <li ai-input-title style="font-size: 26px; font-weight: 700;">{{ winChatBotDesc.title }}</li>
         <li
           ai-text-desc
           class="mt-7 !text-[var(--ai-chat-view-text-color)] content_box"
