@@ -67,12 +67,23 @@
       font-weight: var(--ai-field-input-font-weight);
       background: var(--ai-field-input-bg-color);
 
+      // 移除 van-cell 的默认 padding
+      :deep(.van-cell) {
+        padding: 0;
+        padding-top: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+      }
+
       :deep(.van-field__body) {
         height: 100%;
         //----
         display: flex;
         align-items: center;
         //----
+        padding-left: var(--ai-field-input-padding-left, 16px);
+        padding-right: 0;
 
         input {
           color: var(--ai-field-input-text-color);
@@ -86,13 +97,18 @@
       }
       // ---
       :deep(.van-field__button) {
-        margin: 0;
-        padding: 0;
-        margin-right: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
 
         > div {
-          margin: 0;
-          padding: 0;
+          margin: 0 !important;
+          padding: 0 !important;
         }
       }
       // ---
