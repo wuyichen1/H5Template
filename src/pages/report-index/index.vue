@@ -94,7 +94,7 @@
     <!-- 输入框 -->
     <div mt-6>
       <div ai-input-title>Supplementary description</div>
-      <text-box v-model="formData.title" rows="3" bg="#231e24" />
+      <text-box v-model="formData.title" rows="3" bg="#011733" />
     </div>
 
     <!-- 底部按钮 -->

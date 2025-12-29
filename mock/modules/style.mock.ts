@@ -281,8 +281,8 @@ export default {
       width: '164px',
       height: '115px',
       borderRadius: '20px',
-      backgroundColor: 'rgba(35, 30, 36, 1)',
-      fontSize: '16px',
+      backgroundColor: 'rgba(1, 23, 51, 1)',
+      fontSize: '20px',
       fontWeight: '400',
       color: '#fff'
     }
