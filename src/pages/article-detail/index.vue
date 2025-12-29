@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
+  import likeIcon from '@/assets/public/like.png'
   import swipeOne from '@/assets/public/swipe-1.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
@@ -12,7 +14,7 @@
     name: 'ArticleDetail'
   })
 
-  const { detailLikeIcon, likeIcon } = useAppImgStyle()
+  // const { detailLikeIcon, likeIcon } = useAppImgStyle()
   const { winPublishImageListData } = useWindow()
   const { userInfo } = useUserStore()
   const {
