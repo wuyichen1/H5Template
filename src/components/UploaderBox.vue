@@ -143,7 +143,7 @@
       video {
         width: 100%;
         height: 100%;
-        background: #231e24;
+        background: #011733;
       }
 
       .play-box {
