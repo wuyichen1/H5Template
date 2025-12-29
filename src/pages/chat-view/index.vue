@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import ChatBack from '@/assets/public/chat-index.png'
   import MasonryIcon from '@/assets/public/masonry-icon.png'
+  import ChatBotImage from '@/assets/public/gYFdrTokerNA7UtH.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
@@ -43,6 +44,8 @@
     <van-image :src="ChatBack" fit="cover" class="top-back" />
     <div class="text-center w-full top-34vh absolute">
       <ul p-layout-padding>
+        <!-- 增加一个图片显示 -->
+        <van-image :src="ChatBotImage" fit="cover" class="chat-bot-image" />
         <li ai-input-title style="font-size: 26px; font-weight: 700;">{{ winChatBotDesc.title }}</li>
         <li
           ai-text-desc
@@ -108,6 +111,12 @@
   .top-back {
     width: 100%;
     height: 510px;
+  }
+
+  .chat-bot-image {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 10px;
   }
 
   .bottom-btn {
