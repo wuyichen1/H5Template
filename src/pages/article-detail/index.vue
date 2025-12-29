@@ -164,7 +164,6 @@
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 200px;
     gap: 12px;
     padding-bottom: 10px;
     
@@ -185,13 +184,10 @@
   .comment-item {
     flex-shrink: 0;
     width: 280px;
-    height: 100%;
   }
 
   .comment-content {
-    height: 100%;
     padding: 16px;
-    background: var(--ai-fill-bg-color, #f5f5f5);
     border-radius: var(--ai-rounded, 8px);
     display: flex;
     flex-direction: column;
