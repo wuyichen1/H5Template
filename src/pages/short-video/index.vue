@@ -1,5 +1,7 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
+  import likeIcon from '@/assets/public/like.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useUserStore } from '@/stores'
@@ -8,7 +10,7 @@
     name: 'ShortVideo'
   })
 
-  const { reportIcon, addIcon, messageIcon, detailLikeIcon, likeIcon } =
+  const { reportIcon, addIcon, messageIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
   const {
