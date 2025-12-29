@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <van-image round :src="EmptyIcon" fit="cover" />
+    <van-image round :src="EmptyIcon" fit="cover" width="100" height="100" />
   </div>
 </template>
 
