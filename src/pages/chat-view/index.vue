@@ -105,6 +105,9 @@
     .content_box {
       // padding-bottom: calc(50px + var(--ai-view-padding-bottom));
       padding-bottom: 100px;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
     }
   }
 
