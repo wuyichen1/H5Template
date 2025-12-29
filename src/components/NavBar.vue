@@ -117,7 +117,7 @@
     @click-left="onBack"
   >
     <template v-if="showLeftArrow" #left>
-      <div flex items-end justify-center>
+      <div flex items-center justify-center>
         <van-image 
           :src="backIcon" 
           :style="{
@@ -130,7 +130,7 @@
           v-if="showTitle"
           ml-2
           ai-user-name
-          :style="{ fontSize: 'var(--ai-user-name-font-size, 18px)' }"
+          :style="{ fontSize: 'var(--ai-user-name-font-size, 22px)' }"
         >
           {{ title }}
         </span>
