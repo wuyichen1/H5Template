@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<{
       :maxlength="props.maxlength"
       placeholder="Please enter"
       show-word-limit
-      :style="{ '--text-box-bg': props.bg }"
+      :style="{ '--text-box-bg': props.bg, borderRadius: '12px' }"
     />
   </div>
 </template>
