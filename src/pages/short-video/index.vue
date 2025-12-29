@@ -26,7 +26,7 @@
   } = useDetail()
 
   const videoRef = ref(null)
-  const isPlaying = ref(false)
+  const isPlaying = ref(true)
   const isPopup = ref(false)
   // 举报弹框
   const isReport = ref(false)
