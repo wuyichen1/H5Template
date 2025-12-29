@@ -143,8 +143,8 @@
     height: 300px;
 
     .content {
-      width: var(--ai-chat-view-popup-bg-img-width);
-      height: var(--ai-chat-view-popup-bg-img-height);
+      width: var(--ai-chat-view-popup-bg-img-width + 20px);
+      height: var(--ai-chat-view-popup-bg-img-height + 20px);
       display: flex;
       flex-direction: column;
       justify-content: center;
