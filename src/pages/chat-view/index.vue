@@ -81,13 +81,12 @@
       <div flex h-full justify-center>
         <div class="block" @click.stop>
           <div
-            :style="{ background: `url(${chatBgImage})` }"
+            :style="{ background: `url(${chatBgImage})`, 'background-size': '100% 100%', 'background-repeat': 'no-repeat' }"
             class="content"
-            style="background-size: cover"
           >
             <!-- 添加一个图片 -->
             <van-image :src="MasonryIcon" fit="contain" class="recharge-bot-image" />
-            <span mt-6>Sorry</span>
+            <span mt-3>Sorry</span>
             <span mt-3>your current balance is insufficient</span>
           </div>
           <div mt-8 flex justify-center>
