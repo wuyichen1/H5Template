@@ -132,8 +132,8 @@
                 <van-image 
                   :src="reportIcon"
                   :style="{
-                    width: '24px',
-                    height: '24px'
+                    width: '22px',
+                    height: '22px'
                   }"
                 />
               </div>
@@ -189,6 +189,7 @@
   .comment-item {
     flex-shrink: 0;
     width: 180px;
+    padding-bottom: 12px;
   }
 
   .comment-content {
