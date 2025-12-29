@@ -76,6 +76,7 @@
       font-size: var(--ai-field-input-font-size);
       font-weight: var(--ai-field-input-font-weight);
       background: var(--ai-field-input-bg-color);
+      padding-left: 16px;
 
       // 移除 van-cell 的默认 padding
       :deep(.van-cell) {

@@ -78,8 +78,8 @@
         <li ml-5 class="w-[60%]">
           <span ai-text-desc>{{ dynamicInfo?.dynamicDesc }}</span>
           <p flex flex-wrap>
-            <span mr-2 mt-4 ai-tag-btn>
-              {{
+            <span mr-2 mt-4 px-3 ai-tag-btn>
+              #{{
                 winPublishImageListData[dynamicInfo?.dynamicTitleType]
                   .name
               }}
