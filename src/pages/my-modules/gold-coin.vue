@@ -72,7 +72,7 @@
 
   .top-box {
     border-radius: 20px;
-    background: url(https://img.js.design/assets/img/691aed6ab5e8b987e5484ce3.png#e628c21f3eda4f689fb2344148e7f297);
+    background: url(@/assets/public/diamonds_bg.png);
     border: 4px solid rgba(255, 255, 255, 0.09);
     display: flex;
     align-items: center;
