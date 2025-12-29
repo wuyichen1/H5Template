@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
   import swipeOne from '@/assets/public/swipe-1.png'
+  import reportIcon from '@/assets/public/san_more_icon.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useWindow } from '@/hooks/useWindow'
@@ -11,7 +12,7 @@
     name: 'ArticleDetail'
   })
 
-  const { detailLikeIcon, likeIcon, reportIcon } = useAppImgStyle()
+  const { detailLikeIcon, likeIcon } = useAppImgStyle()
   const { winPublishImageListData } = useWindow()
   const { userInfo } = useUserStore()
   const {
@@ -120,18 +121,19 @@
                   />
                   <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
                 </li>
-                <li v-if="userInfo.userId !== item.userId" flex items-center>
-                  <van-image 
-                    :src="reportIcon"
-                    :style="{
-                      width: 'var(--report-image-width)',
-                      height: 'var(--report-image-height)'
-                    }"
-                    @click="handleReport(item.userId)"
-                  />
-                </li>
+                
               </ul>
               <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
+              <li v-if="userInfo.userId !== item.userId" flex items-center>
+                <van-image 
+                  :src="reportIcon"
+                  :style="{
+                    width: 'var(--report-image-width)',
+                    height: 'var(--report-image-height)'
+                  }"
+                  @click="handleReport(item.userId)"
+                />
+              </li>
             </div>
           </div>
         </div>
@@ -189,7 +191,7 @@
   .comment-content {
     padding: 16px;
     background:  #282329d1;
-    border-radius: var(--ai-rounded, 8px);
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
   } 
