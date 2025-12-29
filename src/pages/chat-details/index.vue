@@ -141,7 +141,6 @@
         </li>
         <li @click="onSend('Can you comfort me?')">
           <span>Can you comfort me?</span>
-          <!-- <van-icon name="chat-o" /> -->
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
@@ -187,7 +186,7 @@
         line-height: var(--ai-chat-details-top-height);
         font-size: var(--ai-chat-details-top-text-font-size);
         font-weight: var(--ai-chat-details-top-text-font-weight);
-        background: var(--ai-chat-details-top-text-bg-color);
+        background: rgba(28, 123, 255, 0.2);
         letter-spacing: 0;
         color: var(--ai-chat-details-top-text-color);
         display: flex;
