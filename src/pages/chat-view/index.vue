@@ -80,13 +80,13 @@
     <van-overlay :show="show" @click="show = false">
       <div flex h-full justify-center>
         <div class="block" @click.stop>
+          <!-- 添加一个图片 -->
+          <van-image :src="MasonryIcon" fit="contain" class="recharge-bot-image" />
           <div
             :style="{ background: `url(${chatBgImage})` }"
             class="content"
             style="background-size: cover"
           >
-            <!-- 添加一个图片 -->
-            <van-image :src="MasonryIcon" fit="contain" class="recharge-bot-image" />
             <span mt-18>Sorry</span>
             <span mt-3>your current balance is insufficient</span>
           </div>
