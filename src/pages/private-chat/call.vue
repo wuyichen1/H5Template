@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import HangIcon from '@/assets/public/hang-icon.png'
   import Head from '@/assets/public/Head.png'
+  import CallBg from '@/assets/public/call-bg.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
 
@@ -26,13 +27,19 @@
     })
   }
 
+  // 计算背景图URL
+  const backgroundImage = computed(() => {
+    const avatar = userData.value?.avator
+    return avatar ? `url(${avatar})` : `url(${CallBg})`
+  })
+
   onMounted(() => {
     getData()
   })
 </script>
 
 <template>
-  <div class="call-box">
+  <div class="call-box" :style="{ backgroundImage }">
     <div v-if="!loading" flex flex-col justify-center items-center>
       <div flex flex-col justify-center items-center>
         <van-image
@@ -65,8 +72,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // 导入背景图
-    background: url('@/assets/public/call-bg.png');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 </style>
