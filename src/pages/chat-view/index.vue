@@ -86,8 +86,8 @@
           >
             <!-- 添加一个图片 -->
             <van-image :src="MasonryIcon" fit="contain" class="recharge-bot-image" />
-            <span mt-3>Sorry</span>
-            <span mt-3>your current balance is insufficient</span>
+            <span mt-2 style="font-size: 24px; color: #000;">Sorry</span>
+            <span mt-3 style="font-size: 16px; color: #0E080F; display: flex; justify-content: center; align-items: center; text-align: center;">your current balance is insufficient</span>
           </div>
           <div mt-8 flex justify-center>
             <p ai-gradient-btn @click="jumpToRecharge()">Recharge</p>
