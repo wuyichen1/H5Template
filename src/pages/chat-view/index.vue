@@ -85,6 +85,8 @@
             class="content"
             style="background-size: cover"
           >
+            <!-- 添加一个图片 -->
+            <van-image :src="MasonryIcon" fit="contain" class="chat-bot-image" />
             <span mt-18>Sorry</span>
             <span mt-3>your current balance is insufficient</span>
           </div>
