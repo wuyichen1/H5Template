@@ -98,7 +98,8 @@
   }
 
   .bottom-btn {
-    background-image: var(--ai-setting-btn-color) !important;
+    // background-image: var(--ai-setting-btn-color) !important;
+    background: linear-gradient(201.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%) !important;
     font-size: var(--ai-setting-btn-text-size) !important;
     font-weight: var(--ai-setting-btn-text-weight) !important;
     color: var(--ai-setting-btn-text-color) !important;
