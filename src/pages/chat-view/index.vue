@@ -103,7 +103,8 @@
     height: 100vh;
     overflow-y: auto;
     .content_box {
-      padding-bottom: calc(50px + var(--ai-view-padding-bottom));
+      // padding-bottom: calc(50px + var(--ai-view-padding-bottom));
+      padding-bottom: 100px;
     }
   }
 
