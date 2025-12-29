@@ -151,7 +151,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #231e24;
+        color: #011733;
         font-size: 36px;
       }
     }
@@ -185,7 +185,7 @@
     :deep(.van-uploader__upload) {
       width: 103px;
       height: 103px;
-      background: #231e24;
+      background: #011733;
       border-radius: 20px;
     }
   }
