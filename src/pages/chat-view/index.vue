@@ -60,18 +60,18 @@
             @click="onSubmit"
           >
             <van-image h-12 w-12 :src="MasonryIcon" fit="cover" />
-            <span text-5 font-400 ml-1>
+            <span text-5 font-700 ml-1>
               X {{ winChatBotDesc.points }}
             </span>
-            <span text-4 font-400 ml-8 mr-1>Chat</span>
-            <van-image
+            <span text-4 font-500 ml-8 mr-1>Chat</span>
+            <!-- <van-image
               :src="chatBtnIcon"
               fit="cover"
               :style="{
                 width: 'var(--ai-btn-arr-image-width)',
                 height: 'var(--ai-btn-arr-image-height)'
               }"
-            />
+            /> -->
           </p>
         </li>
       </ul>
@@ -126,6 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50px;
   }
 
   .block {
