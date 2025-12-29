@@ -4,7 +4,7 @@
   import likeIcon from '@/assets/public/like.png'
   import swipeOne from '@/assets/public/swipe-1.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
-  import { useAppImgStyle } from '@/hooks/useAppImgStyle'
+  // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
