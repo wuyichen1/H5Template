@@ -124,15 +124,15 @@
   <div text-red class="chat-details_box">
     <div class="top-box">
       <ul p-layout-padding>
-        <li>
+        <li @click="onSend('I\'m feeling great today.')">
           <span>I'm feeling great today.</span>
           <van-icon name="chat-o" />
         </li>
-        <li>
+        <li @click="onSend('Do you like reading?')">
           <span>Do you like reading?</span>
           <van-icon name="chat-o" />
         </li>
-        <li>
+        <li @click="onSend('Can you comfort me?')">
           <span>Can you comfort me?</span>
           <van-icon name="chat-o" />
         </li>
@@ -182,6 +182,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        cursor: pointer;
+        transition: opacity 0.2s;
+
+        &:active {
+          opacity: 0.7;
+        }
       }
     }
   }
