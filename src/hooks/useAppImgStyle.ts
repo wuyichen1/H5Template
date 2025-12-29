@@ -2,7 +2,7 @@
  * 全局图片配置项
  */
 
-import loveIcon from '@/assets/images/love.svg'
+import loveIcon from '@/assets/images/love.png'
 import SendIcon from '@/assets/images/send.svg'
 import LeftIcon from '@/assets/nav-bar/back.svg'
 import RightMore from '@/assets/nav-bar/more.svg'
