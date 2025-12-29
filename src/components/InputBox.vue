@@ -21,21 +21,18 @@
         v-model="value"
         safe-area-inset-bottom
         placeholder="Say something"
-      >
-        <template #button>
-          <div flex items-center>
-            <van-image 
-              :src="inputSendIcon" 
-              @click="onSend"
-              :style="{
-                width: 'var(--comment-input-image-width)',
-                height: 'var(--comment-input-image-height)'
-              }"
-             />
-          </div>
-        </template>
-      </van-field>
+        class="input-field"
+      />
     </div>
+    <van-image 
+      class="send-icon"
+      :src="inputSendIcon" 
+      @click="onSend"
+      :style="{
+        width: 'var(--comment-input-image-width)',
+        height: 'var(--comment-input-image-height)'
+      }"
+    />
   </div>
 </template>
 
@@ -60,7 +57,20 @@
       padding-bottom: calc(10px + var(--ai-view-padding-bottom));
     }
 
-    .van-field {
+    .send-icon {
+      position: absolute;
+      right: 20px;
+      bottom: calc(10px + var(--ai-view-padding-bottom));
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      height: var(--ai-field-input-height);
+    }
+
+    .input-field {
       border-radius: var(--ai-field-input-border-radius);
       height: var(--ai-field-input-height);
       font-size: var(--ai-field-input-font-size);
@@ -78,10 +88,8 @@
 
       :deep(.van-field__body) {
         height: 100%;
-        //----
         display: flex;
         align-items: center;
-        //----
         padding-left: var(--ai-field-input-padding-left, 16px);
         padding-right: 0;
 
@@ -95,23 +103,6 @@
           }
         }
       }
-      // ---
-      :deep(.van-field__button) {
-        margin: 0 !important;
-        padding: 0 !important;
-        margin-right: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-        padding-right: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-
-        > div {
-          margin: 0 !important;
-          padding: 0 !important;
-        }
-      }
-      // ---
     }
   }
 </style>
