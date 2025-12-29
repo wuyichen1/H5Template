@@ -79,13 +79,13 @@
 <template>
   <div safe-area-inset-top px-layout-padding class="send-dynamic_box">
     <!-- 输入框 -->
-    <text-box v-model="formData.dynamicDesc" />
+    <text-box v-model="formData.dynamicDesc" bg="#011733" border-radius="16px" />
 
     <div mt-9>
       <!-- 主题选项 -->
       <div>
-        <div ai-input-title>Topic</div>
-        <ul flex justify-between>
+        <div ai-input-title>Classification</div>
+        <ul class="classification-list" flex>
           <li
             v-for="item in winPublishImageListData"
             :key="item.value"
@@ -122,5 +122,20 @@
     );
     background: var(--ai-send-dynamic-bg-color);
     min-height: 100vh;
+  }
+
+  .classification-list {
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
   }
 </style>
