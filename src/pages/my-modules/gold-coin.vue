@@ -73,7 +73,7 @@
   .top-box {
     border-radius: 20px;
     background: url(@/assets/public/diamonds_bg.png);
-    background-size: cover;
+    background-size: fill;
     background-position: center;
     background-repeat: no-repeat;
     border: 4px solid rgba(255, 255, 255, 0.09);

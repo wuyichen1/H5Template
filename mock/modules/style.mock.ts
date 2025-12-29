@@ -306,7 +306,7 @@ export default {
       width: '100%',
       height: '46px',
       borderRadius: '12px',
-      backgroundColor: '#231e24',
+      backgroundColor: '#011733',
       color: '#fff',
       fontSize: '16px',
       fontWeight: '400'

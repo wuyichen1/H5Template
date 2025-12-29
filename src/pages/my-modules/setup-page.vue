@@ -41,7 +41,7 @@
         @click="onSelect(item.value)"
       >
         <span>{{ item.label }}</span>
-        <van-image h-4 w-5 :src="RightIcon" fit="cover" />
+        <van-image h-5 w-5 :src="RightIcon" fit="cover" />
       </li>
     </ul>
 
