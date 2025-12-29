@@ -86,7 +86,7 @@
             style="background-size: cover"
           >
             <!-- 添加一个图片 -->
-            <van-image :src="MasonryIcon" fit="contain" class="chat-bot-image" />
+            <van-image :src="MasonryIcon" fit="contain" class="recharge-bot-image" />
             <span mt-18>Sorry</span>
             <span mt-3>your current balance is insufficient</span>
           </div>
@@ -122,6 +122,11 @@
     width: 135px;
     height: 135px;
     margin-bottom: 10px;
+  }
+
+  .recharge-bot-image {
+    width: 100px;
+    height: 100px;
   }
 
   .bottom-btn {
