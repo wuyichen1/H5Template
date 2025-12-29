@@ -136,8 +136,8 @@
     li {
       flex-shrink: 0;
       white-space: nowrap;
-      padding-left: 6px;
-      padding-right: 6px;
+      padding-left: 10px;
+      padding-right: 10px;
       width: auto !important;
     }
   }
