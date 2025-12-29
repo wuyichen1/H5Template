@@ -138,6 +138,7 @@
       white-space: nowrap;
       padding-left: 6px;
       padding-right: 6px;
+      width: auto !important;
     }
   }
 </style>
