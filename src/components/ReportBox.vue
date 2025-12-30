@@ -101,6 +101,7 @@
 
     li + li {
       margin-top: 16px;
+      background: #011733;
     }
 
     li {
