@@ -79,7 +79,7 @@
       flex
       items-center
       justify-between
-      class="list-box rounded-[20px] bg-[#282329cc]"
+      class="list-box rounded-[20px] bg-[#011733]"
     >
       <ul>
         <li flex items-center>
