@@ -76,7 +76,7 @@
 </script>
 
 <template>
-  <van-popup v-model:show="show" round position="bottom">
+  <van-popup v-model:show="show" round position="bottom" :z-index="3000">
     <ul class="report-box">
       <li>
         <p ai-default-btn @click="onReport">Report</p>
