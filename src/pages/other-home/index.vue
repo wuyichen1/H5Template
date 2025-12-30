@@ -9,13 +9,14 @@
   import otherHomeAddIcon from '@/assets/public/add.png'
   import detailLikeIcon from '@/assets/public/unlike.png'
   import likeIcon from '@/assets/public/like.png'
-
+  import reportIcon from '@/assets/public/san_more_icon.png'
+  
   defineOptions({
     name: 'other-home'
   })
 
   const {
-    reportIcon,
+    // reportIcon,
     // otherHomeAddIcon,
     otherHomeMessageIcon,
     // otherHomeLikeIcon
