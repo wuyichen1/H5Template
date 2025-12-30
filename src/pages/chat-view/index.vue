@@ -138,6 +138,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50px;
+    border: 1px solid #fff; /* 增加一个白色border */
   }
 
   .block {
