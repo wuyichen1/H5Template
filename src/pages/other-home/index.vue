@@ -384,9 +384,12 @@
 
           .tag {
             background: rgba(255, 255, 255, 0.2);
-            display: inline-block;
-            padding: 8px;
+            padding-left: 8px;
+            padding-right: 8px;
             white-space: nowrap;
+            text-align: center;
+            flex: 1;
+            margin-left: 8px;
           }
         }
       }
