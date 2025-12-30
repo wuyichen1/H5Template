@@ -78,7 +78,7 @@
 
 <template>
   <div px-layout-padding class="publish-video_box">
-    <text-box v-model="formData.dynamicDesc" maxlength="50" rows="3" />
+    <text-box v-model="formData.dynamicDesc" bg="#011733" maxlength="50" rows="3" />
 
     <!-- 视频上传 -->
     <div my-6>
