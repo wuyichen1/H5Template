@@ -115,7 +115,8 @@
   }
 
   .send-box {
-    background: var(--ai-chat-list-send-bg-color) !important;
+    background: rgba(28, 123, 255, 1) !important;
+    // background: var(--ai-chat-list-send-bg-color) !important;
     border-radius: var(--ai-chat-list-avatar-border-radius) 0px
       var(--ai-chat-list-avatar-border-radius)
       var(--ai-chat-list-avatar-border-radius) !important;
