@@ -275,13 +275,27 @@
   } 
 
   .top-user-info {
+    position: relative;
     width: 100%;
     height: 346px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
     .bottom-box {
+      position: relative;
+      z-index: 2;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -308,6 +322,8 @@
     }
 
     .number-box {
+      position: relative;
+      z-index: 2;
       margin: 6px 0;
 
       li {
@@ -331,6 +347,8 @@
   }
 
   .avatar-info {
+    position: relative;
+    z-index: 2;
     padding: 96px 0 0;
     display: flex;
     flex-direction: column;
