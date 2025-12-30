@@ -281,6 +281,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    pointer-events: none;
 
     &::before {
       content: '';
@@ -297,6 +298,7 @@
     .bottom-box {
       position: relative;
       z-index: 2;
+      pointer-events: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -325,6 +327,7 @@
     .number-box {
       position: relative;
       z-index: 2;
+      pointer-events: auto;
       margin: 6px 0;
 
       li {
@@ -350,6 +353,7 @@
   .avatar-info {
     position: relative;
     z-index: 2;
+    pointer-events: auto;
     padding: 96px 0 0;
     display: flex;
     flex-direction: column;
