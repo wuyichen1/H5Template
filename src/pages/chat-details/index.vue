@@ -183,9 +183,9 @@
     .right-image {
       position: absolute;
       right: 20px;
-      bottom: 20px;
+      bottom: 40px;
       width: 120px;
-      height: 120px;
+      height: 130;
     }
 
     ul {
