@@ -410,7 +410,7 @@
         position: absolute;
         bottom: 0;
         left: 16px;
-        right: 16px;
+        right: 56px;
         background: linear-gradient(
           90deg,
           #0e080f78 0%,
@@ -431,7 +431,7 @@
 
       .like-box {
         position: absolute;
-        bottom: 36px;
+        bottom: 30px;
         right: 30px;
         display: flex;
         flex-direction: column;
