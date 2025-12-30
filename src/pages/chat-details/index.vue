@@ -173,6 +173,7 @@
 
   .top-box {
     height: 282px;
+    margin-right: 100px;
     background: url('@/assets/public/top-chat.png');
     background-size: cover;
     display: flex;
@@ -196,7 +197,6 @@
 
       li {
         border-radius: var(--ai-chat-details-top-border-radius);
-        margin-right: 100px;
         padding: 0 12px;
         width: 100%;
         height: var(--ai-chat-details-top-height);
