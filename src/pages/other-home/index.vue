@@ -387,7 +387,7 @@
 
       .bottom-text {
         position: absolute;
-        bottom: 20;
+        bottom: 20px;
         background: linear-gradient(
           90deg,
           #0e080f78 0%,
