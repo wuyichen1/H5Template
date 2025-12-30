@@ -189,6 +189,7 @@
     }
 
     ul {
+      flex: 1;
       li + li {
         margin-top: 16px;
       }
@@ -196,7 +197,7 @@
       li {
         border-radius: var(--ai-chat-details-top-border-radius);
         padding: 0 12px;
-        width: var(--ai-chat-details-top-width);
+        width: 100%;
         height: var(--ai-chat-details-top-height);
         line-height: var(--ai-chat-details-top-height);
         font-size: var(--ai-chat-details-top-text-font-size);
@@ -209,6 +210,14 @@
         justify-content: space-between;
         cursor: pointer;
         transition: opacity 0.2s;
+
+        span {
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          margin-right: 8px;
+        }
 
         &:active {
           opacity: 0.7;
