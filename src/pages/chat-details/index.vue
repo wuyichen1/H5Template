@@ -3,6 +3,7 @@
   import CryptoJS from 'crypto-js'
   import { useUserStore } from '@/stores'
   import ChatIcon from '@/assets/public/ai_chat_icon.png'
+  import RightImage from '@/assets/public/ai_bavator.png'
 
   defineOptions({
     name: 'ChatDetails'
@@ -147,6 +148,10 @@
           />
         </li>
       </ul>
+      <van-image
+        :src="RightImage"
+        class="right-image"
+      />
     </div>
 
     <chat-list
@@ -172,6 +177,16 @@
     background-size: cover;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+
+    .right-image {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 120px;
+      height: 120px;
+    }
 
     ul {
       li + li {
