@@ -125,7 +125,7 @@
 <template>
   <div text-red class="chat-details_box">
     <div class="top-box">
-      <ul p-layout-padding>
+      <ul p-layout-padding style="margin-right: 100px;">
         <li @click="onSend('What style do you recommend?')">
           <span>What style do you recommend?</span>
           <van-image
@@ -173,7 +173,6 @@
 
   .top-box {
     height: 282px;
-    margin-right: 100px;
     background: url('@/assets/public/top-chat.png');
     background-size: cover;
     display: flex;
