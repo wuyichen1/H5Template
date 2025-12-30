@@ -126,22 +126,22 @@
   <div text-red class="chat-details_box">
     <div class="top-box">
       <ul p-layout-padding>
-        <li @click="onSend('I\'m feeling great today.')">
-          <span>I'm feeling great today.</span>
+        <li @click="onSend('What style do you recommend?')">
+          <span>What style do you recommend?</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
           />
         </li>
-        <li @click="onSend('Do you like reading?')">
-          <span>Do you like reading?</span>
+        <li @click="onSend('Pearl jewelry matching tips')">
+          <span>Pearl jewelry matching tips</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
           />
         </li>
-        <li @click="onSend('Can you comfort me?')">
-          <span>Can you comfort me?</span>
+        <li @click="onSend('Dinner party accessories matching')">
+          <span>Dinner party accessories matching</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
