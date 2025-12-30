@@ -153,6 +153,10 @@
 </template>
 
 <style lang="less" scoped>
+  :deep(.van-nav-bar) {
+    z-index: 1000;
+  }
+
   .top-nav-bar_box {
     opacity: 0.5;
     background: linear-gradient(

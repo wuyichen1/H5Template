@@ -282,6 +282,7 @@
     flex-direction: column;
     justify-content: space-between;
     pointer-events: none;
+    z-index: 0;
 
     &::before {
       content: '';
