@@ -217,10 +217,7 @@
             <van-image
               v-if="shouldShowReport(item)" 
               :src="reportIcon"
-              :style="{
-                width: 'var(--report-image-width)',
-                height: 'var(--report-image-height)'
-              }"
+              :style="{ width: '20px', height: '20px' }"
               @click.stop="
                 () => {
                   isReport = true
@@ -369,6 +366,9 @@
 
           .tag {
             background: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 8px;
+            white-space: nowrap;
           }
         }
       }
