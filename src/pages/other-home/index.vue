@@ -392,7 +392,7 @@
       }
 
       .bottom-img {
-        padding: 0 16px 16px;
+        padding: 0 16px 0 16px;
         display: flex;
         justify-content: space-between;
 
@@ -405,14 +405,16 @@
 
       .bottom-text {
         position: absolute;
-        bottom: 20px;
+        bottom: 0;
+        left: 16px;
+        right: 16px;
         background: linear-gradient(
           90deg,
           #0e080f78 0%,
           rgba(14, 8, 15, 0) 100%
         );
         height: 42px;
-        width: 90%;
+        width: 100%;
         line-height: 42px;
         padding: 0 16px;
         font-size: var(--ai-other-home-card-desc-text-size);
