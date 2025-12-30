@@ -44,6 +44,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 2001;
 
     opacity: 1;
     background: linear-gradient(
