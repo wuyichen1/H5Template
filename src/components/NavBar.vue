@@ -156,22 +156,11 @@
   :deep(.van-nav-bar) {
     z-index: 1000 !important;
     pointer-events: auto !important;
-    position: relative !important;
   }
 
-  :deep(.van-nav-bar__content),
   :deep(.van-nav-bar__left),
-  :deep(.van-nav-bar__right),
-  :deep(.van-nav-bar__title) {
+  :deep(.van-nav-bar__right) {
     pointer-events: auto !important;
-    position: relative;
-    z-index: 1001;
-  }
-  
-  :deep(.van-nav-bar__left > *),
-  :deep(.van-nav-bar__right > *) {
-    pointer-events: auto !important;
-    cursor: pointer;
   }
 
   .top-nav-bar_box {
