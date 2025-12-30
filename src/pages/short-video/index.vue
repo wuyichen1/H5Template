@@ -5,12 +5,13 @@
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useUserStore } from '@/stores'
+  import addIcon from '@/assets/public/add.png'
 
   defineOptions({
     name: 'ShortVideo'
   })
 
-  const { reportIcon, addIcon, messageIcon } =
+  const { reportIcon, messageIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
   const {
