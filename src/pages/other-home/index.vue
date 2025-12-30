@@ -259,7 +259,7 @@
               width: 'var(--other-home-like-post-width)',
               height: 'var(--other-home-like-post-height)'
             }"/> -->
-          <span class="public-number">{{ item.dynamicLikeCount }}</span>
+          <span class="public-number" style="padding-right: 56px">{{ item.dynamicLikeCount }}</span>
         </div>
       </div>
     </div>
@@ -411,7 +411,7 @@
         position: absolute;
         bottom: 0;
         left: 16px;
-        right: 56px;
+        right: 16px;
         background: linear-gradient(
           90deg,
           #0e080f78 0%,
