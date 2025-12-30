@@ -18,7 +18,7 @@
     reportIcon,
     // otherHomeAddIcon,
     otherHomeMessageIcon,
-    otherHomeLikeIcon
+    // otherHomeLikeIcon
   } = useAppImgStyle()
   const { queryId, jumpToDetail, appParams, jumpToPrivateChat } =
     useJump()
