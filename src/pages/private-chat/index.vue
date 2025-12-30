@@ -95,7 +95,8 @@
     chatListData.value.forEach(v => {
       if (v.chatId === queryId.value) {
         v.lastSendContent = state === 1 ? '[image]' : sendContent
-        v.unreadMsgCount = sendCount.value
+        v.unreadMsgCount = 0
+        // v.unreadMsgCount = sendCount.value
         v.lastSendUserId = userInfo.userId
         v.lastSendTime = getCurrentDateTime()
       }
