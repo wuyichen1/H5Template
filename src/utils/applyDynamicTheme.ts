@@ -93,7 +93,7 @@ export const applyDynamicTheme = () => {
 
   // -------表单按钮
   root.setProperty('--ai-form-btn-text-color', styleJson?.formBtnStyle?.color || 'rgba(255, 255, 255, 1)')
-  root.setProperty('--ai-form-btn-bg-color', styleJson?.formBtnStyle?.backgroundColor || 'rgb(35, 30, 36)')
+  root.setProperty('--ai-form-btn-bg-color', styleJson?.formBtnStyle?.backgroundColor || 'rgba(1, 23, 51, 1)')
   root.setProperty('--ai-form-btn-font-size', styleJson?.formBtnStyle?.fontSize || '18px')
   root.setProperty('--ai-form-btn-font-weight', styleJson?.formBtnStyle?.fontWeight || '400')
   root.setProperty('--ai-form-btn-border-radius', styleJson?.formBtnStyle?.borderRadius || '20px')

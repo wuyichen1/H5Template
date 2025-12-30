@@ -109,8 +109,7 @@ export default defineConfig({
         'font-weight': 'var(--ai-form-btn-font-weight)',
         'text-align': 'center',
         'border-radius': 'var(--ai-form-btn-border-radius)',
-        background: rgba(1, 23, 51, 1),
-        // background: 'var(--ai-form-btn-bg-color)',
+        background: 'var(--ai-form-btn-bg-color)',
         color: 'var(--ai-form-btn-text-color)'
       }
     ],
