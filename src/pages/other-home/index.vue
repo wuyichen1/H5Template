@@ -22,7 +22,7 @@
   } = useAppImgStyle()
   const { queryId, jumpToDetail, appParams, jumpToPrivateChat } =
     useJump()
-  const { winUserListData, winDynamicData, winChatListData } = useWindow()
+  const { winUserListData, winDynamicData, winChatListData, winPublishImageListData } = useWindow()
   const useData = useUserStore()
 
   const {
@@ -206,11 +206,11 @@
         @click="onGoDetail(item)"
       >
         <ul class="top-info">
-          <!-- <li>
-            <van-image round ai-avatar :src="Head" fit="cover" />
-            <span mx-2 ai-user-name>Apien</span>
-            <span ai-tag-btn class="tag"># Theme</span>
-          </li> -->
+          <li>
+            <van-image round ai-avatar :src="userInfo.avator || Head" fit="cover" />
+            <span mx-2 ai-user-name>{{ userInfo.name }}</span>
+            <span ai-tag-btn class="tag"># {{ winPublishImageListData.find(v => v.value === item.dynamicType)?.name }}</span>
+          </li>
           <li />
           <li>
             <van-image
@@ -351,7 +351,7 @@
     }
 
     .card-item {
-      background: rgba(40, 35, 41, 0.8);
+      background: rgba(1, 23, 51, 1);
       border-radius: 20px;
       position: relative;
       overflow: hidden;
@@ -386,14 +386,14 @@
 
       .bottom-text {
         position: absolute;
-        bottom: 0;
+        bottom: 20;
         background: linear-gradient(
           90deg,
           #0e080f78 0%,
           rgba(14, 8, 15, 0) 100%
         );
         height: 42px;
-        width: 100%;
+        width: 90%;
         line-height: 42px;
         padding: 0 16px;
         font-size: var(--ai-other-home-card-desc-text-size);
@@ -407,8 +407,8 @@
 
       .like-box {
         position: absolute;
-        bottom: 26px;
-        right: 10px;
+        bottom: 36px;
+        right: 30px;
         display: flex;
         flex-direction: column;
         align-self: center;
