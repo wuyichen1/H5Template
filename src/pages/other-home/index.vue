@@ -244,7 +244,7 @@
             <van-image rounded-2 h-23.5 w-22 overflow-hidden :src="Head" fit="cover" />
           </li> -->
         </ul>
-        <span class="bottom-text">{{ item.dynamicDesc }}</span>
+        <span class="bottom-text" style="padding-right: 56px">{{ item.dynamicDesc }}</span>
         <div class="like-box">
           <van-image
             :src="isVideoLike ? likeIcon : detailLikeIcon"
@@ -259,7 +259,7 @@
               width: 'var(--other-home-like-post-width)',
               height: 'var(--other-home-like-post-height)'
             }"/> -->
-          <span class="public-number" style="padding-right: 56px">{{ item.dynamicLikeCount }}</span>
+          <span class="public-number">{{ item.dynamicLikeCount }}</span>
         </div>
       </div>
     </div>
