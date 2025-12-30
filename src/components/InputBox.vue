@@ -44,7 +44,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 2001;
+    z-index: 2000;
 
     opacity: 1;
     background: linear-gradient(
@@ -91,7 +91,7 @@
         height: 100%;
         display: flex;
         align-items: center;
-        padding-left: 0px;
+       padding-left: 0px;
         padding-right: 0;
 
         input {
