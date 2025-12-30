@@ -133,7 +133,13 @@
 
 <template>
   <div v-if="!loading" class="other-home_box">
-    <div class="top-user-info">
+    <div 
+      class="top-user-info"
+      :style="{
+        backgroundImage: `url(${userInfo.avator || Head})`,
+        backgroundSize: 'cover'
+      }"
+    >
       <div class="avatar-info">
         <van-image
           round
@@ -271,8 +277,6 @@
   } 
 
   .top-user-info {
-    background: url('@/assets/public/top-home.png');
-    background-size: cover;
     width: 100%;
     height: 346px;
     display: flex;
