@@ -23,28 +23,28 @@
         placeholder="Say something"
         class="input-field"
       />
+      <van-image 
+        class="send-icon"
+        :src="inputSendIcon" 
+        @click="onSend"
+        :style="{
+          width: 'var(--comment-input-image-width)',
+          height: 'var(--comment-input-image-height)'
+        }"
+      />
     </div>
-    <van-image 
-      class="send-icon"
-      :src="inputSendIcon" 
-      @click="onSend"
-      :style="{
-        width: 'var(--comment-input-image-width)',
-        height: 'var(--comment-input-image-height)'
-      }"
-    />
   </div>
 </template>
 
 <style lang="less" scoped>
   .input-box {
-    position: sticky;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: calc(10px + var(--ai-view-padding-bottom));
 
     opacity: 1;
     background: linear-gradient(
@@ -55,20 +55,23 @@
 
     .input--width {
       width: var(--ai-field-input-width);
-      padding-bottom: calc(10px + var(--ai-view-padding-bottom));
+      position: relative;
+      display: flex;
+      align-items: center;
     }
 
     .send-icon {
       position: absolute;
       right: 20px;
-      bottom: calc(10px + var(--ai-view-padding-bottom));
+      top: 50%;
+      transform: translateY(-50%);
       margin: 0;
       padding: 0;
       cursor: pointer;
-      z-index: 10;
       display: flex;
       align-items: center;
       height: var(--ai-field-input-height);
+      z-index: 1;
     }
 
     .input-field {
