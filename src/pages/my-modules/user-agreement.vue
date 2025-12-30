@@ -7,130 +7,129 @@
 <template>
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
-      <h1 class="title">Zoryo 用户协议</h1>
-      <p class="update-date">最后更新时间：2024年</p>
+      <h1 class="title">Zoryo User Agreement</h1>
       
       <section class="section">
-        <h2 class="section-title">一、协议范围</h2>
+        <h2 class="section-title">I. Scope of Agreement</h2>
         <p class="section-text">
-          欢迎使用 Zoryo（以下简称"本应用"或"我们"）。Zoryo 是您的专属珠宝搭配灵感平台，致力于解决各种搭配难题，让每一件小首饰成为您造型的点睛之笔。
+          Welcome to Zoryo (hereinafter referred to as "this App" or "we"). Zoryo is your exclusive jewelry matching inspiration hub, dedicated to solving various matching dilemmas and making every small piece of jewelry the finishing touch to your outfit.
         </p>
         <p class="section-text">
-          本用户协议（以下简称"本协议"）是您与 Zoryo 之间关于使用本应用服务所订立的协议。请您仔细阅读本协议，特别是涉及免除或限制责任的条款、法律适用和争议解决条款。当您注册、登录、使用（以下统称"使用"）本应用服务时，即表示您已充分阅读、理解并同意接受本协议的全部内容。
+          This User Agreement (hereinafter referred to as "this Agreement") is an agreement between you and Zoryo regarding the use of this App's services. Please read this Agreement carefully, especially the clauses concerning exemption or limitation of liability, applicable law, and dispute resolution. When you register, log in, or use (collectively referred to as "use") this App's services, it means that you have fully read, understood, and agreed to accept all the contents of this Agreement.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">二、服务内容</h2>
-        <p class="section-text">Zoryo 为您提供以下核心服务：</p>
+        <h2 class="section-title">II. Service Content</h2>
+        <p class="section-text">Zoryo provides you with the following core services:</p>
         <ul class="section-list">
-          <li><strong>内容分类浏览：</strong>基于不同场景需求，为您分类展示珠宝搭配内容。图文帖子直观呈现从逻辑和风格角度的多样效果，帮助您快速找到适合的珠宝。</li>
-          <li><strong>AI 智能助手：</strong>通过付费解锁 AI 助手功能，随时为您解答疑问，帮助您解锁专属风格。</li>
-          <li><strong>潮流分享社区：</strong>汇聚丰富的创意珠宝造型视频，自由浏览获取灵感，与志同道合的人互动，发现更多可能性。</li>
+          <li><strong>Categorized Content Browsing:</strong> Based on different scenario needs, we categorize and display jewelry matching content for you. Graphic posts intuitively present diverse effects from the perspectives of logic and style, helping you quickly find the jewelry that suits you.</li>
+          <li><strong>AI Assistant:</strong> Unlock the AI Assistant feature through payment to get answers to your questions anytime and help you unlock your exclusive style.</li>
+          <li><strong>Trendy Sharing Community:</strong> Gather a wealth of creative jewelry styling videos. Browse freely to gain inspiration, interact with like-minded people, and discover more possibilities.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2 class="section-title">三、账户注册与使用</h2>
+        <h2 class="section-title">III. Account Registration and Use</h2>
         <p class="section-text">
-          3.1 您在使用本应用服务前需要注册一个账户。您应当使用真实、准确、完整的信息注册账户，并及时更新注册信息。
+          3.1 You need to register an account before using this App's services. You should register an account with true, accurate, and complete information, and update your registration information in a timely manner.
         </p>
         <p class="section-text">
-          3.2 您有责任维护账户信息的安全性和保密性，对您账户下的所有活动负责。如发现任何未经授权的使用，请立即通知我们。
+          3.2 You are responsible for maintaining the security and confidentiality of your account information and are responsible for all activities under your account. If you discover any unauthorized use, please notify us immediately.
         </p>
         <p class="section-text">
-          3.3 您不得将账户转让、出售或以其他方式提供给第三方使用。
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">四、付费服务</h2>
-        <p class="section-text">
-          4.1 本应用的部分功能（如 AI 助手）需要付费解锁。付费服务的价格、支付方式等信息将在相关页面明确展示。
-        </p>
-        <p class="section-text">
-          4.2 您理解并同意，付费服务一旦购买成功，除法律法规规定或本协议另有约定外，不予退款。
-        </p>
-        <p class="section-text">
-          4.3 我们保留根据业务发展需要调整付费服务价格的权利，但不会影响您已购买的服务的有效期。
+          3.3 You may not transfer, sell, or otherwise provide your account to third parties for use.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">五、用户行为规范</h2>
-        <p class="section-text">您在使用本应用服务时，应当遵守以下规范：</p>
+        <h2 class="section-title">IV. Paid Services</h2>
+        <p class="section-text">
+          4.1 Some features of this App (such as the AI Assistant) require payment to unlock. Information about paid services, including prices and payment methods, will be clearly displayed on relevant pages.
+        </p>
+        <p class="section-text">
+          4.2 You understand and agree that once a paid service is successfully purchased, no refund will be provided except as required by laws and regulations or as otherwise agreed in this Agreement.
+        </p>
+        <p class="section-text">
+          4.3 We reserve the right to adjust the prices of paid services according to business development needs, but this will not affect the validity period of services you have already purchased.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">V. User Conduct Standards</h2>
+        <p class="section-text">When using this App's services, you should comply with the following standards:</p>
         <ul class="section-list">
-          <li>遵守国家法律法规，不得发布违法违规内容；</li>
-          <li>尊重他人知识产权，不得侵犯他人的著作权、商标权等合法权益；</li>
-          <li>维护良好的社区氛围，不得发布恶意、虚假、误导性信息；</li>
-          <li>不得利用本应用从事任何商业活动或未经授权的推广行为；</li>
-          <li>不得使用技术手段干扰、破坏本应用的正常运行；</li>
-          <li>不得发布涉及色情、暴力、赌博、政治敏感等不当内容。</li>
+          <li>Comply with national laws and regulations, and do not publish illegal or non-compliant content;</li>
+          <li>Respect others' intellectual property rights and do not infringe upon others' legitimate rights such as copyrights and trademarks;</li>
+          <li>Maintain a good community atmosphere and do not publish malicious, false, or misleading information;</li>
+          <li>Do not use this App to engage in any commercial activities or unauthorized promotional activities;</li>
+          <li>Do not use technical means to interfere with or disrupt the normal operation of this App;</li>
+          <li>Do not publish inappropriate content involving pornography, violence, gambling, political sensitivity, etc.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2 class="section-title">六、知识产权</h2>
+        <h2 class="section-title">VI. Intellectual Property</h2>
         <p class="section-text">
-          6.1 本应用的所有内容，包括但不限于文字、图片、音频、视频、软件、程序、版面设计等，均受知识产权法律法规保护。
+          6.1 All content of this App, including but not limited to text, images, audio, video, software, programs, layout design, etc., is protected by intellectual property laws and regulations.
         </p>
         <p class="section-text">
-          6.2 您在本应用上传、发布的内容，您保留其知识产权，但您授予我们免费、非独占、可转授权的许可，用于在本应用内展示、推广您的作品。
+          6.2 You retain the intellectual property rights to the content you upload and publish on this App, but you grant us a free, non-exclusive, and sublicensable license to display and promote your works within this App.
         </p>
         <p class="section-text">
-          6.3 未经我们书面许可，您不得以任何形式复制、传播、展示、镜像、上传、下载本应用的内容。
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">七、免责声明</h2>
-        <p class="section-text">
-          7.1 本应用提供的服务基于"现状"和"现有"的基础提供，我们不对服务的及时性、安全性、准确性作任何明示或暗示的保证。
-        </p>
-        <p class="section-text">
-          7.2 对于因不可抗力或非我们原因导致的网络中断、数据丢失等损失，我们不承担责任。
-        </p>
-        <p class="section-text">
-          7.3 本应用中的用户生成内容仅代表用户个人观点，不代表我们的立场。我们不对用户发布的内容承担责任。
+          6.3 Without our written permission, you may not copy, distribute, display, mirror, upload, or download the content of this App in any form.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">八、服务变更与终止</h2>
+        <h2 class="section-title">VII. Disclaimer</h2>
         <p class="section-text">
-          8.1 我们有权根据业务发展需要调整、变更或终止部分或全部服务，并提前通知用户。
+          7.1 The services provided by this App are provided on an "as is" and "as available" basis. We make no express or implied warranties regarding the timeliness, security, or accuracy of the services.
         </p>
         <p class="section-text">
-          8.2 如您违反本协议，我们有权立即终止向您提供服务，并保留追究法律责任的权利。
+          7.2 We are not responsible for losses caused by force majeure or reasons not attributable to us, such as network interruptions and data loss.
         </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">九、协议修改</h2>
         <p class="section-text">
-          我们有权根据国家法律法规变化及业务发展需要修改本协议。修改后的协议将在本应用内公布，并通过适当方式通知您。如您不同意修改后的协议，请停止使用本应用服务。
+          7.3 User-generated content on this App only represents the personal views of users and does not represent our position. We are not responsible for the content published by users.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">十、法律适用与争议解决</h2>
+        <h2 class="section-title">VIII. Service Changes and Termination</h2>
         <p class="section-text">
-          10.1 本协议的订立、生效、解释、履行和争议解决均适用中华人民共和国大陆地区法律法规。
+          8.1 We have the right to adjust, change, or terminate part or all of the services according to business development needs and will notify users in advance.
         </p>
         <p class="section-text">
-          10.2 如因本协议产生任何争议，双方应友好协商解决；协商不成的，任何一方均可向我们所在地有管辖权的人民法院提起诉讼。
+          8.2 If you violate this Agreement, we have the right to immediately terminate the services provided to you and reserve the right to pursue legal liability.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">十一、联系我们</h2>
+        <h2 class="section-title">IX. Agreement Modification</h2>
         <p class="section-text">
-          如您对本协议有任何疑问、意见或建议，欢迎通过本应用内的反馈渠道与我们联系。
+          We have the right to modify this Agreement according to changes in national laws and regulations and business development needs. The modified agreement will be published within this App and you will be notified through appropriate means. If you do not agree to the modified agreement, please stop using this App's services.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">X. Applicable Law and Dispute Resolution</h2>
+        <p class="section-text">
+          10.1 The conclusion, validity, interpretation, performance, and dispute resolution of this Agreement shall be governed by the laws and regulations of the mainland region of the People's Republic of China.
+        </p>
+        <p class="section-text">
+          10.2 If any dispute arises from this Agreement, both parties shall resolve it through friendly consultation. If consultation fails, either party may file a lawsuit with the people's court with jurisdiction in our location.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">XI. Contact Us</h2>
+        <p class="section-text">
+          If you have any questions, opinions, or suggestions regarding this Agreement, please feel free to contact us through the feedback channels within this App.
         </p>
       </section>
 
       <p class="footer-text">
-        感谢您选择 Zoryo，让我们一起解锁您的专属风格！
+        Thank you for choosing Zoryo. Let's unlock your exclusive style together!
       </p>
     </div>
   </div>

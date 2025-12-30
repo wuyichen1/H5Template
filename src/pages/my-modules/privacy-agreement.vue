@@ -7,131 +7,130 @@
 <template>
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
-      <h1 class="title">Zoryo 隐私政策</h1>
-      <p class="update-date">最后更新时间：2024年</p>
+      <h1 class="title">Zoryo Privacy Policy</h1>
       
       <section class="section">
-        <h2 class="section-title">一、引言</h2>
+        <h2 class="section-title">I. Introduction</h2>
         <p class="section-text">
-          Zoryo（以下简称"我们"或"本应用"）非常重视您的隐私保护。本隐私政策旨在向您说明我们如何收集、使用、存储、分享和保护您的个人信息，以及您享有的权利。
+          Zoryo (hereinafter referred to as "we" or "this App") takes your privacy protection very seriously. This Privacy Policy aims to explain how we collect, use, store, share, and protect your personal information, as well as the rights you enjoy.
         </p>
         <p class="section-text">
-          请您仔细阅读本隐私政策。当您使用本应用服务时，即表示您已充分理解并同意本隐私政策的全部内容。
+          Please read this Privacy Policy carefully. When you use this App's services, it means that you have fully understood and agreed to all the contents of this Privacy Policy.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">二、我们收集的信息</h2>
-        <p class="section-text">为了向您提供更好的服务，我们可能收集以下信息：</p>
+        <h2 class="section-title">II. Information We Collect</h2>
+        <p class="section-text">To provide you with better services, we may collect the following information:</p>
         
-        <h3 class="subsection-title">2.1 您主动提供的信息</h3>
+        <h3 class="subsection-title">2.1 Information You Actively Provide</h3>
         <ul class="section-list">
-          <li><strong>账户信息：</strong>注册时提供的手机号码、邮箱地址、用户名、密码等；</li>
-          <li><strong>个人资料：</strong>头像、昵称、个人简介、性别、生日等可选的个人信息；</li>
-          <li><strong>内容信息：</strong>您在本应用上传、发布的图片、视频、文字等内容；</li>
-          <li><strong>互动信息：</strong>您发布的评论、点赞、收藏、分享等互动行为；</li>
-          <li><strong>支付信息：</strong>购买付费服务时的支付相关信息（我们不会存储您的完整支付卡号等敏感信息）。</li>
+          <li><strong>Account Information:</strong> Phone number, email address, username, password, etc., provided during registration;</li>
+          <li><strong>Profile Information:</strong> Optional personal information such as avatar, nickname, bio, gender, birthday, etc.;</li>
+          <li><strong>Content Information:</strong> Images, videos, text, and other content you upload and publish on this App;</li>
+          <li><strong>Interaction Information:</strong> Your interactive behaviors such as comments, likes, favorites, shares, etc.;</li>
+          <li><strong>Payment Information:</strong> Payment-related information when purchasing paid services (we do not store sensitive information such as your complete payment card number).</li>
         </ul>
 
-        <h3 class="subsection-title">2.2 我们自动收集的信息</h3>
+        <h3 class="subsection-title">2.2 Information We Automatically Collect</h3>
         <ul class="section-list">
-          <li><strong>设备信息：</strong>设备型号、操作系统版本、唯一设备标识符、移动网络信息等；</li>
-          <li><strong>日志信息：</strong>访问时间、访问页面、IP地址、浏览器类型、语言设置等；</li>
-          <li><strong>位置信息：</strong>在您授权的情况下，我们可能收集您的地理位置信息；</li>
-          <li><strong>使用信息：</strong>您使用本应用的功能、浏览的内容、停留时长等使用行为数据。</li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">三、信息的使用目的</h2>
-        <p class="section-text">我们使用收集的信息用于以下目的：</p>
-        <ul class="section-list">
-          <li>提供、维护和改进本应用的服务功能；</li>
-          <li>为您推荐个性化的珠宝搭配内容和灵感；</li>
-          <li>处理您的付费服务请求，管理您的账户；</li>
-          <li>提供 AI 助手服务，回答您的问题；</li>
-          <li>维护社区秩序，保障服务安全；</li>
-          <li>进行数据分析，优化用户体验；</li>
-          <li>向您发送服务通知、更新信息（您可随时取消）；</li>
-          <li>遵守法律法规要求，配合监管机构调查。</li>
+          <li><strong>Device Information:</strong> Device model, operating system version, unique device identifier, mobile network information, etc.;</li>
+          <li><strong>Log Information:</strong> Access time, visited pages, IP address, browser type, language settings, etc.;</li>
+          <li><strong>Location Information:</strong> We may collect your geographic location information with your authorization;</li>
+          <li><strong>Usage Information:</strong> Usage behavior data such as the functions you use, content you browse, and time spent on this App.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2 class="section-title">四、信息的存储与保护</h2>
-        <p class="section-text">
-          4.1 我们采用行业标准的安全技术和措施保护您的个人信息，包括数据加密、访问控制、安全传输等。
-        </p>
-        <p class="section-text">
-          4.2 您的个人信息将存储在中华人民共和国境内。如需跨境传输，我们将严格按照法律法规要求执行。
-        </p>
-        <p class="section-text">
-          4.3 我们仅在为实现本隐私政策所述目的所必需的期间内保留您的个人信息，法律法规另有规定的除外。
-        </p>
-        <p class="section-text">
-          4.4 尽管我们采取了合理的安全措施，但互联网环境并非绝对安全，我们无法保证信息的绝对安全。
-        </p>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">五、信息的分享与披露</h2>
-        <p class="section-text">我们不会向第三方出售您的个人信息。在以下情况下，我们可能会分享您的信息：</p>
+        <h2 class="section-title">III. Purpose of Information Use</h2>
+        <p class="section-text">We use the collected information for the following purposes:</p>
         <ul class="section-list">
-          <li><strong>获得您的同意：</strong>在您明确同意的情况下，我们可能与第三方分享您的信息；</li>
-          <li><strong>服务提供商：</strong>为提供服务，我们可能与第三方服务提供商（如云存储、支付处理、数据分析服务商）分享必要信息，这些服务提供商有义务保护您的信息；</li>
-          <li><strong>法律要求：</strong>根据法律法规、司法程序、政府要求，我们可能需要披露您的信息；</li>
-          <li><strong>保护权益：</strong>为保护我们、用户或公众的合法权益，我们可能在必要时披露信息；</li>
-          <li><strong>业务转让：</strong>如发生合并、收购或资产转让，您的信息可能被转移给新的实体。</li>
+          <li>Provide, maintain, and improve the service functions of this App;</li>
+          <li>Recommend personalized jewelry matching content and inspiration for you;</li>
+          <li>Process your paid service requests and manage your account;</li>
+          <li>Provide AI Assistant services to answer your questions;</li>
+          <li>Maintain community order and ensure service security;</li>
+          <li>Conduct data analysis to optimize user experience;</li>
+          <li>Send you service notifications and update information (you can cancel at any time);</li>
+          <li>Comply with legal and regulatory requirements and cooperate with regulatory investigations.</li>
         </ul>
       </section>
 
       <section class="section">
-        <h2 class="section-title">六、您的权利</h2>
-        <p class="section-text">根据相关法律法规，您对自己的个人信息享有以下权利：</p>
+        <h2 class="section-title">IV. Information Storage and Protection</h2>
+        <p class="section-text">
+          4.1 We adopt industry-standard security technologies and measures to protect your personal information, including data encryption, access control, secure transmission, etc.
+        </p>
+        <p class="section-text">
+          4.2 Your personal information will be stored within the territory of the People's Republic of China. If cross-border transmission is required, we will strictly comply with legal and regulatory requirements.
+        </p>
+        <p class="section-text">
+          4.3 We only retain your personal information for the period necessary to achieve the purposes described in this Privacy Policy, except as otherwise required by laws and regulations.
+        </p>
+        <p class="section-text">
+          4.4 Although we have taken reasonable security measures, the internet environment is not absolutely secure, and we cannot guarantee absolute security of information.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">V. Information Sharing and Disclosure</h2>
+        <p class="section-text">We do not sell your personal information to third parties. We may share your information in the following circumstances:</p>
         <ul class="section-list">
-          <li><strong>访问权：</strong>您有权访问我们持有的您的个人信息；</li>
-          <li><strong>更正权：</strong>您有权更正不准确或不完整的个人信息；</li>
-          <li><strong>删除权：</strong>在特定情况下，您有权要求我们删除您的个人信息；</li>
-          <li><strong>撤回同意：</strong>您可以撤回之前给予的同意，但可能影响部分服务的使用；</li>
-          <li><strong>限制处理：</strong>在特定情况下，您有权限制我们对您个人信息的处理；</li>
-          <li><strong>数据可携权：</strong>您有权获取您的个人信息副本；</li>
-          <li><strong>投诉权：</strong>如您认为我们处理个人信息的方式违反法律法规，您有权向相关监管部门投诉。</li>
+          <li><strong>With Your Consent:</strong> We may share your information with third parties with your explicit consent;</li>
+          <li><strong>Service Providers:</strong> To provide services, we may share necessary information with third-party service providers (such as cloud storage, payment processing, and data analytics service providers), who are obligated to protect your information;</li>
+          <li><strong>Legal Requirements:</strong> We may need to disclose your information in accordance with laws, regulations, judicial procedures, or government requirements;</li>
+          <li><strong>Protection of Rights:</strong> We may disclose information when necessary to protect our, users', or the public's legitimate rights and interests;</li>
+          <li><strong>Business Transfer:</strong> In the event of a merger, acquisition, or asset transfer, your information may be transferred to a new entity.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">VI. Your Rights</h2>
+        <p class="section-text">According to relevant laws and regulations, you have the following rights regarding your personal information:</p>
+        <ul class="section-list">
+          <li><strong>Right of Access:</strong> You have the right to access your personal information held by us;</li>
+          <li><strong>Right of Rectification:</strong> You have the right to correct inaccurate or incomplete personal information;</li>
+          <li><strong>Right of Deletion:</strong> Under certain circumstances, you have the right to request that we delete your personal information;</li>
+          <li><strong>Right to Withdraw Consent:</strong> You can withdraw previously given consent, though this may affect the use of some services;</li>
+          <li><strong>Right to Restrict Processing:</strong> Under certain circumstances, you have the right to restrict our processing of your personal information;</li>
+          <li><strong>Right to Data Portability:</strong> You have the right to obtain a copy of your personal information;</li>
+          <li><strong>Right to Complain:</strong> If you believe that our processing of personal information violates laws and regulations, you have the right to file a complaint with the relevant regulatory authorities.</li>
         </ul>
         <p class="section-text">
-          您可以通过本应用内的设置功能或联系我们行使上述权利。
+          You can exercise the above rights through the settings function within this App or by contacting us.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">七、Cookie 和类似技术</h2>
+        <h2 class="section-title">VII. Cookies and Similar Technologies</h2>
         <p class="section-text">
-          我们可能使用 Cookie、本地存储等类似技术来收集和存储信息，以改善您的使用体验、分析使用情况、提供个性化内容。您可以通过设备设置管理这些技术的使用，但可能影响部分功能的正常使用。
+          We may use cookies, local storage, and similar technologies to collect and store information to improve your user experience, analyze usage, and provide personalized content. You can manage the use of these technologies through device settings, but this may affect the normal use of some functions.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">八、未成年人保护</h2>
+        <h2 class="section-title">VIII. Protection of Minors</h2>
         <p class="section-text">
-          我们非常重视未成年人的个人信息保护。如果您是未成年人，请在监护人同意和指导下使用本应用。如果我们发现未经监护人同意收集了未成年人的个人信息，我们会尽快删除相关信息。
+          We attach great importance to the protection of minors' personal information. If you are a minor, please use this App with the consent and guidance of your guardian. If we discover that we have collected minors' personal information without guardian consent, we will delete the relevant information as soon as possible.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">九、隐私政策的更新</h2>
+        <h2 class="section-title">IX. Privacy Policy Updates</h2>
         <p class="section-text">
-          我们可能根据业务发展、法律法规变化等因素更新本隐私政策。更新后的隐私政策将在本应用内公布，并通过适当方式通知您。如您不同意更新后的隐私政策，请停止使用本应用服务。
+          We may update this Privacy Policy based on business development, changes in laws and regulations, and other factors. The updated Privacy Policy will be published within this App and you will be notified through appropriate means. If you do not agree to the updated Privacy Policy, please stop using this App's services.
         </p>
       </section>
 
       <section class="section">
-        <h2 class="section-title">十、联系我们</h2>
+        <h2 class="section-title">X. Contact Us</h2>
         <p class="section-text">
-          如您对本隐私政策有任何疑问、意见或建议，或需要行使相关权利，欢迎通过本应用内的反馈渠道与我们联系。我们将在合理时间内回复您的请求。
+          If you have any questions, opinions, or suggestions regarding this Privacy Policy, or need to exercise related rights, please feel free to contact us through the feedback channels within this App. We will reply to your request within a reasonable time.
         </p>
       </section>
 
       <p class="footer-text">
-        我们承诺将严格按照本隐私政策保护您的个人信息安全。
+        We promise to strictly protect your personal information security in accordance with this Privacy Policy.
       </p>
     </div>
   </div>
