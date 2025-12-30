@@ -107,8 +107,8 @@
               v-if="userInfo.userId !== dynamicInfo?.userId"
               :src="reportIcon"
               :style="{
-                width: 'var(--report-image-width)',
-                height: 'var(--report-image-height)'
+                width: '22px',
+                height: '22px'
               }"
               @click="isReport = true"
             />
