@@ -153,7 +153,7 @@
     </div>
 
     <popup-box v-model:show="isPopup">
-      <div p-layout-padding>
+      <div p-layout-padding class="popup-content">
         <van-divider content-position="left">Comments</van-divider>
         <div class="h-[56vh] overflow-y-auto">
           <comment-card
@@ -170,6 +170,10 @@
 </template>
 
 <style lang="less" scoped>
+  .popup-content {
+    position: relative;
+  }
+
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
   }  
