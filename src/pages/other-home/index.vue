@@ -388,6 +388,11 @@
           display: flex;
           align-items: center;
 
+          &:first-child {
+            flex: 1;
+            min-width: 0; // 允许 flex 子元素缩小，使 flex: 1 生效
+          }
+
           .tag {
             background: rgba(255, 255, 255, 0.2);
             padding-left: 8px;
@@ -396,6 +401,7 @@
             text-align: center;
             flex: 1;
             margin-left: 8px;
+            min-width: 0; // 允许文本溢出处理
           }
         }
       }
