@@ -76,19 +76,21 @@
 </script>
 
 <template>
-  <van-popup v-model:show="show" round position="bottom" :z-index="5000" class="report-popup">
-    <ul class="report-box">
-      <li>
-        <p ai-default-btn @click="onReport">Report</p>
-      </li>
-      <li>
-        <p ai-default-btn @click="onShield">Shield</p>
-      </li>
-      <li>
-        <p ai-default-btn ai-selected-btn @click="show = false">Cancel</p>
-      </li>
-    </ul>
-  </van-popup>
+  <teleport to="body">
+    <van-popup v-model:show="show" round position="bottom" :z-index="5000" class="report-popup">
+      <ul class="report-box">
+        <li>
+          <p ai-default-btn @click="onReport">Report</p>
+        </li>
+        <li>
+          <p ai-default-btn @click="onShield">Shield</p>
+        </li>
+        <li>
+          <p ai-default-btn ai-selected-btn @click="show = false">Cancel</p>
+        </li>
+      </ul>
+    </van-popup>
+  </teleport>
 </template>
 
 <style lang="less" scoped>
