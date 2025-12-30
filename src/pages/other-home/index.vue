@@ -404,6 +404,10 @@
             flex: 1;
             margin-left: 8px;
             min-width: 0; // 允许文本溢出处理
+            width: 0; // 覆盖 ai-tag-btn 的固定宽度，让 flex: 1 生效
+            flex-shrink: 1; // 允许收缩
+            overflow: hidden; // 防止内容溢出
+            text-overflow: ellipsis; // 文本溢出显示省略号
           }
         }
       }
