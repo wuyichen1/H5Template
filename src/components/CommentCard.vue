@@ -1,10 +1,11 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
-  import { useAppImgStyle } from '@/hooks/useAppImgStyle'
+  // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId } from '@/hooks/useDetail'
   import { useUserStore } from '@/stores'
+  import reportIcon from '@/assets/public/san_more_icon.png'
 
-  const { reportIcon } = useAppImgStyle()
+  // const { reportIcon } = useAppImgStyle()
   const { userInfo } = useUserStore()
 
   const props = withDefaults(
@@ -30,6 +31,7 @@
       ai-fill-bg
       ai-rounded
       class="card-comment"
+      :style="{ backgroundColor: '#011733' }"
     >
       <ul flex items-center justify-between>
         <li flex items-center>
