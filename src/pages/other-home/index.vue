@@ -2,10 +2,13 @@
   import { showLoadingToast } from 'vant'
   import Head from '@/assets/public/Head.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
-  import { detailId } from '@/hooks/useDetail'
+  import { detailId, useDetail } from '@/hooks/useDetail'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
+  import otherHomeAddIcon from '@/assets/public/add.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
+  import likeIcon from '@/assets/public/like.png'
 
   defineOptions({
     name: 'other-home'
@@ -13,7 +16,7 @@
 
   const {
     reportIcon,
-    otherHomeAddIcon,
+    // otherHomeAddIcon,
     otherHomeMessageIcon,
     otherHomeLikeIcon
   } = useAppImgStyle()
@@ -21,6 +24,11 @@
     useJump()
   const { winUserListData, winDynamicData, winChatListData } = useWindow()
   const useData = useUserStore()
+
+  const {
+    isVideoLike,
+    onVideoLike
+  } = useDetail()
 
   // 举报弹框
   const isReport = ref(false)
@@ -234,10 +242,19 @@
         </ul>
         <span class="bottom-text">{{ item.dynamicDesc }}</span>
         <div class="like-box">
-          <van-image :src="otherHomeLikeIcon" class="icon-box" :style="{
+          <van-image
+            :src="isVideoLike ? likeIcon : detailLikeIcon"
+            class="icon-box"
+            :style="{
               width: 'var(--other-home-like-post-width)',
               height: 'var(--other-home-like-post-height)'
-            }"/>
+            }"
+            @click="onVideoLike"
+          />
+          <!-- <van-image :src="otherHomeLikeIcon" class="icon-box" :style="{
+              width: 'var(--other-home-like-post-width)',
+              height: 'var(--other-home-like-post-height)'
+            }"/> -->
           <span class="public-number">{{ item.dynamicLikeCount }}</span>
         </div>
       </div>
