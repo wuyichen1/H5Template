@@ -98,6 +98,7 @@
   }
 
   .bottom-btn {
+    border: 1px solid #fff; /* 增加一个白色border */
     // background-image: var(--ai-setting-btn-color) !important;
     background: linear-gradient(201.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%) !important;
     font-size: var(--ai-setting-btn-text-size) !important;
