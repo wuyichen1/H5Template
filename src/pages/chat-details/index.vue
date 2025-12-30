@@ -196,6 +196,7 @@
 
       li {
         border-radius: var(--ai-chat-details-top-border-radius);
+        margin-right: 100px;
         padding: 0 12px;
         width: 100%;
         height: var(--ai-chat-details-top-height);
