@@ -101,7 +101,6 @@
 
     li + li {
       margin-top: 16px;
-      background: #011733;
     }
 
     li {
@@ -109,6 +108,12 @@
         width: var(--ai-report-btn-select-style-width);
         height: var(--ai-report-btn-select-style-height);
         line-height: var(--ai-report-btn-select-style-height);
+      }
+
+      &:not(:last-child) {
+        p {
+          background: #011733;
+        }
       }
 
       &:last-child {
