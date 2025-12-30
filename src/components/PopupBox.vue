@@ -15,8 +15,4 @@ const show = defineModel<boolean>('show', {
 </template>
 
 <style lang="less" scoped>
-.popup-box {
-  position: relative;
-  isolation: isolate;
-}
 </style>

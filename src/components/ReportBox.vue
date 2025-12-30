@@ -76,7 +76,7 @@
 </script>
 
 <template>
-  <van-popup v-model:show="show" round position="bottom" :z-index="5000">
+  <van-popup v-model:show="show" round position="bottom" :z-index="5000" class="report-popup">
     <ul class="report-box">
       <li>
         <p ai-default-btn @click="onReport">Report</p>
@@ -92,6 +92,10 @@
 </template>
 
 <style lang="less" scoped>
+  .report-popup {
+    z-index: 5000 !important;
+  }
+
   .report-box {
     display: flex;
     flex-direction: column;

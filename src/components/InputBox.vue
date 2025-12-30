@@ -38,14 +38,13 @@
 
 <style lang="less" scoped>
   .input-box {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 1;
-    isolation: isolate;
 
     opacity: 1;
     background: linear-gradient(

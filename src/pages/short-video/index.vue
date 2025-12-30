@@ -170,10 +170,6 @@
 </template>
 
 <style lang="less" scoped>
-  .popup-content {
-    position: relative;
-  }
-
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
   }  
