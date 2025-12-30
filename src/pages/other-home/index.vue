@@ -272,6 +272,7 @@
   .other-home_box {
     min-height: 100vh;
     background: var(--ai-other-home-bg-color);
+    position: relative;
   } 
 
   .top-user-info {
@@ -283,6 +284,7 @@
     justify-content: space-between;
     pointer-events: none;
     z-index: 0;
+    isolation: isolate; // 创建新的层叠上下文
 
     &::before {
       content: '';
