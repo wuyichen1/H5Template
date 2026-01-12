@@ -102,7 +102,7 @@ export default {
   /** 高亮按钮样式 */
   highlightBtnStyle: {
     color: 'rgba(255, 255, 255, 1)',
-    backgroundColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+    backgroundColor: 'linear-gradient(90deg, rgba(172, 94, 255, 1) 0%, rgba(139, 31, 255, 1) 100%)'
   },
   /** 确认按钮样式 */
   confirmBtnStyle: {
@@ -120,7 +120,7 @@ export default {
     /** 发送背景色 */
     sendBgColor: '#434044',
     /** 接收背景色 */
-    receiveBgColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+    receiveBgColor: 'linear-gradient(90deg, rgba(172, 94, 255, 1) 0%, rgba(139, 31, 255, 1) 100%)'
     // receiveBgColor: 'linear-gradient(157.71deg, rgba(255, 94, 135, 1) 0%, rgba(71, 252, 255, 1) 100%)'
   },
   /** 举报按钮 */
@@ -314,19 +314,20 @@ export default {
   },
   /** 关注页样式 */
   followStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
+    // backgroundColor: '#0e080f'
   },
   /** 粉丝页样式 */
   fansStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 黑名单页样式 */
   blackListStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 编辑页样式 */
   editStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 金币充值 */
   coinStyle: {
@@ -337,7 +338,7 @@ export default {
       height: '100px',
       borderRadius: '24px',
       backgroundColor: 'rgba(35, 30, 36, 1)',
-      selectedColor: 'linear-gradient(157.44deg, rgba(28, 123, 255, 1) 0%, rgba(0, 0, 0, 1) 51.28%, rgba(255, 129, 51, 1) 100%)'
+      selectedColor: 'linear-gradient(90deg, rgba(172, 94, 255, 1) 0%, rgba(139, 31, 255, 1) 100%)'
     }
   }
 } satisfies Window['styleJson']
