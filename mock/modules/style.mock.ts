@@ -293,7 +293,8 @@ export default {
   },
   /** 设置页样式 */
   settingStyle: {
-    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
+    backgroundColor: '#0e080f',
+    // backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 按钮文本样式 */
     btnTextStyle: {
       backgroundColor: 'linear-gradient(136deg, rgba(255, 94, 135, 1) 60%, rgba(71, 252, 255, 1) 100%)',
@@ -314,8 +315,8 @@ export default {
   },
   /** 关注页样式 */
   followStyle: {
-    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
-    // backgroundColor: '#0e080f'
+    // backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
+    backgroundColor: '#0e080f'
   },
   /** 粉丝页样式 */
   fansStyle: {
@@ -323,7 +324,8 @@ export default {
   },
   /** 黑名单页样式 */
   blackListStyle: {
-    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
+    // backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
+    backgroundColor: '#0e080f'
   },
   /** 编辑页样式 */
   editStyle: {
