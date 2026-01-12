@@ -1,14 +1,14 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
   defineOptions({
     name: 'PrivacyAgreement'
-  }) 
+  })
 </script>
 
 <template>
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
       <h1 class="title">Zoryo Privacy Policy</h1>
-      
+
       <section class="section">
         <h2 class="section-title">I. Introduction</h2>
         <p class="section-text">
@@ -22,7 +22,7 @@
       <section class="section">
         <h2 class="section-title">II. Information We Collect</h2>
         <p class="section-text">To provide you with better services, we may collect the following information:</p>
-        
+
         <h3 class="subsection-title">2.1 Information You Actively Provide</h3>
         <ul class="section-list">
           <li><strong>Account Information:</strong> Phone number, email address, username, password, etc., provided during registration;</li>
@@ -143,7 +143,11 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-follow-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow-y: auto;
   }
 

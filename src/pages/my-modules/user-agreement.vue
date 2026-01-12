@@ -8,7 +8,7 @@
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
       <h1 class="title">Zoryo User Agreement</h1>
-      
+
       <section class="section">
         <h2 class="section-title">I. Scope of Agreement</h2>
         <p class="section-text">
@@ -142,7 +142,11 @@
       var(--van-nav-bar-height) + var(--ai-view-padding-top)
     );
     min-height: 100vh;
-    background: var(--ai-follow-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow-y: auto;
   }
 
@@ -209,4 +213,3 @@
     }
   }
 </style>
-
