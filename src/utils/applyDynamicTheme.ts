@@ -5,43 +5,43 @@ export const applyDynamicTheme = () => {
   const styleJson = window.styleJson
   const root = document.documentElement.style
 
-  //返回图片大小
+  // 返回图片大小
   root.setProperty('--back-image-width', styleJson?.backImageSize?.width || '24px')
   root.setProperty('--back-image-height', styleJson?.backImageSize?.height || '24px')
 
-  //举报图片大小
+  // 举报图片大小
   root.setProperty('--report-image-width', styleJson?.reportImageSize?.width || '24px')
   root.setProperty('--report-image-height', styleJson?.reportImageSize?.height || '24px')
 
-  //帖子点赞图片大小（不高亮）
+  // 帖子点赞图片大小（不高亮）
   root.setProperty('--unlike-image-width', styleJson?.unlikeImageSize?.width || '40px')
   root.setProperty('--unlike-image-height', styleJson?.unlikeImageSize?.height || '40px')
 
-  //帖子发送评论图标
+  // 帖子发送评论图标
   root.setProperty('--comment-input-image-width', styleJson?.inputStyle?.sendIconWidth || '21px')
   root.setProperty('--comment-input-image-height', styleJson?.inputStyle?.sendIconHeight || '21px')
 
-  //ai聊天按钮右箭头
+  // ai聊天按钮右箭头
   root.setProperty('--ai-btn-arr-image-width', styleJson?.chatViewStyle?.btnStyle?.rightIconWidth || '16px')
   root.setProperty('--ai-btn-arr-image-height', styleJson?.chatViewStyle?.btnStyle?.rightIconHeight || '16px')
 
-  //他人主页关注图标
+  // 他人主页关注图标
   root.setProperty('--other-home-follow-width', styleJson?.otherHomeStyle?.addIconWidth || '20px')
   root.setProperty('--other-home-follow-height', styleJson?.otherHomeStyle?.addIconHeight || '20px')
 
-  //他人主页私聊图标
+  // 他人主页私聊图标
   root.setProperty('--other-home-chat-width', styleJson?.otherHomeStyle?.messageIconWidth || '40px')
   root.setProperty('--other-home-chat-height', styleJson?.otherHomeStyle?.messageIconHeight || '40px')
 
-  //他人主页帖子喜欢图标
+  // 他人主页帖子喜欢图标
   root.setProperty('--other-home-like-post-width', styleJson?.otherHomeStyle?.likeIconWidth || '40px')
   root.setProperty('--other-home-like-post-height', styleJson?.otherHomeStyle?.likeIconHeight || '40px')
 
-  //视频详情关注图标
+  // 视频详情关注图标
   root.setProperty('--video-details-follow-width', styleJson?.shortVideoStyle?.addIconWidth || '20px')
   root.setProperty('--video-details-follow-height', styleJson?.shortVideoStyle?.addIconHeight || '20px')
 
-  //视频详情评论图标
+  // 视频详情评论图标
   root.setProperty('--video-details-comment-width', styleJson?.shortVideoStyle?.messageIconWidth || '40px')
   root.setProperty('--video-details-comment-height', styleJson?.shortVideoStyle?.messageIconHeight || '40px')
 

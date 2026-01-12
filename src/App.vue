@@ -62,25 +62,4 @@ onMounted(() => {
   width: 100%;
   position: relative;
 }
-
-.app-wrapper::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('@/assets/public/bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 确保所有页面内容在背景之上 */
-.app-wrapper > * {
-  position: relative;
-  z-index: 2;
-}
 </style>

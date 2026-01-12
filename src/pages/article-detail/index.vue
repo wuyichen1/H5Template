@@ -1,14 +1,14 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
-  import detailLikeIcon from '@/assets/public/unlike.png'
   import likeIcon from '@/assets/public/like.png'
-  import swipeOne from '@/assets/public/swipe-1.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
+  import swipeOne from '@/assets/public/swipe-1.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
   // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
+  import { detailId } from '@/hooks/useDetail'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
-  import { detailId } from '@/hooks/useDetail'
 
   defineOptions({
     name: 'ArticleDetail'
@@ -63,7 +63,7 @@
         absolute
         class="bottom-[-64px]"
       >
-        <van-image 
+        <van-image
           :src="isLike ? likeIcon : detailLikeIcon"
           :style="{
             width: 'var(--unlike-image-width)',
@@ -123,15 +123,14 @@
                   />
                   <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
                 </li>
-                
-              </ul>
+</ul>
               <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
-              <div 
-                v-if="userInfo.userId !== item.userId" 
+              <div
+                v-if="userInfo.userId !== item.userId"
                 class="report-icon"
                 @click="handleReport(item.userId)"
               >
-                <van-image 
+                <van-image
                   :src="reportIcon"
                   :style="{
                     width: '22px',
@@ -153,7 +152,11 @@
 
 <style lang="less" scoped>
   .article-detail_box {
-    background: var(--ai-article-detail-bg-color);
+    // background: var(--ai-article-detail-bg-color);
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
   }
 
@@ -173,15 +176,15 @@
     overflow-y: hidden;
     gap: 12px;
     padding-bottom: 10px;
-    
+
     &::-webkit-scrollbar {
       height: 4px;
     }
-    
+
     &::-webkit-scrollbar-track {
       background: transparent;
     }
-    
+
     &::-webkit-scrollbar-thumb {
       background: rgba(0, 0, 0, 0.2);
       border-radius: 2px;
