@@ -177,7 +177,7 @@
 
   .top-box {
     height: 282px;
-    background: transparent;
+    background: linear-gradient(90deg, rgba(167, 48, 255, 1) 0%, rgba(167, 48, 255, 1) 100%);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
