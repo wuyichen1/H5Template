@@ -62,5 +62,23 @@ onMounted(() => {
 .app-wrapper {
   width: 100%;
   position: relative;
+  z-index: 2;
+}
+
+.app-wrapper::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 </style>
