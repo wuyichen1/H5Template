@@ -138,18 +138,18 @@ export default {
   },
   /** 动态详情页 */
   articleDetailStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 发布动态 */
   sendDynamicStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 聊天机器人 */
   chatViewStyle: {
     /** 描述文本颜色 */
     textCorlor: 'rgba(255, 255, 255, 0.6)',
     textAlign: 'center',
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     btnStyle: {
       width: '227px',
       height: '56px',
@@ -183,7 +183,7 @@ export default {
   },
   /** 聊天详情样式 */
   chatDetailsStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 顶部文本样式 */
     topTextStyle: {
       borderRadius: '20px',
@@ -197,7 +197,7 @@ export default {
   },
   /** 短视频 */
   shortVideoStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 添加图标 */
     addIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_follow.png',
     addIconWidth: '20px',
@@ -220,11 +220,11 @@ export default {
   },
   /** 发布视频样式 */
   publishVideoStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 其他用户主页样式 */
   otherHomeStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 关注他人图标 */
     addIcon: 'https://huanniuchat.oss-accelerate.aliyuncs.com/template_development/sivio_follow.png',
     addIconWidth: '20px',
@@ -275,7 +275,7 @@ export default {
   },
   /** 举报样式 */
   reportIndexStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 选项样式 */
     selectBtnStyle: {
       width: '164px',
@@ -289,11 +289,11 @@ export default {
   },
   /** 私聊样式 */
   privateChatStyle: {
-    backgroundColor: '#0e080f'
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)'
   },
   /** 设置页样式 */
   settingStyle: {
-    backgroundColor: '#0e080f',
+    backgroundColor: 'linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%)',
     /** 按钮文本样式 */
     btnTextStyle: {
       backgroundColor: 'linear-gradient(136deg, rgba(255, 94, 135, 1) 60%, rgba(71, 252, 255, 1) 100%)',
