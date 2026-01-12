@@ -21,8 +21,7 @@ useHead({
     {
       rel: 'icon',
       type: 'image/svg+xml',
-      href: () =>
-        preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg'
+      href: () => (preferredDark.value ? '/favicon-dark.svg' : '/favicon.svg')
     }
   ]
 })
@@ -62,18 +61,24 @@ onMounted(() => {
 .app-wrapper {
   width: 100%;
   position: relative;
-  z-index: 2;
 }
 
 .app-wrapper::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(32, 25, 43, 0) 0%, rgba(32, 25, 43, 1) 100%), linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%);
+  background: linear-gradient(180deg, rgba(32, 25, 43, 0) 0%, rgba(32, 25, 43, 1) 100%),
+    linear-gradient(90deg, rgba(57, 44, 176, 1) 0%, rgba(110, 12, 149, 1) 100%);
   pointer-events: none;
   z-index: 1;
+}
+
+/* 确保所有页面内容在蒙版之上 */
+.app-wrapper > * {
+  position: relative;
+  z-index: 2;
 }
 </style>
