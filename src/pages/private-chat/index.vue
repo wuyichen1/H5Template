@@ -166,7 +166,11 @@ onMounted(() => {
 <style lang="less" scoped>
 .private-chat_box {
   min-height: 100vh;
-  background: var(--ai-private-chat-bg-color);
+  background: #0e080f;
+  background-image: url("@/assets/public/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding-bottom: 70px;
 }
 

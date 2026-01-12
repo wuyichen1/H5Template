@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast, showSuccessToast, closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import defaultOptionIcon from '@/assets/public/default-option.png'
   import SelectedIcon from '@/assets/public/selected.png'
   import { useJump } from '@/hooks/useJump'
@@ -111,6 +111,11 @@
     );
     min-height: 100vh;
     background: var(--ai-report-index-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .top-select {

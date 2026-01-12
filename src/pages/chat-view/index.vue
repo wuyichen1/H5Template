@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import ChatBack from '@/assets/public/chat-index.png'
-  import MasonryIcon from '@/assets/public/masonry-icon.png'
   import ChatBotImage from '@/assets/public/gYFdrTokerNA7UtH.png'
+  import MasonryIcon from '@/assets/public/masonry-icon.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
@@ -81,7 +81,7 @@
       <div flex h-full justify-center>
         <div class="block" @click.stop>
           <div
-            :style="{ background: `url(${chatBgImage})`, 'background-size': '100% 100%', 'background-repeat': 'no-repeat' }"
+            :style="{ 'background': `url(${chatBgImage})`, 'background-size': '100% 100%', 'background-repeat': 'no-repeat' }"
             class="content"
           >
             <!-- 添加一个图片 -->
@@ -102,7 +102,12 @@
 
 <style lang="less" scoped>
   .chat-view_box {
-    background: var(--ai-chat-view-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
     height: 100vh;
     overflow-y: auto;
     .content_box {

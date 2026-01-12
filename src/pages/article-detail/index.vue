@@ -152,7 +152,7 @@
 
 <style lang="less" scoped>
   .article-detail_box {
-    // background: var(--ai-article-detail-bg-color);
+    background: #0e080f;
     background-image: url('@/assets/public/bg.png');
     background-size: cover;
     background-position: center;

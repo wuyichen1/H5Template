@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import axios from 'axios'
   import CryptoJS from 'crypto-js'
-  import { useUserStore } from '@/stores'
-  import ChatIcon from '@/assets/public/ai_chat_icon.png'
   import RightImage from '@/assets/public/ai_bavator.png'
+  import ChatIcon from '@/assets/public/ai_chat_icon.png'
+  import { useUserStore } from '@/stores'
 
   defineOptions({
     name: 'ChatDetails'
@@ -168,7 +168,11 @@
   }
   .chat-details_box {
     min-height: 100vh;
-    background: var(--ai-chat-details-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .top-box {

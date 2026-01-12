@@ -1,11 +1,11 @@
 <script setup lang="ts">
+  import addIcon from '@/assets/public/add.png'
   import Head from '@/assets/public/Head.png'
-  import detailLikeIcon from '@/assets/public/unlike.png'
   import likeIcon from '@/assets/public/like.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
   import { useUserStore } from '@/stores'
-  import addIcon from '@/assets/public/add.png'
 
   defineOptions({
     name: 'ShortVideo'
@@ -94,11 +94,11 @@
             absolute
             :src="addIcon"
             fit="cover"
-            @click="onFollow"
             :style="{
               width: 'var(--video-details-follow-width)',
               height: 'var(--video-details-follow-height)'
             }"
+            @click="onFollow"
           />
         </div>
         <ul ml-3 shrink w-full>
@@ -123,13 +123,13 @@
       </div>
       <ul class="bottom-btn">
         <li @click="isPopup = true">
-          <van-image 
-            :src="messageIcon" 
+          <van-image
+            :src="messageIcon"
             class="icon-box"
             :style="{
               width: 'var(--video-details-comment-width)',
               height: 'var(--video-details-comment-height)'
-            }" 
+            }"
           />
           <span class="public-number">
             {{ dynamicInfo?.dynamicCommentCount }}
@@ -172,7 +172,7 @@
 <style lang="less" scoped>
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
-  }  
+  }
   .video-box {
     width: 100%;
     height: 100vh;

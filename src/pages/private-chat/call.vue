@@ -1,7 +1,7 @@
 <script setup lang="ts">
+  import CallBg from '@/assets/public/call-bg.png'
   import HangIcon from '@/assets/public/hang-icon.png'
   import Head from '@/assets/public/Head.png'
-  import CallBg from '@/assets/public/call-bg.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
 
@@ -67,7 +67,11 @@
   .call-box {
     width: 100%;
     height: 100vh;
-    background: var(--ai-private-chat-bg-color);
+    background: #0e080f;
+    background-image: url('@/assets/public/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
