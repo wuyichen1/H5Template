@@ -75,7 +75,7 @@ onMounted(() => {
   background-position: center;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* 确保所有页面内容在背景之上 */
