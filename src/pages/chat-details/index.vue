@@ -177,8 +177,7 @@
 
   .top-box {
     height: 282px;
-    background: url('@/assets/public/top-chat.png');
-    background-size: cover;
+    background: transparent;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
