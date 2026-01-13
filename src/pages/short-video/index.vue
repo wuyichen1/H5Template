@@ -32,8 +32,14 @@ const isPopup = ref(false)
 const isReport = ref(false)
 
 // 切换播放/暂停
-const togglePlay = async () => {
+const togglePlay = async (event?: Event) => {
   if (!videoRef.value) return
+
+  // 阻止默认行为和事件冒泡
+  if (event) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
 
   if (isPlaying.value) {
     videoRef.value.pause()
@@ -44,6 +50,17 @@ const togglePlay = async () => {
       console.warn('播放失败:', error)
     }
   }
+}
+
+// 阻止视频的默认行为（右键菜单、双击全屏等）
+const handleVideoContextMenu = (event: Event) => {
+  event.preventDefault()
+}
+
+const handleVideoDoubleClick = (event: Event) => {
+  event.preventDefault()
+  // 双击也切换播放暂停
+  togglePlay(event)
 }
 
 // 事件处理函数
@@ -91,6 +108,10 @@ watch(
 
 onMounted(() => {
   if (videoRef.value) {
+    // 禁用原生控制
+    videoRef.value.controls = false
+    videoRef.value.setAttribute('controls', 'false')
+
     // 添加事件监听器
     videoRef.value.addEventListener('play', handlePlay)
     videoRef.value.addEventListener('pause', handlePause)
@@ -124,7 +145,11 @@ onUnmounted(() => {
       muted
       width="100%"
       height="100%"
+      controlslist="nodownload nofullscreen noremoteplayback"
+      disablepictureinpicture
       @click="togglePlay"
+      @contextmenu="handleVideoContextMenu"
+      @dblclick="handleVideoDoubleClick"
     />
     <van-icon
       v-if="!isPlaying"
@@ -244,6 +269,23 @@ onUnmounted(() => {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    object-fit: cover;
+    // 隐藏原生控制栏
+    &::-webkit-media-controls {
+      display: none !important;
+    }
+    &::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
+    &::-webkit-media-controls-panel {
+      display: none !important;
+    }
+    &::-webkit-media-controls-play-button {
+      display: none !important;
+    }
+    &::-webkit-media-controls-start-playback-button {
+      display: none !important;
+    }
   }
 
   .play-box {
