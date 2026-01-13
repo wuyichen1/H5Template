@@ -100,8 +100,8 @@
       </ul>
       <van-image
         :src="rightIcon"
-        width="30"
-        height="30"
+        width="26"
+        height="26"
         fit="cover"
         style="cursor: pointer"
         @click="onClick(item.userId, index)"
