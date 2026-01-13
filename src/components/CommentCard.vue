@@ -69,6 +69,9 @@
 <style lang="less" scoped>
   .card-comment + .card-comment {
     margin-top: 12px;
+  }
+
+  .card-comment {
     margin-left: 20px;
     margin-right: 20px;
   }
