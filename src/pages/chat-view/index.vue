@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import ChatBack from '@/assets/public/chat-index.png'
-  import ChatBotImage from '@/assets/public/gYFdrTokerNA7UtH.png'
+  // import ChatBotImage from '@/assets/public/gYFdrTokerNA7UtH.png'
   import MasonryIcon from '@/assets/public/masonry-icon.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useJump } from '@/hooks/useJump'
@@ -124,11 +124,11 @@
     height: 510px;
   }
 
-  .chat-bot-image {
-    width: 135px;
-    height: 135px;
-    margin-bottom: 10px;
-  }
+  // .chat-bot-image {
+  //   width: 135px;
+  //   height: 135px;
+  //   margin-bottom: 10px;
+  // }
 
   .recharge-bot-image {
     width: 100px;
