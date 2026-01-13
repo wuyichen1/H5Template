@@ -373,7 +373,7 @@
     }
 
     .card-item {
-      background: rgba(1, 23, 51, 1);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 20px;
       position: relative;
       overflow: hidden;

@@ -29,7 +29,7 @@ html.dark {
   line-height: 21.2px;
   text-align: center;
   vertical-align: top;
-  background: linear-gradient(201.44deg, #1c7bff 0%, #000000 51.28%, #ff8133 100%);
+  background: #fff;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
