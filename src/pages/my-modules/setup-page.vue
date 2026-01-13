@@ -85,7 +85,8 @@ const onSelect = (value: string) => {
     padding: 0 16px;
     height: var(--ai-setting-select-style-height);
     border-radius: var(--ai-setting-select-style-border-radius);
-    background: var(--ai-setting-select-style-bg-color);
+    // background: var(--ai-setting-select-style-bg-color);
+    background: rgba(255, 255, 255, 0.2);
 
     span {
       font-size: var(--ai-setting-select-style-text-size);
