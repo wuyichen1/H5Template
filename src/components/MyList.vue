@@ -97,8 +97,9 @@
       </ul>
       <van-image
         :src="rightIcon"
-        width="28"
-        height="28"
+        h-28
+        w-28
+        fit="cover"
         style="cursor: pointer"
         @click="onClick(item.userId, index)"
       />
