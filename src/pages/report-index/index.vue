@@ -113,7 +113,8 @@
       width: 100%;
       min-height: var(--ai-report-index-select-style-height);
       border-radius: var(--ai-report-index-select-style-border-radius);
-      background: var(--ai-report-index-select-style-bg-color);
+      background: rgba(255, 255, 255, 0.2);
+      // background: var(--ai-report-index-select-style-bg-color);
       font-size: var(--ai-report-index-select-style-text-size);
       color: var(--ai-report-index-select-style-text-color);
       font-weight: var(--ai-report-index-select-style-text-weight);
