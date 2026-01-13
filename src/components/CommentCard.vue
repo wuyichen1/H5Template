@@ -31,7 +31,7 @@
       ai-fill-bg
       ai-rounded
       class="card-comment"
-      :style="{ background: 'linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%))' }"
+      :style="{ backgroundColor: 'rgba(255, 255, 255, 1)' }"
     >
       <ul flex items-center justify-between>
         <li flex items-center>
