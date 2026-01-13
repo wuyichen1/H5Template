@@ -173,7 +173,7 @@ const handleReport = (userId: string) => {
 
 .comment-content {
   padding: 16px;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 18px;
   display: flex;
   flex-direction: column;
