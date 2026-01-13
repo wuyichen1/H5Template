@@ -1,9 +1,9 @@
 <script setup lang="ts">
   import Head from '@/assets/public/Head.png'
+  import reportIcon from '@/assets/public/san_more_icon.png'
   // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId } from '@/hooks/useDetail'
   import { useUserStore } from '@/stores'
-  import reportIcon from '@/assets/public/san_more_icon.png'
 
   // const { reportIcon } = useAppImgStyle()
   const { userInfo } = useUserStore()
@@ -31,7 +31,7 @@
       ai-fill-bg
       ai-rounded
       class="card-comment"
-      :style="{ backgroundColor: '#011733' }"
+      :style="{ background: 'linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%))' }"
     >
       <ul flex items-center justify-between>
         <li flex items-center>
@@ -44,7 +44,7 @@
           <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
         </li>
         <li v-if="userInfo.userId !== item.userId" flex items-center>
-          <van-image 
+          <van-image
             :src="reportIcon"
             :style="{
               width: '22px',
@@ -69,5 +69,5 @@
 <style lang="less" scoped>
   .card-comment + .card-comment {
     margin-top: 12px;
-  } 
+  }
 </style>
