@@ -42,11 +42,16 @@ export const useFile = (cb?: UploadSuccessCallback) => {
 
   /** 上传到 OSS */
   const uploadToOSS = async (item: UploaderFileListItem) => {
-    // const sts = await getSTS()
     item.status = 'uploading'
     item.message = 'Uploading...'
     const file = item.file
-    const sts: stsTypeData = stsData.value
+    
+    // 确保 STS 凭证已获取
+    let sts: stsTypeData = stsData.value
+    if (!sts) {
+      sts = await getSTS()
+    }
+    
     const [https, endpoint] = sts.host.split(`${sts.bucket}.`)
     const client = new OSS({
       accessKeyId: sts.AccessKeyId,
@@ -86,6 +91,7 @@ export const useFile = (cb?: UploadSuccessCallback) => {
       } else {
         const key = `template_development/${Date.now()}_${file.name}`
         const result = await client.put(key, file)
+        item.status = ''
         return result.url.replace(/^http:\/\//, https)
       }
     } catch (err) {
