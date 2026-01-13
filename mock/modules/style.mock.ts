@@ -54,7 +54,7 @@ export default {
   },
   /** 文本输入框（发送内容）样式 */
   inputStyle: {
-    backgroundColor: 'rgba(62, 57, 63, 1)',
+    backgroundColor: 'rgba(255, 255, 255, 1)',
     borderRadius: '30px',
     width: '100%',
     height: '46px',
