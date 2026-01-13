@@ -1,8 +1,9 @@
 <script setup lang="ts">
   import ChatBack from '@/assets/public/chat-index.png'
+  import chatBgImage from '@/assets/public/dialog-box.png'
   // import ChatBotImage from '@/assets/public/gYFdrTokerNA7UtH.png'
   import MasonryIcon from '@/assets/public/masonry-icon.png'
-  import { useAppImgStyle } from '@/hooks/useAppImgStyle'
+  // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
@@ -11,7 +12,7 @@
     name: 'ChatView'
   })
 
-  const { chatBgImage } = useAppImgStyle()
+  // const { chatBgImage } = useAppImgStyle()
   const { winUserData, winUserListData, winChatBotDesc } = useWindow()
   const { userInfo } = useUserStore()
   const { jumpToRecharge, appParams, jumpToChatDetail } = useJump()
