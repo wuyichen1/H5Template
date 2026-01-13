@@ -1,7 +1,5 @@
 <script setup lang="ts">
   import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
-  import defaultOptionIcon from '@/assets/public/default-option.png'
-  import SelectedIcon from '@/assets/public/selected.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
 
@@ -72,23 +70,11 @@
       <li
         v-for="(item, index) in winReportListData"
         :key="index"
+        :class="{ 'is-selected': formData.select === index }"
         @click="formData.select = index"
       >
         <span>{{ item.reportContext }}</span>
-
-        <p class="selected-icon">
-          <van-image
-            :src="
-              formData.select === index ? SelectedIcon : defaultOptionIcon
-            "
-            fit="cover"
-          />
-          <van-icon
-            v-if="formData.select === index"
-            name="success"
-            class="success-icon"
-          />
-        </p>
+        <div class="radio-circle" />
       </li>
     </ul>
     <!-- 输入框 -->
@@ -143,18 +129,20 @@
         flex: 1;
       }
 
-      .selected-icon {
-        position: relative;
+      .radio-circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        background: transparent;
         flex-shrink: 0;
         margin-left: 12px;
+        transition: background-color 0.3s;
+      }
 
-        .success-icon {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 24px;
-        }
+      &.is-selected .radio-circle {
+        background: #8b5cf6;
+        border-color: #fff;
       }
     }
   }
