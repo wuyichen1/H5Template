@@ -2,6 +2,7 @@ import type { UploaderFileListItem } from 'vant'
 import OSS from 'ali-oss'
 import axios from 'axios'
 import { closeToast, showLoadingToast } from 'vant'
+import { useVideoCover } from './useVideoCover'
 
 type stsTypeData = {
   AccessKeyId: string
@@ -18,6 +19,8 @@ type UploadSuccessCallback = (url: string) => void
 
 /** 获取对应文件并上传 */
 export const useFile = (cb?: UploadSuccessCallback) => {
+  const { extractCoverFromVideo } = useVideoCover()
+
   let fileInput: HTMLInputElement | null = null
   const stsData = ref<stsTypeData>()
   /** 图片链接 */
@@ -97,9 +100,55 @@ export const useFile = (cb?: UploadSuccessCallback) => {
         item.status = 'done' // 使用 'done' 而不是空字符串
         item.message = ''
 
-        // 直接使用上传后的视频 URL 作为预览，不使用 Blob
-        // 这样 poster 和 src 都使用服务器上的视频 URL，不会有 blob: 前缀
-        item.objectUrl = videoUrl
+        // 异步生成并上传封面（不阻塞主流程）
+        extractCoverFromVideo(file)
+          .then(coverBlob => {
+            if (coverBlob) {
+              // 将 Blob 转换为 File 对象用于上传
+              const coverFile = new File([coverBlob], 'cover.jpg', {
+                type: 'image/jpeg',
+                lastModified: Date.now()
+              })
+              const coverKey = `template_development/${Date.now()}_${coverFile.name}`
+              return client.put(coverKey, coverFile)
+            }
+            return null
+          })
+          .then(coverResult => {
+            if (coverResult) {
+              const coverUrl = coverResult.url.replace(/^http:\/\//, https)
+              item.objectUrl = coverUrl
+              console.log('=== 视频上传信息 ===')
+              console.log('视频 URL:', item.url)
+              console.log('视频封面路径 (objectUrl):', item.objectUrl)
+              console.log('封面上传成功:', coverUrl)
+            } else {
+              // 如果封面生成失败，使用视频 URL 作为预览
+              item.objectUrl = videoUrl
+              console.log('=== 视频上传信息 ===')
+              console.log('视频 URL:', item.url)
+              console.log('视频封面路径 (objectUrl):', item.objectUrl)
+              console.warn('封面生成失败，使用视频 URL 作为预览')
+            }
+          })
+          .catch(err => {
+            console.warn('封面生成失败，使用视频 URL 作为预览:', err)
+            item.objectUrl = videoUrl
+            console.log('=== 视频上传信息 ===')
+            console.log('视频 URL:', item.url)
+            console.log('视频封面路径 (objectUrl):', item.objectUrl)
+          })
+
+        // 调试打印视频封面路径（初始状态）
+        console.log('=== 视频上传信息 ===')
+        console.log('视频 URL:', item.url)
+        console.log('视频封面路径 (objectUrl):', item.objectUrl || '生成中...')
+        console.log('完整 item 对象:', JSON.stringify({
+          url: item.url,
+          objectUrl: item.objectUrl || '生成中...',
+          status: item.status,
+          message: item.message
+        }, null, 2))
 
         return videoUrl
       } else {

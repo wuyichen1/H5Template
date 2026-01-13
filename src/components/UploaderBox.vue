@@ -55,6 +55,12 @@
               currentFile.url = url
               currentFile.status = 'done'
               currentFile.message = ''
+              // 调试打印：上传完成后的封面路径
+              console.log('=== UploaderBox 上传完成 ===')
+              console.log('当前文件对象:', currentFile)
+              console.log('视频 URL:', currentFile.url)
+              console.log('视频封面路径 (objectUrl):', currentFile.objectUrl)
+              console.log('文件状态:', currentFile.status)
             }
           })
         })
@@ -74,8 +80,11 @@
   }
 
   const onCheckVideo = (item: UploaderFileListItem) => {
-    console.log(item)
+    console.log('=== 点击查看视频 ===')
+    console.log('完整 item 对象:', item)
     const { url, objectUrl } = item
+    console.log('视频 URL:', url)
+    console.log('视频封面路径 (objectUrl):', objectUrl)
     videoData.url = url
     videoData.objectUrl = objectUrl
     videoData.show = true
