@@ -95,7 +95,7 @@
           <span ai-text-desc>{{ item.about }}</span>
         </li>
       </ul>
-      <img
+      <van-image
         :src="rightIcon"
         width="28"
         height="28"
