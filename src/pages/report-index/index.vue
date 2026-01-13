@@ -111,7 +111,8 @@
 
     li {
       width: 100%;
-      min-height: var(--ai-report-index-select-style-height);
+      min-height: 60px;
+      // min-height: var(--ai-report-index-select-style-height);
       border-radius: var(--ai-report-index-select-style-border-radius);
       background: rgba(255, 255, 255, 0.2);
       // background: var(--ai-report-index-select-style-bg-color);
