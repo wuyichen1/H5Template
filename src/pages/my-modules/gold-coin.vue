@@ -100,7 +100,8 @@ const onRecharge = () => {
     align-items: center;
     justify-content: space-between;
     border-radius: var(--ai-coin-select-style-border-radius);
-    background: var(--ai-coin-select-style-bg-color);
+    background: rgba(255, 255, 255, 0.2);
+    // background: var(--ai-coin-select-style-bg-color);
     padding: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
