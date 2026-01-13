@@ -11,6 +11,9 @@
         class="empty-image"
       />
     </div>
+    <div class="empty-text">
+      no data
+    </div>
   </div>
 </template>
 
@@ -39,5 +42,11 @@
   border-radius: 50%;
   background: transparent;
   display: block;
+}
+
+.empty-text {
+  color: #999;
+  margin-top: 18px;
+  text-align: center;
 }
 </style>
