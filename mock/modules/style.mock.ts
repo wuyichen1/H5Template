@@ -44,7 +44,7 @@ export default {
   },
   /** 标签样式（如：描述下面的标签） */
   tagStyle: {
-    backgroundColor: 'rgb(35, 30, 36)',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: '20px',
     width: '65px',
     height: '26px',
