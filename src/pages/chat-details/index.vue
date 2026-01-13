@@ -125,7 +125,7 @@
 <template>
   <div text-red class="chat-details_box">
     <div class="top-box">
-      <ul p-layout-padding style="margin-right: 120px;">
+      <ul p-layout-padding style="margin-right: 130px;">
         <li @click="onSend('I\'m feeling great today.')">
           <span>I'm feeling great today.</span>
           <van-image
