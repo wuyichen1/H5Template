@@ -284,17 +284,17 @@
     z-index: 0;
     isolation: isolate; // 创建新的层叠上下文
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-      pointer-events: none;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background: rgba(0, 0, 0, 0.5);
+    //   z-index: 0;
+    //   pointer-events: none;
+    // }
 
     .bottom-box {
       position: relative;
