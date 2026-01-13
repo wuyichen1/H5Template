@@ -126,22 +126,22 @@
   <div text-red class="chat-details_box">
     <div class="top-box">
       <ul p-layout-padding style="margin-right: 100px;">
-        <li @click="onSend('What style do you recommend?')">
-          <span>What style do you recommend?</span>
+        <li @click="onSend('I\'m feeling great today.')">
+          <span>I'm feeling great today.</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
           />
         </li>
-        <li @click="onSend('Pearl jewelry matching tips')">
-          <span>Pearl jewelry matching tips</span>
+        <li @click="onSend('Do you like reading?')">
+          <span>Do you like reading?</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
           />
         </li>
-        <li @click="onSend('Dinner party accessories matching')">
-          <span>Dinner party accessories matching</span>
+        <li @click="onSend('Can you comfort me?')">
+          <span>Can you comfort me?</span>
           <van-image
             :src="ChatIcon"
             :style="{ width: '14px', height: '14px' }"
@@ -182,6 +182,9 @@
     align-items: flex-end;
     justify-content: space-between;
     position: relative;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
 
     .right-image {
       position: absolute;
