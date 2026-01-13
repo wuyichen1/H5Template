@@ -25,32 +25,90 @@ const {
   onVideoLike
 } = useDetail()
 
-const videoRef = ref(null)
-const isPlaying = ref(true)
+const videoRef = ref<HTMLVideoElement | null>(null)
+const isPlaying = ref(false)
 const isPopup = ref(false)
 // 举报弹框
 const isReport = ref(false)
 
+// 切换播放/暂停
 const togglePlay = async () => {
   if (!videoRef.value) return
 
   if (isPlaying.value) {
     videoRef.value.pause()
-
-    // videoRef.value.play().catch((err) => {
-    //   console.error('播放失败:', err)
-    // })
-
-    isPlaying.value = false
   } else {
     try {
       await videoRef.value.play()
-      isPlaying.value = true
     } catch (error) {
-      console.warn('自动播放被阻止:', error)
+      console.warn('播放失败:', error)
     }
   }
 }
+
+// 事件处理函数
+const handlePlay = () => {
+  isPlaying.value = true
+}
+const handlePause = () => {
+  isPlaying.value = false
+}
+const handleEnded = () => {
+  if (videoRef.value) {
+    videoRef.value.currentTime = 0
+    videoRef.value.play().catch((error) => {
+      console.warn('重新播放失败:', error)
+    })
+  }
+}
+
+// 初始化视频自动播放
+const initVideo = () => {
+  if (videoRef.value && dynamicInfo.value?.dynamicVideo) {
+    // 尝试自动播放
+    videoRef.value
+      .play()
+      .then(() => {
+        isPlaying.value = true
+      })
+      .catch((error) => {
+        console.warn('自动播放被阻止:', error)
+        isPlaying.value = false
+      })
+  }
+}
+
+// 监听视频源变化，自动播放
+watch(
+  () => dynamicInfo.value?.dynamicVideo,
+  () => {
+    nextTick(() => {
+      initVideo()
+    })
+  },
+  { immediate: true }
+)
+
+onMounted(() => {
+  if (videoRef.value) {
+    // 添加事件监听器
+    videoRef.value.addEventListener('play', handlePlay)
+    videoRef.value.addEventListener('pause', handlePause)
+    videoRef.value.addEventListener('ended', handleEnded)
+
+    // 初始化播放
+    initVideo()
+  }
+})
+
+// 组件卸载时清理事件监听器
+onUnmounted(() => {
+  if (videoRef.value) {
+    videoRef.value.removeEventListener('play', handlePlay)
+    videoRef.value.removeEventListener('pause', handlePause)
+    videoRef.value.removeEventListener('ended', handleEnded)
+  }
+})
 </script>
 
 <template>
@@ -70,7 +128,7 @@ const togglePlay = async () => {
     />
     <van-icon
       v-if="!isPlaying"
-      :name="isPlaying ? 'pause-circle' : 'play-circle'"
+      name="play-circle"
       class="play-box"
       @click="togglePlay"
     />
