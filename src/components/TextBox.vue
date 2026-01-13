@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<{
 }>(), {
   maxlength: 150,
   rows: 6,
-  bg: '#0e080f'
+  bg: 'rgba(255,255,255,0.2)'
 })
 </script>
 
@@ -25,7 +25,7 @@ const props = withDefaults(defineProps<{
       :maxlength="props.maxlength"
       placeholder="Please enter"
       show-word-limit
-      :style="{ '--text-box-bg': props.bg, borderRadius: '12px' }"
+      :style="{ '--text-box-bg': props.bg, 'borderRadius': '12px' }"
     />
   </div>
 </template>
