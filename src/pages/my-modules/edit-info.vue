@@ -134,6 +134,6 @@
   }
 
   .public-input {
-    background: #011733 !important;
+    background: rgba(255, 255, 255, 0.2) !important;
   }
 </style>
