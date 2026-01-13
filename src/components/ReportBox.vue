@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { showLoadingToast,showSuccessToast,closeToast } from 'vant'
+  import { closeToast, showLoadingToast, showSuccessToast } from 'vant'
   import { detailId } from '@/hooks/useDetail'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
@@ -118,7 +118,7 @@
 
       &:not(:last-child) {
         p {
-          background: #011733;
+          background: rgba(255, 255, 255, 0.2);
         }
       }
 
