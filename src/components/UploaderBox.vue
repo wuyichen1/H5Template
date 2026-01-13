@@ -182,6 +182,7 @@
       border-radius: 20px;
     }
 
+    // 正确的上传大按钮背景色
     :deep(.van-uploader__upload) {
       width: 103px;
       height: 103px;
