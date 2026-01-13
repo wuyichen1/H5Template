@@ -102,6 +102,7 @@ const handleReport = (userId: string) => {
               <div
                 v-if="userInfo.userId !== item.userId"
                 class="report-icon"
+                style="margin-top: 10px;"
                 @click="handleReport(item.userId)"
               >
                 <van-image
