@@ -185,7 +185,7 @@
     :deep(.van-uploader__upload) {
       width: 103px;
       height: 103px;
-      background: #011733;
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 20px;
     }
   }
