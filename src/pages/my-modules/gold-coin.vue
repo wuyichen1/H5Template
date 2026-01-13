@@ -56,11 +56,11 @@ const onRecharge = () => {
             </div>
           </li>
         </ul>
+      </div>
 
-        <!-- 按钮 -->
-        <div mt-6 flex justify-center>
-          <p ai-gradient-btn @click="onRecharge">Recharge</p>
-        </div>
+      <!-- 按钮 -->
+      <div class="button-area" flex justify-center>
+        <p ai-gradient-btn @click="onRecharge">Recharge</p>
       </div>
     </div>
   </div>
@@ -104,6 +104,12 @@ const onRecharge = () => {
   flex: 1;
   overflow-y: auto;
   margin-top: 16px;
+  min-height: 0;
+}
+
+.button-area {
+  flex-shrink: 0;
+  margin-top: 24px;
   padding-bottom: env(safe-area-inset-bottom);
 }
 
