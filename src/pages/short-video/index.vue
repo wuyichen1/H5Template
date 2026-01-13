@@ -152,11 +152,11 @@
       </ul>
     </div>
 
-    <popup-box v-model:show="isPopup">
-      <div
-        class="popup-content bg-gradient-comment"
-        style="background: linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%);"
-      >
+    <popup-box
+      v-model:show="isPopup"
+      background="linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%)"
+    >
+      <div class="popup-content">
         <div px-layout-padding pt-layout-padding>
           <van-divider content-position="left">Comments</van-divider>
         </div>
@@ -176,9 +176,6 @@
 
 <style lang="less" scoped>
   .popup-content {
-    padding-top: 0;
-    margin-top: 0;
-
     :deep(.van-divider) {
       margin-top: 0;
       margin-bottom: 0;
