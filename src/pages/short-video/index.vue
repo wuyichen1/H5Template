@@ -156,7 +156,7 @@ const togglePlay = async () => {
       background="linear-gradient(90deg, rgba(46, 35, 146, 1) 0%, rgba(83, 9, 112, 1) 100%)"
     >
       <!-- px-layout-padding pt-layout-padding -->
-      <div style="padding-top: 0px; padding-bottom: 0px">
+      <div style="padding-top: 0px; padding-bottom: 0px; margin-left: 20px; margin-right: 20px;">
         <van-divider content-position="left">Comments</van-divider>
       </div>
       <div class="h-[56vh] overflow-y-auto">
