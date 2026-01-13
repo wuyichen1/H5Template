@@ -79,7 +79,7 @@
       flex
       items-center
       justify-between
-      class="list-box rounded-[20px] bg-[rgba(255, 255, 255, 0.4)]"
+      class="list-box rounded-[20px]"
     >
       <ul>
         <li flex items-center>
@@ -107,5 +107,8 @@
 <style lang="less" scoped>
   .list-box + .list-box {
     margin-top: 16px;
+  }
+  .list-box {
+    background-color: rgba(255, 255, 255, 0.4);
   }
 </style>
