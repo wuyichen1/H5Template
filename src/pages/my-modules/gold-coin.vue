@@ -24,7 +24,7 @@ const onRecharge = () => {
 
 <template>
   <div safe-area-inset-top class="gold-coin_box">
-    <div p-layout-padding>
+    <div p-layout-padding class="content-wrapper">
       <ul class="top-box">
         <li>
           <van-image h-20 w-20 :src="MasonryIcon" fit="cover" />
@@ -38,27 +38,29 @@ const onRecharge = () => {
       </ul>
 
       <!-- 选项数据 -->
-      <ul class="bottom-selsect">
-        <li
-          v-for="item in winCoinData"
-          :key="item.key"
-          :class="{ 'on-active': formData.radio === item.key }"
-          @click="formData.radio = item.key"
-        >
-          <div class="left-content">
-            <van-image h-4 w-5 :src="MyIcon" fit="cover" />
-            <span ml-1 ai-user-name>{{ item.cions }}</span>
-          </div>
-          <div class="right-content">
-            <span ai-text-desc>${{ item.meney }}</span>
-            <div class="radio-circle" />
-          </div>
-        </li>
-      </ul>
+      <div class="scroll-area">
+        <ul class="bottom-selsect">
+          <li
+            v-for="item in winCoinData"
+            :key="item.key"
+            :class="{ 'on-active': formData.radio === item.key }"
+            @click="formData.radio = item.key"
+          >
+            <div class="left-content">
+              <van-image h-4 w-5 :src="MyIcon" fit="cover" />
+              <span ml-1 ai-user-name>{{ item.cions }}</span>
+            </div>
+            <div class="right-content">
+              <span ai-text-desc>${{ item.meney }}</span>
+              <div class="radio-circle" />
+            </div>
+          </li>
+        </ul>
 
-      <!-- 按钮 -->
-      <div mt-6 flex justify-center>
-        <p ai-gradient-btn @click="onRecharge">Recharge</p>
+        <!-- 按钮 -->
+        <div mt-6 flex justify-center>
+          <p ai-gradient-btn @click="onRecharge">Recharge</p>
+        </div>
       </div>
     </div>
   </div>
@@ -72,7 +74,17 @@ const onRecharge = () => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
 .top-box {
@@ -85,10 +97,17 @@ const onRecharge = () => {
   align-items: center;
   padding: 20px;
   padding-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.scroll-area {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 16px;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .bottom-selsect {
-  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
