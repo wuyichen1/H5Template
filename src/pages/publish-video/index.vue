@@ -33,14 +33,46 @@ const onSubmit = async () => {
     return showToast('Please wait for the video to upload')
   }
 
+  const videoItem = formData.dynamicPic[0]
+  let coverUrl = videoItem.objectUrl
+
+  // 检查封面是否还是本地 blob URL，如果是则等待封面上传完成
+  if (coverUrl && coverUrl.startsWith('blob:')) {
+    console.log('检测到封面还是 blob URL，等待封面上传完成...', coverUrl)
+    // 等待封面上传完成（最多等待 10 秒）
+    let waitCount = 0
+    while (coverUrl && coverUrl.startsWith('blob:') && waitCount < 20) {
+      await new Promise(resolve => setTimeout(resolve, 500))
+      coverUrl = videoItem.objectUrl
+      waitCount++
+      console.log(`等待封面上传... (${waitCount}/20)`, coverUrl)
+    }
+
+    // 如果等待超时，使用视频 URL 作为封面
+    if (coverUrl && coverUrl.startsWith('blob:')) {
+      console.warn('封面上传超时，使用视频 URL 作为封面')
+      coverUrl = videoItem.url
+    }
+  }
+
+  // 确保封面 URL 是有效的（不是 blob:）
+  if (!coverUrl || coverUrl.startsWith('blob:')) {
+    coverUrl = videoItem.url
+  }
+
+  console.log('=== 提交数据 ===')
+  console.log('视频 URL:', videoItem.url)
+  console.log('封面 URL:', coverUrl)
+  console.log('是否 blob URL:', coverUrl?.startsWith('blob:'))
+
   const data = {
     ...formData,
     dynamicTag: [],
-    dynamicVideo: formData.dynamicPic.map((v) => v.url)[0],
+    dynamicVideo: videoItem.url,
     dynamicLikeCount: 0,
     dynamicCommentCount: 0,
     dynamicId: `${Date.now()}_video`,
-    dynamicPic: [formData.dynamicPic.map((v) => v.objectUrl)[0]]
+    dynamicPic: [coverUrl]
   } as DynamicInfo
 
   listData.value.unshift(data)

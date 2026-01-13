@@ -117,26 +117,34 @@ export const useFile = (cb?: UploadSuccessCallback) => {
           .then(coverResult => {
             if (coverResult) {
               const coverUrl = coverResult.url.replace(/^http:\/\//, https)
-              item.objectUrl = coverUrl
-              console.log('=== 视频上传信息 ===')
-              console.log('视频 URL:', item.url)
-              console.log('视频封面路径 (objectUrl):', item.objectUrl)
-              console.log('封面上传成功:', coverUrl)
+              // 使用 nextTick 确保 Vue 响应式更新
+              nextTick(() => {
+                item.objectUrl = coverUrl
+                console.log('=== 视频上传信息 ===')
+                console.log('视频 URL:', item.url)
+                console.log('视频封面路径 (objectUrl):', item.objectUrl)
+                console.log('封面上传成功:', coverUrl)
+                console.log('封面已更新到 item 对象')
+              })
             } else {
               // 如果封面生成失败，使用视频 URL 作为预览
-              item.objectUrl = videoUrl
-              console.log('=== 视频上传信息 ===')
-              console.log('视频 URL:', item.url)
-              console.log('视频封面路径 (objectUrl):', item.objectUrl)
-              console.warn('封面生成失败，使用视频 URL 作为预览')
+              nextTick(() => {
+                item.objectUrl = videoUrl
+                console.log('=== 视频上传信息 ===')
+                console.log('视频 URL:', item.url)
+                console.log('视频封面路径 (objectUrl):', item.objectUrl)
+                console.warn('封面生成失败，使用视频 URL 作为预览')
+              })
             }
           })
           .catch(err => {
             console.warn('封面生成失败，使用视频 URL 作为预览:', err)
-            item.objectUrl = videoUrl
-            console.log('=== 视频上传信息 ===')
-            console.log('视频 URL:', item.url)
-            console.log('视频封面路径 (objectUrl):', item.objectUrl)
+            nextTick(() => {
+              item.objectUrl = videoUrl
+              console.log('=== 视频上传信息 ===')
+              console.log('视频 URL:', item.url)
+              console.log('视频封面路径 (objectUrl):', item.objectUrl)
+            })
           })
 
         // 调试打印视频封面路径（初始状态）
