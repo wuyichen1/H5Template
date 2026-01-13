@@ -76,7 +76,7 @@ const onSubmit = async () => {
 <template>
   <div safe-area-inset-top px-layout-padding class="send-dynamic_box">
     <!-- 输入框 -->
-    <text-box v-model="formData.dynamicDesc" bg="#011733" border-radius="16px" />
+    <text-box v-model="formData.dynamicDesc" bg="rgba(255, 255, 255, 0.2)" border-radius="16px" />
 
     <div mt-9>
       <!-- 主题选项 -->

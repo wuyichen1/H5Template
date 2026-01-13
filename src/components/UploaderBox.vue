@@ -151,7 +151,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #011733;
+        color: rgba(255, 255, 255, 0.2);
         font-size: 36px;
       }
     }
