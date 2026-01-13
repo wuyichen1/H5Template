@@ -153,7 +153,11 @@
     </div>
 
     <popup-box v-model:show="isPopup">
-      <div p-layout-padding class="popup-content">
+      <div
+        p-layout-padding
+        class="popup-content bg-gradient-comment"
+        style="background: linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%);"
+      >
         <van-divider content-position="left">Comments</van-divider>
         <div class="h-[56vh] overflow-y-auto">
           <comment-card
