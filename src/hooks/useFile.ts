@@ -42,16 +42,28 @@ export const useFile = (cb?: UploadSuccessCallback) => {
 
   /** 上传到 OSS */
   const uploadToOSS = async (item: UploaderFileListItem) => {
+    if (!item.file) {
+      item.status = 'failed'
+      item.message = '文件不存在'
+      throw new Error('文件不存在')
+    }
+
     item.status = 'uploading'
     item.message = 'Uploading...'
     const file = item.file
-    
+
     // 确保 STS 凭证已获取
     let sts: stsTypeData = stsData.value
     if (!sts) {
       sts = await getSTS()
     }
-    
+
+    if (!sts || !sts.host || !sts.bucket) {
+      item.status = 'failed'
+      item.message = 'STS 凭证获取失败'
+      throw new Error('STS 凭证获取失败')
+    }
+
     const [https, endpoint] = sts.host.split(`${sts.bucket}.`)
     const client = new OSS({
       accessKeyId: sts.AccessKeyId,
@@ -75,16 +87,26 @@ export const useFile = (cb?: UploadSuccessCallback) => {
       // 判断是否是视频
       if (file.type.startsWith('video/')) {
         const key = `template_development/${Date.now()}_${file.name}`
+
+        // 提取视频封面
         const coverBlob = await extractCoverFromVideo(file)
-        console.log(coverBlob)
+        if (!coverBlob) {
+          throw new Error('视频封面提取失败')
+        }
+
         // 构造 File 对象用于上传
         const coverFile = new File([coverBlob], 'cover.jpg', {
           type: 'image/jpeg',
           lastModified: Date.now() // 防止缓存
         })
         const videoKey = `template_development/${Date.now()}_${coverFile.name}`
-        const result = await client.put(videoKey, coverFile)
-        const videoRes = await client.put(key, file)
+
+        // 先上传封面，再上传视频
+        const [result, videoRes] = await Promise.all([
+          client.put(videoKey, coverFile),
+          client.put(key, file)
+        ])
+
         item.objectUrl = result.url.replace(/^http:\/\//, https)
         item.status = ''
         return videoRes.url.replace(/^http:\/\//, https)

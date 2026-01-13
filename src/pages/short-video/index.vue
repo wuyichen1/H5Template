@@ -155,7 +155,7 @@ const togglePlay = async () => {
       v-model:show="isPopup"
       background="linear-gradient(90deg, rgba(46, 35, 146, 1) 0%, rgba(83, 9, 112, 1) 100%)"
     >
-      <div px-layout-padding pt-layout-padding>
+      <div p-layout-padding>
         <van-divider content-position="left">Comments</van-divider>
       </div>
       <div class="h-[56vh] overflow-y-auto">
@@ -170,7 +170,7 @@ const togglePlay = async () => {
 
 <style lang="less" scoped>
 .video-comment-card_box {
-  padding-bottom: calc(10px + var(--ai-view-padding-bottom));
+  padding-bottom: calc(60px + var(--ai-view-padding-bottom));
 }
 .video-box {
   width: 100%;

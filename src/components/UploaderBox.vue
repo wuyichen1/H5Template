@@ -34,26 +34,30 @@
     // 判断是单个还是多个文件
     const files = Array.isArray(fileOrFiles) ? fileOrFiles : [fileOrFiles]
 
-    const uploadPromises = files.map((file, index) =>
-      uploadToOSS(file)
+    // 记录文件在 fileList 中的起始索引（vant uploader 在调用 afterRead 时已经将文件添加到 fileList）
+    const startIndex = fileList.value.length - files.length
+
+    const uploadPromises = files.map((file, index) => {
+      const currentIndex = startIndex + index
+      // 使用 fileList 中的实际对象，确保引用一致
+      const currentFile = fileList.value[currentIndex] || file
+
+      return uploadToOSS(currentFile)
         .then(url => {
-          fileList.value[fileList.value.length - files.length + index] = {
-            ...file,
-            url,
-            status: '',
-            message: ''
-          }
+          // 直接更新 fileList 中对应对象的属性，保持引用一致
+          currentFile.url = url
+          currentFile.status = ''
+          currentFile.message = ''
+          // objectUrl 已经在 uploadToOSS 中设置
         })
-        .catch(() => {
-          fileList.value[fileList.value.length - files.length + index] = {
-            ...file,
-            status: 'failed',
-            message: '上传失败'
-          }
+        .catch((err) => {
+          // 上传失败时更新状态
+          currentFile.status = 'failed'
+          currentFile.message = '上传失败'
+          console.error('上传失败:', err)
         })
-    )
+    })
     await Promise.all(uploadPromises)
-    // console.log(fileList.value)
   }
 
   const onCheckVideo = (item: UploaderFileListItem) => {
