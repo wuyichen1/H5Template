@@ -129,10 +129,10 @@ const onRecharge = () => {
   }
 
   .on-active {
-    background: var(--ai-coin-select-style-selected-color);
+    // background: var(--ai-coin-select-style-selected-color);
 
     .radio-circle {
-      background: #8b5cf6;
+      background: linear-gradient(90deg, rgba(172, 94, 255, 1) 0%, rgba(139, 31, 255, 1) 100%);
       border-color: #fff;
     }
   }
