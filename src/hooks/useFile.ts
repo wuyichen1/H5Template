@@ -2,7 +2,6 @@ import type { UploaderFileListItem } from 'vant'
 import OSS from 'ali-oss'
 import axios from 'axios'
 import { closeToast, showLoadingToast } from 'vant'
-import { useVideoCover } from './useVideoCover'
 
 type stsTypeData = {
   AccessKeyId: string
@@ -19,8 +18,6 @@ type UploadSuccessCallback = (url: string) => void
 
 /** 获取对应文件并上传 */
 export const useFile = (cb?: UploadSuccessCallback) => {
-  const { extractCoverFromVideo } = useVideoCover()
-
   let fileInput: HTMLInputElement | null = null
   const stsData = ref<stsTypeData>()
   /** 图片链接 */
@@ -100,32 +97,9 @@ export const useFile = (cb?: UploadSuccessCallback) => {
         item.status = 'done' // 使用 'done' 而不是空字符串
         item.message = ''
 
-        // 异步生成并上传封面（不阻塞主流程）
-        extractCoverFromVideo(file)
-          .then(coverBlob => {
-            if (coverBlob) {
-              const coverFile = new File([coverBlob], 'cover.jpg', {
-                type: 'image/jpeg',
-                lastModified: Date.now()
-              })
-              const coverKey = `template_development/${Date.now()}_${coverFile.name}`
-              return client.put(coverKey, coverFile)
-            }
-            return null
-          })
-          .then(coverResult => {
-            if (coverResult) {
-              item.objectUrl = coverResult.url.replace(/^http:\/\//, https)
-              console.log('封面上传成功:', item.objectUrl)
-            } else {
-              // 如果封面生成失败，使用视频的第一帧作为预览
-              item.objectUrl = videoUrl
-            }
-          })
-          .catch(err => {
-            console.warn('封面生成失败，使用视频 URL 作为预览:', err)
-            item.objectUrl = videoUrl
-          })
+        // 直接使用上传后的视频 URL 作为预览，不使用 Blob
+        // 这样 poster 和 src 都使用服务器上的视频 URL，不会有 blob: 前缀
+        item.objectUrl = videoUrl
 
         return videoUrl
       } else {
