@@ -155,7 +155,7 @@ const togglePlay = async () => {
       v-model:show="isPopup"
       background="linear-gradient(90deg, rgba(46, 35, 146, 1) 0%, rgba(83, 9, 112, 1) 100%)"
     >
-      <div p-layout-padding>
+      <div style="padding-top:16px; padding-bottom:16px;">
         <van-divider content-position="left">Comments</van-divider>
       </div>
       <div class="h-[56vh] overflow-y-auto">
