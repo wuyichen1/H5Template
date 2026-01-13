@@ -120,13 +120,12 @@
 
   .top-select {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    height: 368px;
+    flex-direction: column;
+    gap: 12px;
 
     li {
-      width: var(--ai-report-index-select-style-width);
-      height: var(--ai-report-index-select-style-height);
+      width: 100%;
+      min-height: var(--ai-report-index-select-style-height);
       border-radius: var(--ai-report-index-select-style-border-radius);
       background: var(--ai-report-index-select-style-bg-color);
       font-size: var(--ai-report-index-select-style-text-size);
@@ -135,16 +134,25 @@
       padding: 14px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+
+      span {
+        flex: 1;
+      }
 
       .selected-icon {
-        position: absolute;
-        bottom: -6px;
-        right: 0;
+        position: relative;
+        flex-shrink: 0;
+        margin-left: 12px;
 
         .success-icon {
           position: absolute;
-          bottom: 10px;
-          right: 4px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           font-size: 24px;
         }
       }
