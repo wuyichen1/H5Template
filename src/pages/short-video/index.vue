@@ -176,7 +176,7 @@
 
 <style lang="less" scoped>
   .popup-content {
-    padding-top: 12px;
+    padding-top: 0;
     margin-top: 0;
 
     :deep(.van-divider) {
