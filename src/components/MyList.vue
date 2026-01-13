@@ -1,5 +1,8 @@
 <script setup lang="ts">
+  import AddIcon from '@/assets/public/add.png'
+  import DeleteIcon from '@/assets/public/delete-icon.png'
   import Head from '@/assets/public/Head.png'
+  import SubtractIcon from '@/assets/public/subtract.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
 
@@ -24,13 +27,13 @@
   const rightIcon = computed(() => {
     switch (props.type) {
       case 'follow':
-        return '@/assets/public/subtract.png'
+        return SubtractIcon
       case 'fans':
-        return '@/assets/public/add.png'
+        return AddIcon
       case 'blackList':
-        return '@/assets/public/delete-icon.png'
+        return DeleteIcon
       default:
-        return '@/assets/public/subtract.png'
+        return SubtractIcon
     }
   })
 
@@ -97,8 +100,8 @@
       </ul>
       <van-image
         :src="rightIcon"
-        h-28
-        w-28
+        h-8
+        w-8
         fit="cover"
         style="cursor: pointer"
         @click="onClick(item.userId, index)"
