@@ -160,7 +160,7 @@
       video {
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.2);
+        background: #0e080f;
       }
 
       .play-box {
