@@ -101,7 +101,7 @@
         </div>
       </template>
       <template #preview-delete>
-        <van-image :src="DeleteIcon" />
+        <van-image :src="DeleteIcon" width="24px" height="24px" />
       </template>
     </van-uploader>
 
