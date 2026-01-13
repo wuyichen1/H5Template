@@ -82,7 +82,12 @@
       <div flex h-full justify-center>
         <div class="block" @click.stop>
           <div
-            :style="{ 'background': `url(${chatBgImage})`, 'background-size': '100% 100%', 'background-repeat': 'no-repeat' }"
+            :style="{
+              'background': `url(${chatBgImage})`,
+              'background-size': 'cover',
+              'background-repeat': 'no-repeat',
+              'border-radius': '24px'
+            }"
             class="content"
           >
             <!-- 添加一个图片 -->
