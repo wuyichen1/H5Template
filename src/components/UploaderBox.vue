@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import type { UploaderFileListItem } from 'vant'
+  import { nextTick } from 'vue'
   import DeleteIcon from '@/assets/public/delete-icon.png'
   import { useFile } from '@/hooks/useFile'
 
@@ -42,22 +43,34 @@
       // 使用 fileList 中的实际对象，确保引用一致
       const currentFile = fileList.value[currentIndex] || file
 
+      console.log('开始上传文件:', currentFile.file?.name, '索引:', currentIndex)
+
       return uploadToOSS(currentFile)
         .then(url => {
-          // 直接更新 fileList 中对应对象的属性，保持引用一致
-          currentFile.url = url
-          currentFile.status = ''
-          currentFile.message = ''
-          // objectUrl 已经在 uploadToOSS 中设置
+          console.log('上传成功:', url)
+          // uploadToOSS 已经更新了 status 和 url，这里只需要确保同步
+          // 使用 nextTick 确保 Vue 响应式更新
+          nextTick(() => {
+            if (currentFile) {
+              currentFile.url = url
+              currentFile.status = 'done'
+              currentFile.message = ''
+            }
+          })
         })
         .catch((err) => {
-          // 上传失败时更新状态
-          currentFile.status = 'failed'
-          currentFile.message = '上传失败'
           console.error('上传失败:', err)
+          // 上传失败时更新状态
+          nextTick(() => {
+            if (currentFile) {
+              currentFile.status = 'failed'
+              currentFile.message = '上传失败'
+            }
+          })
         })
     })
     await Promise.all(uploadPromises)
+    console.log('所有文件上传完成')
   }
 
   const onCheckVideo = (item: UploaderFileListItem) => {
