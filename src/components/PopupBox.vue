@@ -15,9 +15,4 @@ const show = defineModel<boolean>('show', {
 </template>
 
 <style lang="less" scoped>
-  .popup-box {
-    :deep(.van-popup) {
-      padding-top: 0 !important;
-    }
-  }
 </style>
