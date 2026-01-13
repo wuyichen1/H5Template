@@ -170,7 +170,7 @@ const togglePlay = async () => {
 
 <style lang="less" scoped>
 .video-comment-card_box {
-  padding-bottom: calc(60px + var(--ai-view-padding-bottom));
+  padding-bottom: calc(10px + var(--ai-view-padding-bottom));
 }
 .video-box {
   width: 100%;
