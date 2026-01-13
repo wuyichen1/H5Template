@@ -31,7 +31,7 @@
       ai-fill-bg
       ai-rounded
       class="card-comment"
-      :style="{ backgroundColor: 'rgba(255, 255, 255, 1)' }"
+      :style="{ backgroundColor: 'rgba(255, 255, 255, 0.2)' }"
     >
       <ul flex items-center justify-between>
         <li flex items-center>
@@ -69,5 +69,7 @@
 <style lang="less" scoped>
   .card-comment + .card-comment {
     margin-top: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 </style>

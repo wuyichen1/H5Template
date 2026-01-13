@@ -154,7 +154,7 @@
 
     <popup-box
       v-model:show="isPopup"
-      background="linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%)"
+      background="linear-gradient(90deg, rgba(46, 35, 146, 1) 0%, rgba(83, 9, 112, 1) 100%)"
     >
       <div class="popup-content">
         <div px-layout-padding pt-layout-padding>
