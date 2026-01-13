@@ -85,6 +85,7 @@
             :style="{
               'background': `url(${chatBgImage})`,
               'background-size': 'cover',
+              'background-position': 'center',
               'border-radius': '30px'
             }"
             class="content"
