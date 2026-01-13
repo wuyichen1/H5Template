@@ -175,13 +175,6 @@
 </template>
 
 <style lang="less" scoped>
-  .popup-content {
-    :deep(.van-divider) {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-
   .video-comment-card_box {
     padding-bottom: calc(60px + var(--ai-view-padding-bottom));
   }
@@ -206,7 +199,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 64px;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.2);
     }
 
     .bottom-box {
