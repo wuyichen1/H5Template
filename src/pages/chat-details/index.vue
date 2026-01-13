@@ -208,7 +208,7 @@
         line-height: var(--ai-chat-details-top-height);
         font-size: var(--ai-chat-details-top-text-font-size);
         font-weight: var(--ai-chat-details-top-text-font-weight);
-        background: rgba(28, 123, 255, 0.2);
+        background: rgba(255, 255, 255, 0.2);
         letter-spacing: 0;
         color: var(--ai-chat-details-top-text-color);
         display: flex;
