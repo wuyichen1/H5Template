@@ -7,25 +7,27 @@
 <template>
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
-      <h1 class="title">Zoryo User Agreement</h1>
+      <h1 class="title">Flira User Agreement</h1>
 
       <section class="section">
         <h2 class="section-title">I. Scope of Agreement</h2>
         <p class="section-text">
-          Welcome to Zoryo (hereinafter referred to as "this App" or "we"). Zoryo is your exclusive jewelry matching inspiration hub, dedicated to solving various matching dilemmas and making every small piece of jewelry the finishing touch to your outfit.
+          Welcome to Flira (hereinafter referred to as "this App" or "we"). Flira is a vibrant guitar community built for guitar lovers around the world. Whether you're a beginner, an experienced player, or a passionate music creator, Flira gives you a place to connect, share, and grow through music.
         </p>
         <p class="section-text">
-          This User Agreement (hereinafter referred to as "this Agreement") is an agreement between you and Zoryo regarding the use of this App's services. Please read this Agreement carefully, especially the clauses concerning exemption or limitation of liability, applicable law, and dispute resolution. When you register, log in, or use (collectively referred to as "use") this App's services, it means that you have fully read, understood, and agreed to accept all the contents of this Agreement.
+          This User Agreement (hereinafter referred to as "this Agreement") is an agreement between you and Flira regarding the use of this App's services. Please read this Agreement carefully, especially the clauses concerning exemption or limitation of liability, applicable law, and dispute resolution. When you register, log in, or use (collectively referred to as "use") this App's services, it means that you have fully read, understood, and agreed to accept all the contents of this Agreement.
         </p>
       </section>
 
       <section class="section">
         <h2 class="section-title">II. Service Content</h2>
-        <p class="section-text">Zoryo provides you with the following core services:</p>
+        <p class="section-text">Flira provides you with the following core services:</p>
         <ul class="section-list">
-          <li><strong>Categorized Content Browsing:</strong> Based on different scenario needs, we categorize and display jewelry matching content for you. Graphic posts intuitively present diverse effects from the perspectives of logic and style, helping you quickly find the jewelry that suits you.</li>
-          <li><strong>AI Assistant:</strong> Unlock the AI Assistant feature through payment to get answers to your questions anytime and help you unlock your exclusive style.</li>
-          <li><strong>Trendy Sharing Community:</strong> Gather a wealth of creative jewelry styling videos. Browse freely to gain inspiration, interact with like-minded people, and discover more possibilities.</li>
+          <li><strong>Share Your Guitar Journey:</strong> Post updates about your guitars, your practice moments, and your musical life. Share photos, thoughts, and experiences with a community that truly understands your passion.</li>
+          <li><strong>Upload & Watch Guitar Videos:</strong> Record and share your guitar performances, riffs, covers, and original creations. Explore videos from other guitarists, get inspired, and exchange feedback.</li>
+          <li><strong>Video Calls with Other Guitarists:</strong> Connect face-to-face through in-app video calls. Jam together, discuss techniques, or simply chat with fellow guitar enthusiasts anytime, anywhere.</li>
+          <li><strong>AI Chat Inside the App:</strong> Flira includes an AI-powered chat feature that's always ready to talk. Ask questions, get ideas, or enjoy casual conversations related to music and beyond.</li>
+          <li><strong>A Community Built for Guitarists:</strong> Flira isn't just an app — it's a space where guitar players connect, learn, and inspire each other.</li>
         </ul>
       </section>
 
@@ -45,7 +47,7 @@
       <section class="section">
         <h2 class="section-title">IV. Paid Services</h2>
         <p class="section-text">
-          4.1 Some features of this App (such as the AI Assistant) require payment to unlock. Information about paid services, including prices and payment methods, will be clearly displayed on relevant pages.
+          4.1 Some features of this App (such as the AI Chat feature or premium video call features) may require payment to unlock. Information about paid services, including prices and payment methods, will be clearly displayed on relevant pages.
         </p>
         <p class="section-text">
           4.2 You understand and agree that once a paid service is successfully purchased, no refund will be provided except as required by laws and regulations or as otherwise agreed in this Agreement.
@@ -129,7 +131,7 @@
       </section>
 
       <p class="footer-text">
-        Thank you for choosing Zoryo. Let's unlock your exclusive style together!
+        Thank you for choosing Flira. Join us and turn your love for guitar into a shared experience!
       </p>
     </div>
   </div>

@@ -7,12 +7,12 @@
 <template>
   <div safe-area-inset-top p-layout-padding class="follow_box">
     <div class="agreement-content">
-      <h1 class="title">Zoryo Privacy Policy</h1>
+      <h1 class="title">Flira Privacy Policy</h1>
 
       <section class="section">
         <h2 class="section-title">I. Introduction</h2>
         <p class="section-text">
-          Zoryo (hereinafter referred to as "we" or "this App") takes your privacy protection very seriously. This Privacy Policy aims to explain how we collect, use, store, share, and protect your personal information, as well as the rights you enjoy.
+          Flira (hereinafter referred to as "we" or "this App") takes your privacy protection very seriously. This Privacy Policy aims to explain how we collect, use, store, share, and protect your personal information, as well as the rights you enjoy.
         </p>
         <p class="section-text">
           Please read this Privacy Policy carefully. When you use this App's services, it means that you have fully understood and agreed to all the contents of this Privacy Policy.
@@ -26,18 +26,21 @@
         <h3 class="subsection-title">2.1 Information You Actively Provide</h3>
         <ul class="section-list">
           <li><strong>Account Information:</strong> Phone number, email address, username, password, etc., provided during registration;</li>
-          <li><strong>Profile Information:</strong> Optional personal information such as avatar, nickname, bio, gender, birthday, etc.;</li>
-          <li><strong>Content Information:</strong> Images, videos, text, and other content you upload and publish on this App;</li>
-          <li><strong>Interaction Information:</strong> Your interactive behaviors such as comments, likes, favorites, shares, etc.;</li>
+          <li><strong>Profile Information:</strong> Optional personal information such as avatar, nickname, bio, gender, birthday, musical preferences, skill level, etc.;</li>
+          <li><strong>Content Information:</strong> Photos of your guitars, practice moments, guitar performance videos, riffs, covers, original music creations, text posts, and other content you upload and publish on this App;</li>
+          <li><strong>Interaction Information:</strong> Your interactive behaviors such as comments, likes, favorites, shares, follows, etc.;</li>
+          <li><strong>Video Call Information:</strong> Audio and video data during video calls with other users (this information is processed in real-time and not stored unless required for service quality or legal compliance);</li>
+          <li><strong>Chat Information:</strong> Messages and conversations you have with other users and with the AI chat feature;</li>
           <li><strong>Payment Information:</strong> Payment-related information when purchasing paid services (we do not store sensitive information such as your complete payment card number).</li>
         </ul>
 
         <h3 class="subsection-title">2.2 Information We Automatically Collect</h3>
         <ul class="section-list">
-          <li><strong>Device Information:</strong> Device model, operating system version, unique device identifier, mobile network information, etc.;</li>
+          <li><strong>Device Information:</strong> Device model, operating system version, unique device identifier, mobile network information, camera and microphone permissions (for video calls and video uploads), etc.;</li>
           <li><strong>Log Information:</strong> Access time, visited pages, IP address, browser type, language settings, etc.;</li>
           <li><strong>Location Information:</strong> We may collect your geographic location information with your authorization;</li>
-          <li><strong>Usage Information:</strong> Usage behavior data such as the functions you use, content you browse, and time spent on this App.</li>
+          <li><strong>Usage Information:</strong> Usage behavior data such as the functions you use, videos you watch, content you browse, time spent on this App, video call duration, etc.;</li>
+          <li><strong>Network Information:</strong> Network connection type, bandwidth, and quality information to ensure optimal video call and video streaming experiences.</li>
         </ul>
       </section>
 
@@ -46,12 +49,14 @@
         <p class="section-text">We use the collected information for the following purposes:</p>
         <ul class="section-list">
           <li>Provide, maintain, and improve the service functions of this App;</li>
-          <li>Recommend personalized jewelry matching content and inspiration for you;</li>
+          <li>Enable video calls between guitarists and ensure call quality;</li>
+          <li>Process and display your guitar videos, photos, and posts;</li>
+          <li>Recommend personalized guitar content, videos, and community members based on your interests;</li>
+          <li>Provide AI chat services to answer your questions and engage in music-related conversations;</li>
           <li>Process your paid service requests and manage your account;</li>
-          <li>Provide AI Assistant services to answer your questions;</li>
-          <li>Maintain community order and ensure service security;</li>
-          <li>Conduct data analysis to optimize user experience;</li>
-          <li>Send you service notifications and update information (you can cancel at any time);</li>
+          <li>Maintain community order, moderate content, and ensure service security;</li>
+          <li>Conduct data analysis to optimize user experience and improve our services;</li>
+          <li>Send you service notifications, community updates, and relevant information (you can cancel at any time);</li>
           <li>Comply with legal and regulatory requirements and cooperate with regulatory investigations.</li>
         </ul>
       </section>
@@ -77,7 +82,7 @@
         <p class="section-text">We do not sell your personal information to third parties. We may share your information in the following circumstances:</p>
         <ul class="section-list">
           <li><strong>With Your Consent:</strong> We may share your information with third parties with your explicit consent;</li>
-          <li><strong>Service Providers:</strong> To provide services, we may share necessary information with third-party service providers (such as cloud storage, payment processing, and data analytics service providers), who are obligated to protect your information;</li>
+          <li><strong>Service Providers:</strong> To provide services, we may share necessary information with third-party service providers (such as cloud storage, video hosting, video call infrastructure, payment processing, and data analytics service providers), who are obligated to protect your information;</li>
           <li><strong>Legal Requirements:</strong> We may need to disclose your information in accordance with laws, regulations, judicial procedures, or government requirements;</li>
           <li><strong>Protection of Rights:</strong> We may disclose information when necessary to protect our, users', or the public's legitimate rights and interests;</li>
           <li><strong>Business Transfer:</strong> In the event of a merger, acquisition, or asset transfer, your information may be transferred to a new entity.</li>
