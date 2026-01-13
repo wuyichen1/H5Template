@@ -182,8 +182,6 @@
       width: 100%;
       height: 100%;
       // background: var(--ai-short-video-bg-color);
-      background: #0e080f;
-      background-image: url("@/assets/public/bg.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
