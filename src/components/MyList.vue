@@ -24,13 +24,13 @@
   const rightIcon = computed(() => {
     switch (props.type) {
       case 'follow':
-        return 'minus'
+        return '@/assets/public/subtract.png'
       case 'fans':
-        return 'plus'
+        return '@/assets/public/add.png'
       case 'blackList':
-        return 'cross'
+        return '@/assets/public/delete-icon.png'
       default:
-        return 'minus'
+        return '@/assets/public/subtract.png'
     }
   })
 
@@ -95,9 +95,11 @@
           <span ai-text-desc>{{ item.about }}</span>
         </li>
       </ul>
-      <van-icon
-        color="#fff"
-        :name="rightIcon"
+      <img
+        :src="rightIcon"
+        width="28"
+        height="28"
+        style="cursor: pointer"
         @click="onClick(item.userId, index)"
       />
     </div>
