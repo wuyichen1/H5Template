@@ -1,56 +1,47 @@
 <script setup lang="ts">
-  import Head from '@/assets/public/Head.png'
-  import likeIcon from '@/assets/public/like.png'
-  import reportIcon from '@/assets/public/san_more_icon.png'
-  import swipeOne from '@/assets/public/swipe-1.png'
-  import detailLikeIcon from '@/assets/public/unlike.png'
-  // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
-  import { useDetail } from '@/hooks/useDetail'
-  import { detailId } from '@/hooks/useDetail'
-  import { useWindow } from '@/hooks/useWindow'
-  import { useUserStore } from '@/stores'
+import Head from '@/assets/public/Head.png'
+import likeIcon from '@/assets/public/like.png'
+import reportIcon from '@/assets/public/san_more_icon.png'
+import swipeOne from '@/assets/public/swipe-1.png'
+import detailLikeIcon from '@/assets/public/unlike.png'
+// import { useAppImgStyle } from '@/hooks/useAppImgStyle'
+import { useDetail } from '@/hooks/useDetail'
+import { detailId } from '@/hooks/useDetail'
+import { useWindow } from '@/hooks/useWindow'
+import { useUserStore } from '@/stores'
 
-  defineOptions({
-    name: 'ArticleDetail'
-  })
+defineOptions({
+  name: 'ArticleDetail'
+})
 
-  // const { detailLikeIcon, likeIcon } = useAppImgStyle()
-  const { winPublishImageListData } = useWindow()
-  const { userInfo } = useUserStore()
-  const {
-    loding,
-    dynamicInfo,
-    commentList,
-    isLike,
-    onAvator,
-    onLike,
-    onSend
-  } = useDetail()
+// const { detailLikeIcon, likeIcon } = useAppImgStyle()
+const { winPublishImageListData } = useWindow()
+const { userInfo } = useUserStore()
+const {
+  loding,
+  dynamicInfo,
+  commentList,
+  isLike,
+  onAvator,
+  onLike,
+  onSend
+} = useDetail()
 
-  // 举报弹框
-  const isReport = ref(false)
+// 举报弹框
+const isReport = ref(false)
 
-  const handleReport = (userId: string) => {
-    isReport.value = true
-    detailId.value = userId
-  }
+const handleReport = (userId: string) => {
+  isReport.value = true
+  detailId.value = userId
+}
 </script>
 
 <template>
   <div v-if="!loding" class="article-detail_box">
     <div relative>
       <van-swipe class="my-swipe" indicator-color="white">
-        <van-swipe-item
-          v-for="(item, index) in dynamicInfo?.dynamicPic"
-          :key="index"
-        >
-          <van-image
-            h-full
-            w-full
-            :src="item || swipeOne"
-            fit="cover"
-            position="top"
-          />
+        <van-swipe-item v-for="(item, index) in dynamicInfo?.dynamicPic" :key="index">
+          <van-image h-full w-full :src="item || swipeOne" fit="cover" position="top" />
         </van-swipe-item>
       </van-swipe>
       <div
@@ -67,7 +58,7 @@
           :src="isLike ? likeIcon : detailLikeIcon"
           :style="{
             width: 'var(--unlike-image-width)',
-            height: 'var(--unlike-image-height)'
+            height: 'var(--unlike-image-height)',
           }"
           fit="cover"
           @click="onLike"
@@ -81,22 +72,14 @@
     <div mt-5 px-layout-padding w-full>
       <ul flex>
         <li flex shrink flex-col items-center @click="onAvator">
-          <van-image
-            round
-            ai-avatar
-            :src="dynamicInfo?.avator || Head"
-            fit="cover"
-          />
+          <van-image round ai-avatar :src="dynamicInfo?.avator || Head" fit="cover" />
           <span mt-1 ai-user-name>{{ dynamicInfo?.name }}</span>
         </li>
         <li ml-5 class="w-[60%]">
           <span ai-text-desc>{{ dynamicInfo?.dynamicDesc }}</span>
           <p flex>
             <span mr-2 mt-4 px-2 ai-tag-btn class="tag-span">
-              #{{
-                winPublishImageListData[dynamicInfo?.dynamicTitleType]
-                  .name
-              }}
+              #{{ winPublishImageListData[dynamicInfo?.dynamicTitleType].name }}
             </span>
           </p>
         </li>
@@ -107,24 +90,15 @@
       <div class="article-comment-card_box">
         <empty v-if="commentList.length === 0" />
         <div class="comment-scroll-container">
-          <div
-            v-for="(item, index) in commentList"
-            :key="index"
-            class="comment-item"
-          >
+          <div v-for="(item, index) in commentList" :key="index" class="comment-item">
             <div class="comment-content">
               <ul flex items-center justify-between>
                 <li flex items-center>
-                  <van-image
-                    round
-                    ai-avatar
-                    :src="item?.avator || Head"
-                    fit="cover"
-                  />
-                  <span ml-3 ai-user-name>{{ item?.name || '' }}</span>
+                  <van-image round ai-avatar :src="item?.avator || Head" fit="cover" />
+                  <span ml-3 ai-user-name>{{ item?.name || "" }}</span>
                 </li>
-</ul>
-              <span mt-2 ai-text-desc>{{ item?.content || '' }}</span>
+              </ul>
+              <span mt-2 ai-text-desc>{{ item?.content || "" }}</span>
               <div
                 v-if="userInfo.userId !== item.userId"
                 class="report-icon"
@@ -134,7 +108,7 @@
                   :src="reportIcon"
                   :style="{
                     width: '22px',
-                    height: '22px'
+                    height: '22px',
                   }"
                 />
               </div>
@@ -151,70 +125,70 @@
 </template>
 
 <style lang="less" scoped>
-  .article-detail_box {
-    background: #0e080f;
-    background-image: url('@/assets/public/bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
+.article-detail_box {
+  background: #0e080f;
+  background-image: url("@/assets/public/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.my-swipe {
+  .van-swipe-item {
+    height: 379px;
+  }
+}
+
+.article-comment-card_box {
+  padding-bottom: calc(80px + var(--ai-view-padding-bottom));
+}
+
+.comment-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 12px;
+  padding-bottom: 10px;
+
+  &::-webkit-scrollbar {
+    height: 4px;
   }
 
-  .my-swipe {
-    .van-swipe-item {
-      height: 379px;
-    }
+  &::-webkit-scrollbar-track {
+    background: transparent;
   }
 
-  .article-comment-card_box {
-    padding-bottom: calc(80px + var(--ai-view-padding-bottom));
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
   }
+}
 
-  .comment-scroll-container {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 12px;
-    padding-bottom: 10px;
+.comment-item {
+  flex-shrink: 0;
+  width: 180px;
+  padding-bottom: 15px;
+}
 
-    &::-webkit-scrollbar {
-      height: 4px;
-    }
+.comment-content {
+  padding: 16px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 
-    &::-webkit-scrollbar-track {
-      background: transparent;
-    }
+.report-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  cursor: pointer;
+}
 
-    &::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 2px;
-    }
-  }
-
-  .comment-item {
-    flex-shrink: 0;
-    width: 180px;
-    padding-bottom: 15px;
-  }
-
-  .comment-content {
-    padding: 16px;
-    background:  #282329d1;
-    border-radius: 18px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
-  .report-icon {
-    position: absolute;
-    bottom: 8px;
-    right: 12px;
-    cursor: pointer;
-  }
-
-  .tag-span {
-    width: auto !important;
-    white-space: nowrap;
-  }
+.tag-span {
+  width: auto !important;
+  white-space: nowrap;
+}
 </style>
