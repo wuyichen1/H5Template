@@ -96,7 +96,7 @@
 <style lang="less" scoped>
   .report-popup {
     z-index: 5000 !important;
-    linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%)
+    background: linear-gradient(90deg, rgba(46, 35, 146, 0.753) 0%, rgba(83, 9, 112, 0.686) 100%);
   }
 
   .report-box {
