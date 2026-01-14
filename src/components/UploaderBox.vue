@@ -70,7 +70,7 @@
           nextTick(() => {
             if (currentFile) {
               currentFile.status = 'failed'
-              currentFile.message = '上传失败'
+              currentFile.message = 'Upload failed'
             }
           })
         })
