@@ -62,7 +62,6 @@ const togglePlay = async () => {
       webkit-playsinline
       playsinline
       x5-playsinline
-      autoplay
       muted
       width="100%"
       height="100%"
