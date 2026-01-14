@@ -26,7 +26,7 @@ const {
 } = useDetail()
 
 const videoRef = ref(null)
-const isPlaying = ref(false)
+const isPlaying = ref(true)
 const isPopup = ref(false)
 // 举报弹框
 const isReport = ref(false)
@@ -62,7 +62,7 @@ const togglePlay = async () => {
       webkit-playsinline
       playsinline
       x5-playsinline
-      muted
+      autoplay
       width="100%"
       height="100%"
       @click="togglePlay"
