@@ -138,20 +138,60 @@
         console.log('[调试] 当前列表中的所有msgId:', listData.value.map(v => v.msgId))
       }
     } catch (error: any) {
-      console.error('[调试] 请求失败:', error)
-      console.error('[调试] 错误详情:', {
-        message: error.message,
-        response: error.response?.data,
-        status: error.response?.status,
-        statusText: error.response?.statusText
-      })
+      console.error('[调试] 请求失败 - 错误对象:', error)
+      console.error('[调试] 错误类型:', error?.constructor?.name)
+      console.error('[调试] 错误消息:', error?.message)
+      console.error('[调试] 错误代码:', error?.code)
+      console.error('[调试] 请求URL:', url)
+      console.error('[调试] 请求数据长度:', data?.length)
+
+      if (error.response) {
+        console.error('[调试] 响应状态码:', error.response.status)
+        console.error('[调试] 响应状态文本:', error.response.statusText)
+        console.error('[调试] 响应数据:', error.response.data)
+        console.error('[调试] 响应头:', error.response.headers)
+      } else if (error.request) {
+        console.error('[调试] 请求已发出但无响应:', error.request)
+        console.error('[调试] 请求配置:', JSON.stringify({
+          url,
+          method: 'POST',
+          headers
+        }, null, 2))
+      }
+
+      console.error('[调试] 完整错误信息:', JSON.stringify({
+        message: error?.message,
+        code: error?.code,
+        name: error?.name,
+        stack: error?.stack,
+        response: error?.response
+          ? {
+              status: error.response.status,
+              statusText: error.response.statusText,
+              data: error.response.data
+            }
+          : undefined,
+        request: error?.request
+          ? 'Request object exists'
+          : undefined
+      }, null, 2))
 
       // 错误时也要将loading设置为false
       const targetItem = listData.value.find(v => v.msgId === `ai_${currentAiIndex}`)
       if (targetItem) {
         console.log('[调试] 错误处理：将loading设置为false')
         targetItem.loading = false
-        targetItem.sendContent = '抱歉，请求失败，请稍后重试'
+        // 根据错误类型显示不同的错误信息
+        let errorMessage = '抱歉，请求失败，请稍后重试'
+        if (error?.code === 'ERR_NETWORK' || error?.message?.includes('Network Error')) {
+          errorMessage = '网络连接失败，请检查网络设置'
+        } else if (error?.response) {
+          errorMessage = `请求失败 (${error.response.status}): ${error.response.statusText || '服务器错误'}`
+        }
+        targetItem.sendContent = errorMessage
+        console.log('[调试] 错误消息已设置:', errorMessage)
+      } else {
+        console.error('[调试] 错误处理：未找到目标消息项')
       }
     }
   }
