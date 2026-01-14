@@ -25,111 +25,32 @@ const {
   onVideoLike
 } = useDetail()
 
-const videoRef = ref<HTMLVideoElement | null>(null)
-const isPlaying = ref(false)
+const videoRef = ref(null)
+const isPlaying = ref(true)
 const isPopup = ref(false)
 // 举报弹框
 const isReport = ref(false)
 
-// 切换播放/暂停
-const togglePlay = async (event?: Event) => {
+const togglePlay = async () => {
   if (!videoRef.value) return
-
-  // 阻止默认行为和事件冒泡
-  if (event) {
-    event.preventDefault()
-    event.stopPropagation()
-  }
 
   if (isPlaying.value) {
     videoRef.value.pause()
+
+    // videoRef.value.play().catch((err) => {
+    //   console.error('播放失败:', err)
+    // })
+
+    isPlaying.value = false
   } else {
     try {
       await videoRef.value.play()
+      isPlaying.value = true
     } catch (error) {
-      console.warn('播放失败:', error)
+      console.warn('自动播放被阻止:', error)
     }
   }
 }
-
-// 阻止视频的默认行为（右键菜单、双击全屏等）
-const handleVideoContextMenu = (event: Event) => {
-  event.preventDefault()
-}
-
-const handleVideoDoubleClick = (event: Event) => {
-  event.preventDefault()
-  // 双击也切换播放暂停
-  togglePlay(event)
-}
-
-// 事件处理函数
-const handlePlay = () => {
-  isPlaying.value = true
-}
-const handlePause = () => {
-  isPlaying.value = false
-}
-const handleEnded = () => {
-  if (videoRef.value) {
-    videoRef.value.currentTime = 0
-    videoRef.value.play().catch((error) => {
-      console.warn('重新播放失败:', error)
-    })
-  }
-}
-
-// 初始化视频自动播放
-const initVideo = () => {
-  if (videoRef.value && dynamicInfo.value?.dynamicVideo) {
-    // 尝试自动播放
-    videoRef.value
-      .play()
-      .then(() => {
-        isPlaying.value = true
-      })
-      .catch((error) => {
-        console.warn('自动播放被阻止:', error)
-        isPlaying.value = false
-      })
-  }
-}
-
-// 监听视频源变化，自动播放
-watch(
-  () => dynamicInfo.value?.dynamicVideo,
-  () => {
-    nextTick(() => {
-      initVideo()
-    })
-  },
-  { immediate: true }
-)
-
-onMounted(() => {
-  if (videoRef.value) {
-    // 禁用原生控制
-    videoRef.value.controls = false
-    videoRef.value.setAttribute('controls', 'false')
-
-    // 添加事件监听器
-    videoRef.value.addEventListener('play', handlePlay)
-    videoRef.value.addEventListener('pause', handlePause)
-    videoRef.value.addEventListener('ended', handleEnded)
-
-    // 初始化播放
-    initVideo()
-  }
-})
-
-// 组件卸载时清理事件监听器
-onUnmounted(() => {
-  if (videoRef.value) {
-    videoRef.value.removeEventListener('play', handlePlay)
-    videoRef.value.removeEventListener('pause', handlePause)
-    videoRef.value.removeEventListener('ended', handleEnded)
-  }
-})
 </script>
 
 <template>
@@ -145,15 +66,11 @@ onUnmounted(() => {
       muted
       width="100%"
       height="100%"
-      controlslist="nodownload nofullscreen noremoteplayback"
-      disablepictureinpicture
       @click="togglePlay"
-      @contextmenu="handleVideoContextMenu"
-      @dblclick="handleVideoDoubleClick"
     />
     <van-icon
       v-if="!isPlaying"
-      name="play-circle"
+      :name="isPlaying ? 'pause-circle' : 'play-circle'"
       class="play-box"
       @click="togglePlay"
     />
@@ -269,23 +186,6 @@ onUnmounted(() => {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
-    object-fit: cover;
-    // 隐藏原生控制栏
-    &::-webkit-media-controls {
-      display: none !important;
-    }
-    &::-webkit-media-controls-enclosure {
-      display: none !important;
-    }
-    &::-webkit-media-controls-panel {
-      display: none !important;
-    }
-    &::-webkit-media-controls-play-button {
-      display: none !important;
-    }
-    &::-webkit-media-controls-start-playback-button {
-      display: none !important;
-    }
   }
 
   .play-box {
