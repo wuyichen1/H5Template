@@ -42,29 +42,11 @@ export const useFile = (cb?: UploadSuccessCallback) => {
 
   /** 上传到 OSS */
   const uploadToOSS = async (item: UploaderFileListItem) => {
-    if (!item.file) {
-      item.status = 'failed'
-      item.message = '文件不存在'
-      throw new Error('文件不存在')
-    }
-
-    // 设置上传状态
+    // const sts = await getSTS()
     item.status = 'uploading'
     item.message = 'Uploading...'
     const file = item.file
-
-    // 确保 STS 凭证已获取
-    let sts: stsTypeData = stsData.value
-    if (!sts) {
-      sts = await getSTS()
-    }
-
-    if (!sts || !sts.host || !sts.bucket) {
-      item.status = 'failed'
-      item.message = 'STS 凭证获取失败'
-      throw new Error('STS 凭证获取失败')
-    }
-
+    const sts: stsTypeData = stsData.value
     const [https, endpoint] = sts.host.split(`${sts.bucket}.`)
     const client = new OSS({
       accessKeyId: sts.AccessKeyId,
@@ -87,90 +69,29 @@ export const useFile = (cb?: UploadSuccessCallback) => {
     try {
       // 判断是否是视频
       if (file.type.startsWith('video/')) {
-        const videoKey = `template_development/${Date.now()}_${file.name}`
-
-        // 方案1：先上传视频，封面异步生成（更可靠）
-        console.log('开始上传视频:', file.name)
-        const videoRes = await client.put(videoKey, file)
-        const videoUrl = videoRes.url.replace(/^http:\/\//, https)
-        console.log('视频上传成功:', videoUrl)
-
-        // 设置视频 URL
-        item.url = videoUrl
-        item.status = 'done' // 使用 'done' 而不是空字符串
-        item.message = ''
-
-        // 异步生成并上传封面（不阻塞主流程）
-        extractCoverFromVideo(file)
-          .then(coverBlob => {
-            if (coverBlob) {
-              // 将 Blob 转换为 File 对象用于上传
-              const coverFile = new File([coverBlob], 'cover.jpg', {
-                type: 'image/jpeg',
-                lastModified: Date.now()
-              })
-              const coverKey = `template_development/${Date.now()}_${coverFile.name}`
-              return client.put(coverKey, coverFile)
-            }
-            return null
-          })
-          .then(coverResult => {
-            if (coverResult) {
-              const coverUrl = coverResult.url.replace(/^http:\/\//, https)
-              // 使用 nextTick 确保 Vue 响应式更新
-              nextTick(() => {
-                item.objectUrl = coverUrl
-                console.log('=== 视频上传信息 ===')
-                console.log('视频 URL:', item.url)
-                console.log('视频封面路径 (objectUrl):', item.objectUrl)
-                console.log('封面上传成功:', coverUrl)
-                console.log('封面已更新到 item 对象')
-              })
-            } else {
-              // 如果封面生成失败，使用视频 URL 作为预览
-              nextTick(() => {
-                item.objectUrl = videoUrl
-                console.log('=== 视频上传信息 ===')
-                console.log('视频 URL:', item.url)
-                console.log('视频封面路径 (objectUrl):', item.objectUrl)
-                console.warn('封面生成失败，使用视频 URL 作为预览')
-              })
-            }
-          })
-          .catch(err => {
-            console.warn('封面生成失败，使用视频 URL 作为预览:', err)
-            nextTick(() => {
-              item.objectUrl = videoUrl
-              console.log('=== 视频上传信息 ===')
-              console.log('视频 URL:', item.url)
-              console.log('视频封面路径 (objectUrl):', item.objectUrl)
-            })
-          })
-
-        // 调试打印视频封面路径（初始状态）
-        console.log('=== 视频上传信息 ===')
-        console.log('视频 URL:', item.url)
-        console.log('视频封面路径 (objectUrl):', item.objectUrl || '生成中...')
-        console.log('完整 item 对象:', JSON.stringify({
-          url: item.url,
-          objectUrl: item.objectUrl || '生成中...',
-          status: item.status,
-          message: item.message
-        }, null, 2))
-
-        return videoUrl
+        const key = `template_development/${Date.now()}_${file.name}`
+        const coverBlob = await extractCoverFromVideo(file)
+        console.log(coverBlob)
+        // 构造 File 对象用于上传
+        const coverFile = new File([coverBlob], 'cover.jpg', {
+          type: 'image/jpeg',
+          lastModified: Date.now() // 防止缓存
+        })
+        const videoKey = `template_development/${Date.now()}_${coverFile.name}`
+        const result = await client.put(videoKey, coverFile)
+        const videoRes = await client.put(key, file)
+        item.objectUrl = result.url.replace(/^http:\/\//, https)
+        item.status = ''
+        return videoRes.url.replace(/^http:\/\//, https)
       } else {
-        // 图片上传
         const key = `template_development/${Date.now()}_${file.name}`
         const result = await client.put(key, file)
-        item.status = 'done'
-        item.message = ''
         return result.url.replace(/^http:\/\//, https)
       }
     } catch (err) {
-      console.error('上传失败:', err)
       item.status = 'failed'
-      item.message = '上传失败'
+      item.message = 'Failed...'
+      console.error(err)
       throw err
     }
   }
