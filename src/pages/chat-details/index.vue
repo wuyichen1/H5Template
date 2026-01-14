@@ -182,11 +182,11 @@
         console.log('[调试] 错误处理：将loading设置为false')
         targetItem.loading = false
         // 根据错误类型显示不同的错误信息
-        let errorMessage = '抱歉，请求失败，请稍后重试'
+        let errorMessage = 'Sorry, the request failed, please try again later'
         if (error?.code === 'ERR_NETWORK' || error?.message?.includes('Network Error')) {
-          errorMessage = '网络连接失败，请检查网络设置'
+          errorMessage = 'Network connection failed, please check network settings'
         } else if (error?.response) {
-          errorMessage = `请求失败 (${error.response.status}): ${error.response.statusText || '服务器错误'}`
+          errorMessage = `Request failed (${error.response.status}): ${error.response.statusText || 'Server error'}`
         }
         targetItem.sendContent = errorMessage
         console.log('[调试] 错误消息已设置:', errorMessage)
