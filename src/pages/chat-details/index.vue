@@ -47,7 +47,12 @@
   )
 
   const onSend = async (v: string) => {
-    if (!isAllLoaded.value) return
+    if (!isAllLoaded.value) {
+      console.log('[调试] 仍有消息在加载中，取消发送')
+      return
+    }
+    console.log('[调试] 开始发送消息:', v)
+
     // 要发送的原始数据
     const originalData = {
       system: '1',
@@ -66,6 +71,7 @@
       sendContent: v
     }
     listData.value.push(item)
+    console.log('[调试] 用户消息已添加到列表')
 
     const dataStr = CryptoJS.enc.Utf8.parse(JSON.stringify(originalData))
 
@@ -90,34 +96,63 @@
       deviceNo: 'qLHAFA35vphwki4J7yaIhoyFoR944332211',
       appId: '44332211'
     }
-    try {
-      aiIndex.value += 1
-      const aiItem: MessageInfo = {
-        loading: true,
-        position: 'left',
-        msgId: `ai_${aiIndex.value}`,
-        chatId: `${Date.now()}_c_c1_ai`,
-        name: '',
-        avator: '',
-        userId: `${Date.now()}_c_c1_ai_c`,
-        sendPicUrl: '',
-        sendContent: ''
-      }
 
-      listData.value.push(aiItem)
+    aiIndex.value += 1
+    const currentAiIndex = aiIndex.value
+    const aiItem: MessageInfo = {
+      loading: true,
+      position: 'left',
+      msgId: `ai_${currentAiIndex}`,
+      chatId: `${Date.now()}_c_c1_ai`,
+      name: '',
+      avator: '',
+      userId: `${Date.now()}_c_c1_ai_c`,
+      sendPicUrl: '',
+      sendContent: ''
+    }
+
+    listData.value.push(aiItem)
+    console.log('[调试] AI消息项已添加，msgId:', `ai_${currentAiIndex}`, 'loading:', true)
+
+    try {
+      console.log('[调试] 开始发送请求到:', url)
       const response = await axios.post(url, data, {
         headers,
         transformRequest: [data => data]
       })
+      console.log('[调试] 请求成功，响应数据:', response.data)
+      console.log('[调试] 响应result字段:', response.data?.result)
+
       const list = aesHexDecrypt(response.data.result)
-      listData.value.forEach(v => {
-        if (v.msgId === `ai_${aiIndex.value}`) {
-          v.loading = false
-          v.sendContent = list.output.choices[0].message.content
-        }
+      console.log('[调试] 解密后的数据:', list)
+      console.log('[调试] 解密数据路径 list.output.choices[0].message.content:', list?.output?.choices?.[0]?.message?.content)
+
+      const targetItem = listData.value.find(v => v.msgId === `ai_${currentAiIndex}`)
+      if (targetItem) {
+        console.log('[调试] 找到目标消息项，准备更新')
+        targetItem.loading = false
+        targetItem.sendContent = list?.output?.choices?.[0]?.message?.content || ''
+        console.log('[调试] 消息项已更新，loading:', targetItem.loading, 'content:', targetItem.sendContent)
+      } else {
+        console.error('[调试] 未找到目标消息项，msgId:', `ai_${currentAiIndex}`)
+        console.log('[调试] 当前列表中的所有msgId:', listData.value.map(v => v.msgId))
+      }
+    } catch (error: any) {
+      console.error('[调试] 请求失败:', error)
+      console.error('[调试] 错误详情:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+        statusText: error.response?.statusText
       })
-    } catch (error) {
-      console.error('请求失败:', error.response?.data || error.message)
+
+      // 错误时也要将loading设置为false
+      const targetItem = listData.value.find(v => v.msgId === `ai_${currentAiIndex}`)
+      if (targetItem) {
+        console.log('[调试] 错误处理：将loading设置为false')
+        targetItem.loading = false
+        targetItem.sendContent = '抱歉，请求失败，请稍后重试'
+      }
     }
   }
 </script>
