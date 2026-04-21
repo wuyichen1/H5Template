@@ -4,6 +4,8 @@
   import likeIcon from '@/assets/public/like.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
+  import { detailId } from '@/hooks/useDetail'
+  import { useJump } from '@/hooks/useJump'
   import { useUserStore } from '@/stores'
   import addIcon from '@/assets/public/add.png'
 
@@ -14,6 +16,7 @@
   const { reportIcon, messageIcon } =
     useAppImgStyle()
   const { userInfo } = useUserStore()
+  const { ensureLoggedIn } = useJump()
   const {
     loding,
     dynamicInfo,
@@ -51,6 +54,12 @@
         console.warn('自动播放被阻止:', error)
       }
     }
+  }
+
+  const onOpenReport = () => {
+    if (!ensureLoggedIn()) return
+    isReport.value = true
+    detailId.value = dynamicInfo.value.userId
   }
 </script>
 
@@ -111,7 +120,7 @@
                 width: '22px',
                 height: '22px'
               }"
-              @click="isReport = true"
+              @click="onOpenReport"
             />
           </li>
           <li>

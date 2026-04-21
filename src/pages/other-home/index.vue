@@ -1,16 +1,16 @@
 <script setup lang="ts">
-  import { showLoadingToast } from 'vant'
+  import { showLoadingToast, showToast } from 'vant'
+    import otherHomeAddIcon from '@/assets/public/add.png'
   import Head from '@/assets/public/Head.png'
+  import likeIcon from '@/assets/public/like.png'
+  import reportIcon from '@/assets/public/san_more_icon.png'
+  import detailLikeIcon from '@/assets/public/unlike.png'
   import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId, useDetail } from '@/hooks/useDetail'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
-  import otherHomeAddIcon from '@/assets/public/add.png'
-  import detailLikeIcon from '@/assets/public/unlike.png'
-  import likeIcon from '@/assets/public/like.png'
-  import reportIcon from '@/assets/public/san_more_icon.png'
-  
+
   defineOptions({
     name: 'other-home'
   })
@@ -18,10 +18,10 @@
   const {
     // reportIcon,
     // otherHomeAddIcon,
-    otherHomeMessageIcon,
+    otherHomeMessageIcon
     // otherHomeLikeIcon
   } = useAppImgStyle()
-  const { queryId, jumpToDetail, appParams, jumpToPrivateChat } =
+  const { queryId, jumpToDetail, appParams, jumpToPrivateChat, ensureLoggedIn } =
     useJump()
   const { winUserListData, winDynamicData, winChatListData, winPublishImageListData } = useWindow()
   const useData = useUserStore()
@@ -60,6 +60,7 @@
   }
 
   const onFollow = () => {
+    if (!ensureLoggedIn()) return
     useData.userInfo.follow.push(userInfo.value.userId)
     userInfo.value.fans.push(useData.userInfo.userId)
     allUserList.value.forEach(v => {
@@ -87,6 +88,15 @@
   }
 
   const onAddChat = () => {
+    if (!ensureLoggedIn()) return
+    const isMutualFollow =
+      !!useData.userInfo.follow?.includes(userInfo.value.userId)
+      && !!userInfo.value.follow?.includes(useData.userInfo.userId)
+    if (!isMutualFollow) {
+      showToast('You need to follow each other before you can chat.')
+      return
+    }
+
     const chatItem = winChatListData.find(v => {
       return (
         v.chatUserIds.includes(userInfo.value.userId) &&
@@ -130,11 +140,17 @@
     // 不显示自己
     return item.userId !== useData.userInfo.userId
   }
+
+  const onOpenReport = (id: string) => {
+    if (!ensureLoggedIn()) return
+    isReport.value = true
+    detailId.value = id
+  }
 </script>
 
 <template>
   <div v-if="!loading" class="other-home_box">
-    <div 
+    <div
       class="top-user-info"
       :style="{
         backgroundImage: `url(${userInfo.avator || Head})`,
@@ -158,11 +174,11 @@
             absolute
             :src="otherHomeAddIcon"
             fit="cover"
-            @click="onFollow"
             :style="{
               width: 'var(--other-home-follow-width)',
               height: 'var(--other-home-follow-height)'
             }"
+            @click="onFollow"
           />
         </div>
         <span mt-1 ai-user-name>{{ userInfo.name }}</span>
@@ -186,11 +202,12 @@
         <li
           v-if="shouldShowReport(userInfo)"
         >
-          <van-image :src="otherHomeMessageIcon" class="icon-box" 
+          <van-image :src="otherHomeMessageIcon" class="icon-box"
             :style="{
               width: 'var(--other-home-chat-width)',
               height: 'var(--other-home-chat-height)'
-            }"/>
+            }"
+/>
           <span ml-3 class="public-number !mt-0" @click="onAddChat">
             Chat
           </span>
@@ -215,15 +232,10 @@
           <li />
           <li>
             <van-image
-              v-if="shouldShowReport(item)" 
+              v-if="shouldShowReport(item)"
               :src="reportIcon"
               :style="{ width: '20px', height: '20px' }"
-              @click.stop="
-                () => {
-                  isReport = true
-                  detailId = item.userId
-                }
-              "
+              @click.stop="onOpenReport(item.userId)"
             />
           </li>
         </ul>
@@ -273,7 +285,7 @@
     min-height: 100vh;
     background: var(--ai-other-home-bg-color);
     position: relative;
-  } 
+  }
 
   .top-user-info {
     position: relative;

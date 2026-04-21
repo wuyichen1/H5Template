@@ -8,7 +8,7 @@ export const detailId = ref('')
 /** 动态详情信息获取 */
 export const useDetail = () => {
   const router = useRouter()
-  const { queryId, appParams } = useJump()
+  const { queryId, appParams, ensureLoggedIn } = useJump()
   const { userInfo } = useUserStore()
   const { winCommentData, winDynamicData, winUserListData } = useWindow()
 
@@ -78,6 +78,7 @@ export const useDetail = () => {
    * @param type 0:图片 1:视频
    */
   const onSend = (v: string, _: 0 | 1 = 0) => {
+    if (!ensureLoggedIn()) return
     if (v) {
       const id = Date.now()
       const item: CommentInfo = {
@@ -106,6 +107,7 @@ export const useDetail = () => {
    * 图片点赞
    */
   const onLike = () => {
+    if (!ensureLoggedIn()) return
     if (isLike.value) {
       userInfo.picPostLikeIds = userInfo.picPostLikeIds.filter(v => v !== queryId.value)
       dynamicInfo.value.dynamicLikeCount -= 1
@@ -133,6 +135,7 @@ export const useDetail = () => {
 
   /** 视频点赞 */
   const onVideoLike = () => {
+    if (!ensureLoggedIn()) return
     if (isVideoLike.value) {
       userInfo.videoPostLikeIds = userInfo.videoPostLikeIds.filter(v => v !== queryId.value)
       dynamicInfo.value.dynamicLikeCount -= 1
@@ -160,6 +163,7 @@ export const useDetail = () => {
 
   /** 点击关注 */
   const onFollow = () => {
+    if (!ensureLoggedIn()) return
     if (userInfo.userId !== dynamicInfo.value.userId) {
       if (!userInfo.follow.includes(dynamicInfo.value.userId)) {
         userInfo.follow.push(dynamicInfo.value.userId)

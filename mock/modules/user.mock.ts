@@ -7,6 +7,7 @@ export default {
   name: 'laiyla',
   about: '这个人很棒',
   coins: 100,
+  isguest: 1,
   follow: [],
   fans: [],
   blockList: ['u24'],

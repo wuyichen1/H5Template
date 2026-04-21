@@ -51,6 +51,8 @@ interface UserInfo {
   videoPostLikeIds?: string[]
   /** 账号是否删除 0：未删除，1：已删除 */
   isdelete?: 0 | 1
+  /** 是否游客 1：是，0：否 */
+  isguest?: 0 | 1
   /** 密码 */
   password?: string
 }

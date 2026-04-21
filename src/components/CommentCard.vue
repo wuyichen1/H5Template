@@ -2,11 +2,13 @@
   import Head from '@/assets/public/Head.png'
   // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { detailId } from '@/hooks/useDetail'
+  import { useJump } from '@/hooks/useJump'
   import { useUserStore } from '@/stores'
   import reportIcon from '@/assets/public/san_more_icon.png'
 
   // const { reportIcon } = useAppImgStyle()
   const { userInfo } = useUserStore()
+  const { ensureLoggedIn } = useJump()
 
   const props = withDefaults(
     defineProps<{
@@ -19,6 +21,12 @@
 
   // 举报弹框
   const isReport = ref(false)
+
+  const onReport = (userId: string) => {
+    if (!ensureLoggedIn()) return
+    isReport.value = true
+    detailId.value = userId
+  }
 </script>
 
 <template>
@@ -50,12 +58,7 @@
               width: '22px',
               height: '22px'
             }"
-            @click="
-              () => {
-                isReport = true
-                detailId = item.userId
-              }
-            "
+            @click="onReport(item.userId)"
           />
         </li>
       </ul>

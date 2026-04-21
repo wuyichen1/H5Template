@@ -1,4 +1,5 @@
 import { useUserStore } from '@/stores'
+import { useLoginPopup } from './useLoginPopup'
 import { useWindow } from './useWindow'
 
 /**
@@ -21,13 +22,29 @@ export type AppCommunication =
   | 'uploadMessage'
   | 'uploadChat'
   | 'Recharge'
+  | 'toLogin'
 
 /** 路由跳转 */
 export const useJump = () => {
   const { userInfo } = useUserStore()
+  const { openLoginPopup } = useLoginPopup()
+  const isGuest = computed(() => Number(userInfo?.isguest) === 1)
+
+  const toLogin = () => {
+    window.flutter_inappwebview.callHandler('toLogin')
+  }
+
+  const ensureLoggedIn = (
+    message = 'To ensure the normal operation of the function, please log in to your account first.'
+  ) => {
+    if (!isGuest.value) return true
+
+    openLoginPopup(message, toLogin)
+    return false
+  }
+
   const router = useRouter()
   const route = useRoute()
-
 
   /** 接收路由参数 id */
   const queryId = computed<string>(
@@ -84,6 +101,7 @@ export const useJump = () => {
 
   /** 跳转私聊 */
   const jumpToPrivateChat = (id: string, cid: string) => {
+    if (!ensureLoggedIn()) return
     router.replace({
       path: '/private-chat',
       query: { id, cid, name: 'otherHome', url: 'other-home' }
@@ -100,6 +118,7 @@ export const useJump = () => {
 
   /** 跳转到黑名单 */
   const jumpToBlackList = () => {
+    if (!ensureLoggedIn()) return
     router.replace({
       path: `/black-list`,
       query: { id: userInfo.userId, url: 'setup-page' }
@@ -186,7 +205,10 @@ export const useJump = () => {
     jumpToCall,
     jumpToChatDetail,
     jumpToPrivateChat,
-    queryId
+    queryId,
+    isGuest,
+    toLogin,
+    ensureLoggedIn
   }
 }
 

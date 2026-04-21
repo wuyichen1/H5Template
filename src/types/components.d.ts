@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppGradientButton: typeof import('./../components/AppGradientButton.vue')['default']
     CbbInputTest: typeof import('./../components/cbb-input-test.vue')['default']
     CbbTest: typeof import('./../components/cbb-test.vue')['default']
     ChatList: typeof import('./../components/ChatList.vue')['default']
@@ -18,6 +19,7 @@ declare module 'vue' {
     Empty: typeof import('./../components/Empty.vue')['default']
     GhostButton: typeof import('./../components/GhostButton.vue')['default']
     InputBox: typeof import('./../components/InputBox.vue')['default']
+    LoginRequiredPopup: typeof import('./../components/LoginRequiredPopup.vue')['default']
     MyList: typeof import('./../components/MyList.vue')['default']
     NavBar: typeof import('./../components/NavBar.vue')['default']
     PopupBox: typeof import('./../components/PopupBox.vue')['default']

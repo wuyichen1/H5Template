@@ -15,11 +15,12 @@
 
   const { winUserListData } = useWindow()
   const { userInfo } = useUserStore()
-  const { appParams } = useJump()
+  const { appParams, ensureLoggedIn } = useJump()
 
   const allUserList = ref<UserInfo[]>(winUserListData)
 
   const onReport = () => {
+    if (!ensureLoggedIn()) return
     router
       .replace({
         path: '/report-index',
@@ -31,6 +32,7 @@
   }
 
   const onShield = async () => {
+    if (!ensureLoggedIn()) return
     // 1. 显示 Loading（手动关闭）
     showLoadingToast({
       message: 'Blocking...',

@@ -10,7 +10,7 @@
 
   const { userInfo } = useUserStore()
   const { winDynamicData } = useWindow()
-  const { appParams } = useJump()
+  const { appParams, ensureLoggedIn } = useJump()
 
   const listData = ref<DynamicInfo[]>(winDynamicData)
 
@@ -23,6 +23,7 @@
   })
 
   const onSubmit = async () => {
+    if (!ensureLoggedIn()) return
     if (!formData.dynamicDesc) {
       return showToast('Please enter the content')
     }

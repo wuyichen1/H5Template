@@ -6,6 +6,7 @@
   import reportIcon from '@/assets/public/san_more_icon.png'
   // import { useAppImgStyle } from '@/hooks/useAppImgStyle'
   import { useDetail } from '@/hooks/useDetail'
+  import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
   import { detailId } from '@/hooks/useDetail'
@@ -17,6 +18,7 @@
   // const { detailLikeIcon, likeIcon } = useAppImgStyle()
   const { winPublishImageListData } = useWindow()
   const { userInfo } = useUserStore()
+  const { ensureLoggedIn } = useJump()
   const {
     loding,
     dynamicInfo,
@@ -31,6 +33,7 @@
   const isReport = ref(false)
 
   const handleReport = (userId: string) => {
+    if (!ensureLoggedIn()) return
     isReport.value = true
     detailId.value = userId
   }

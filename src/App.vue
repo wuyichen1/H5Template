@@ -55,6 +55,7 @@ onMounted(() => {
       </section>
     </router-view>
     <tab-bar />
+    <login-required-popup />
   </van-config-provider>
 </template>
 
