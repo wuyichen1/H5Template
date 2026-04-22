@@ -29,6 +29,8 @@ declare module 'vue' {
     TabBar: typeof import('./../components/TabBar.vue')['default']
     TextBox: typeof import('./../components/TextBox.vue')['default']
     UploaderBox: typeof import('./../components/UploaderBox.vue')['default']
+    VanActionSheet: typeof import('vant/es')['ActionSheet']
+    VanCalendar: typeof import('vant/es')['Calendar']
     VanCell: typeof import('vant/es')['Cell']
     VanCellGroup: typeof import('vant/es')['CellGroup']
     VanConfigProvider: typeof import('vant/es')['ConfigProvider']

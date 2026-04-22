@@ -40,6 +40,14 @@ export default [
     component: () => import('@/pages/my-modules/edit-info.vue')
   },
   {
+    path: '/user-register',
+    name: 'UserRegister',
+    meta: {
+      title: 'Sign up'
+    },
+    component: () => import('@/pages/my-modules/user-register.vue')
+  },
+  {
     path: '/gold-coin',
     name: 'GoldCoin',
     meta: {
