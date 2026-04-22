@@ -25,21 +25,17 @@ interface BorderStyle extends FontStyle {
   height?: string
 }
 
-/** 注册页桥接 `window.newUserData()` 返回值 */
+/** 与原生 `addJavaScriptHandler(handlerName: 'newUserData')` 交互的数据 */
 interface NewUserBridgeData {
-  /** 头像地址；未上传时为默认头像 URL */
+  /** 头像地址；提交时未上传传空串，由原生补默认 */
   avator: string
   /** 用户名 */
   name: string
 }
 
-/** 注册页 `window.newUserData`：拉取表单 + App 注册 Next 跳转首页 */
-type NewUserDataBridge = (() => NewUserBridgeData) & {
-  /**
-   * App 在 WebView 内执行注入脚本注册；Next 校验通过后会调用 `fn`。
-   * 示例：`newUserData.setGoHome(function(){ window.flutter_inappwebview.callHandler('goHome'); })`
-   */
-  setGoHome: (fn: () => void) => void
+/** 原生 `newUserData` 提交后的返回 */
+interface NewUserDataSubmitResult {
+  ok: boolean
 }
 
 /** 用户信息 */
@@ -188,13 +184,7 @@ interface PublishImageInfo {
 }
 
 interface Window {
-  /**
-   * 注册页挂载时由 H5 赋值。
-   * - `newUserData()`：返回 `avator`（空则默认头像）、`name`。
-   * - `newUserData.setGoHome(fn)`：App 注入 Next 成功后跳转首页等逻辑。
-   */
-  newUserData?: NewUserDataBridge
-  /** 与 app 通信 */
+  /** 与 app 通信（含 `callHandler('newUserData')` 注册资料读写） */
   flutter_inappwebview: any
   /** 样式表 */
   styleJson: {

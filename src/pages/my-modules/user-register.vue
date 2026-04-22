@@ -1,6 +1,10 @@
 <script setup lang="ts">
-  import { showFailToast, showSuccessToast } from 'vant'
-  // import { useRouter } from 'vue-router'
+  import {
+    closeToast,
+    showFailToast,
+    showLoadingToast,
+    showSuccessToast
+  } from 'vant'
   import defaultHead from '@/assets/public/default-head.png'
   import upImg from '@/assets/public/up-img.png'
   import { useFile } from '@/hooks/useFile'
@@ -9,11 +13,7 @@
     name: 'UserRegister'
   })
 
-  // const router = useRouter()
   const { imgUrl, clickElement } = useFile()
-
-  /** 与项目 UserInfo 一致，供 Flutter 等通过 evaluateJavascript 调用 */
-  const defaultAvatarUrl = defaultHead
 
   const form = reactive({
     name: '',
@@ -64,51 +64,94 @@
     showLocation.value = false
   }
 
-  const getNewUserData = (): NewUserBridgeData => {
-    const uploaded = imgUrl.value?.trim() || ''
-    return {
-      avator: uploaded || defaultAvatarUrl,
-      name: form.name.trim()
+  /** 无参：原生走 readDraft；有参：原生走提交 finalize */
+  const callNativeNewUserData = async (
+    payload?: NewUserBridgeData
+  ): Promise<unknown> => {
+    const bridge = window.flutter_inappwebview
+    if (!bridge?.callHandler)
+      return null
+    if (payload)
+      return bridge.callHandler('newUserData', payload)
+    return bridge.callHandler('newUserData')
+  }
+
+  const isSubmitIgnored = (v: unknown): v is NewUserDataSubmitResult =>
+    typeof v === 'object' && v !== null && 'ok' in v && (v as { ok: unknown }).ok === false
+
+  const isDraftShape = (v: unknown): v is NewUserBridgeData => {
+    if (typeof v !== 'object' || v === null)
+      return false
+    const o = v as Record<string, unknown>
+    if (o.ok !== undefined)
+      return false
+    return typeof o.name === 'string' || typeof o.avator === 'string'
+  }
+
+  /** 进入页面时拉取原生草稿（与 Flutter 空参分支一致） */
+  const syncDraftFromNative = async () => {
+    try {
+      const raw = await callNativeNewUserData()
+      if (raw == null || isSubmitIgnored(raw))
+        return
+      if (isDraftShape(raw)) {
+        const d = raw as NewUserBridgeData
+        if (d.name)
+          form.name = d.name
+        if (d.avator)
+          imgUrl.value = d.avator
+      }
+    }
+    catch (e) {
+      console.warn('newUserData read draft failed', e)
     }
   }
 
-  /** App 通过 `newUserData.setGoHome(fn)` 注入，由 Next 触发（如原生回首页） */
-  let appGoHome: (() => void) | null = null
-
-  const newUserDataBridge = Object.assign(
-    (): NewUserBridgeData => getNewUserData(),
-    {
-      setGoHome(fn: () => void) {
-        appGoHome = typeof fn === 'function' ? fn : null
-      }
-    }
-  ) as NewUserDataBridge
-
-  const onNext = () => {
+  const onNext = async () => {
     if (!form.name.trim()) {
       showFailToast('Please enter nickname')
       return
     }
-    if (appGoHome) {
-      try {
-        appGoHome()
+
+    showLoadingToast({
+      message: 'Submitting...',
+      forbidClick: true,
+      duration: 0
+    })
+
+    try {
+      const payload: NewUserBridgeData = {
+        name: form.name.trim(),
+        avator: imgUrl.value?.trim() || ''
       }
-      catch (e) {
-        console.error('newUserData.setGoHome callback', e)
+      const raw = await callNativeNewUserData(payload)
+      closeToast()
+
+      if (raw == null) {
+        showSuccessToast('OK')
+        return
       }
-      return
+
+      if (isSubmitIgnored(raw)) {
+        showFailToast('Submit unavailable')
+        return
+      }
+
+      const ok = (raw as { ok?: boolean }).ok === true
+      if (ok)
+        showSuccessToast('Saved')
+      else
+        showFailToast('Submit failed')
     }
-    // router.replace('/')
-    showSuccessToast('OK')
+    catch (e) {
+      closeToast()
+      console.warn('newUserData submit failed', e)
+      showFailToast('Submit failed')
+    }
   }
 
   onMounted(() => {
-    window.newUserData = newUserDataBridge
-  })
-
-  onUnmounted(() => {
-    appGoHome = null
-    window.newUserData = undefined
+    syncDraftFromNative()
   })
 </script>
 
@@ -308,14 +351,14 @@
 
   .gender-pill {
     flex: 1;
-    height: 52px;
+    // height: 52px;
     border: none;
     border-radius: 26px;
     font-size: 22px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    // padding: 10px 0;
+    padding: 10px 0;
   }
 
   .gender-pill.male {
