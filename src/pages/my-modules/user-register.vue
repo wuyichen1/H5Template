@@ -283,13 +283,14 @@
 
   .gender-pill {
     flex: 1;
-    height: 52px;
+    // height: 52px;
     border: none;
     border-radius: 26px;
     font-size: 22px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
+    padding: 10px 0;
   }
 
   .gender-pill.male {
@@ -314,6 +315,8 @@
 
   .next-btn {
     min-width: 220px;
+    height: 52px;
+    line-height: 52px;
     text-align: center;
     font-weight: 600;
     font-size: 18px;
