@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { showFailToast, showSuccessToast } from 'vant'
+  import { useRouter } from 'vue-router'
   import defaultHead from '@/assets/public/default-head.png'
   import upImg from '@/assets/public/up-img.png'
   import { useFile } from '@/hooks/useFile'
@@ -8,6 +9,7 @@
     name: 'UserRegister'
   })
 
+  const router = useRouter()
   const { imgUrl, clickElement } = useFile()
 
   /** 与项目 UserInfo 一致，供 Flutter 等通过 evaluateJavascript 调用 */
@@ -70,19 +72,42 @@
     }
   }
 
+  /** App 通过 `newUserData.setGoHome(fn)` 注入，由 Next 触发（如原生回首页） */
+  let appGoHome: (() => void) | null = null
+
+  const newUserDataBridge = Object.assign(
+    (): NewUserBridgeData => getNewUserData(),
+    {
+      setGoHome(fn: () => void) {
+        appGoHome = typeof fn === 'function' ? fn : null
+      }
+    }
+  ) as NewUserDataBridge
+
   const onNext = () => {
     if (!form.name.trim()) {
       showFailToast('Please enter nickname')
       return
     }
+    if (appGoHome) {
+      try {
+        appGoHome()
+      }
+      catch (e) {
+        console.error('newUserData.setGoHome callback', e)
+      }
+      return
+    }
+    router.replace('/')
     showSuccessToast('OK')
   }
 
   onMounted(() => {
-    window.newUserData = getNewUserData
+    window.newUserData = newUserDataBridge
   })
 
   onUnmounted(() => {
+    appGoHome = null
     window.newUserData = undefined
   })
 </script>
@@ -283,14 +308,14 @@
 
   .gender-pill {
     flex: 1;
-    // height: 52px;
+    height: 52px;
     border: none;
     border-radius: 26px;
     font-size: 22px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    padding: 10px 0;
+    // padding: 10px 0;
   }
 
   .gender-pill.male {

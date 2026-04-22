@@ -33,6 +33,15 @@ interface NewUserBridgeData {
   name: string
 }
 
+/** 注册页 `window.newUserData`：拉取表单 + App 注册 Next 跳转首页 */
+type NewUserDataBridge = (() => NewUserBridgeData) & {
+  /**
+   * App 在 WebView 内执行注入脚本注册；Next 校验通过后会调用 `fn`。
+   * 示例：`newUserData.setGoHome(function(){ window.flutter_inappwebview.callHandler('goHome'); })`
+   */
+  setGoHome: (fn: () => void) => void
+}
+
 /** 用户信息 */
 interface UserInfo {
   /** 用户ID */
@@ -180,10 +189,11 @@ interface PublishImageInfo {
 
 interface Window {
   /**
-   * 注册页挂载时由 H5 赋值；Flutter 可通过 evaluateJavascript 调用。
-   * 返回当前填写的 `avator`（空则默认头像）、`name`。
+   * 注册页挂载时由 H5 赋值。
+   * - `newUserData()`：返回 `avator`（空则默认头像）、`name`。
+   * - `newUserData.setGoHome(fn)`：App 注入 Next 成功后跳转首页等逻辑。
    */
-  newUserData?: () => NewUserBridgeData
+  newUserData?: NewUserDataBridge
   /** 与 app 通信 */
   flutter_inappwebview: any
   /** 样式表 */
