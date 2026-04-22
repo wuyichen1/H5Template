@@ -6,6 +6,8 @@
     showSuccessToast
   } from 'vant'
   import defaultHead from '@/assets/public/default-head.png'
+  import femaleImg from '@/assets/public/female.png'
+  import maleImg from '@/assets/public/male.png'
   import upImg from '@/assets/public/up-img.png'
   import { useFile } from '@/hooks/useFile'
 
@@ -224,7 +226,7 @@
             :class="{ active: form.gender === 'male' }"
             @click="form.gender = 'male'"
           >
-            ♂
+            <van-image :src="maleImg" class="gender-icon" fit="contain" />
           </button>
           <button
             type="button"
@@ -232,7 +234,7 @@
             :class="{ active: form.gender === 'female' }"
             @click="form.gender = 'female'"
           >
-            ♀
+            <van-image :src="femaleImg" class="gender-icon" fit="contain" />
           </button>
         </div>
       </div>
@@ -351,14 +353,20 @@
 
   .gender-pill {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     // height: 52px;
     border: none;
     border-radius: 26px;
-    font-size: 22px;
-    font-weight: 600;
     cursor: pointer;
     transition: background 0.2s, color 0.2s;
-    padding: 10px 0;
+    padding: 12px 0;
+  }
+
+  .gender-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .gender-pill.male {
@@ -377,7 +385,7 @@
   }
 
   .gender-pill.female.active {
-    background: #fff;
+    background: #1c7bff;
     color: #111;
   }
 
