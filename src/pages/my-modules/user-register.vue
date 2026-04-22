@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { showFailToast, showSuccessToast } from 'vant'
-  import { useRouter } from 'vue-router'
+  // import { useRouter } from 'vue-router'
   import defaultHead from '@/assets/public/default-head.png'
   import upImg from '@/assets/public/up-img.png'
   import { useFile } from '@/hooks/useFile'
@@ -9,7 +9,7 @@
     name: 'UserRegister'
   })
 
-  const router = useRouter()
+  // const router = useRouter()
   const { imgUrl, clickElement } = useFile()
 
   /** 与项目 UserInfo 一致，供 Flutter 等通过 evaluateJavascript 调用 */
