@@ -17,8 +17,9 @@ defineProps<{
     background:
       linear-gradient(201.44deg, #1c7bff 0%, #000 51.28%, #ff8133 100%) !important;
     color: #fff;
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 34px;
+    height: 46px;
   }
 </style>
-
