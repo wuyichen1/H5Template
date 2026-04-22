@@ -14,12 +14,14 @@
   const { chatBgImage } = useAppImgStyle()
   const { winUserData, winUserListData, winChatBotDesc } = useWindow()
   const { userInfo } = useUserStore()
-  const { jumpToRecharge, appParams, jumpToChatDetail } = useJump()
+  const { jumpToRecharge, appParams, jumpToChatDetail, ensureLoggedIn } =
+    useJump()
 
   /** 弹框  */
   const show = ref(false)
 
   const onSubmit = () => {
+    if (!ensureLoggedIn()) return
     show.value = !(userInfo.coins >= winChatBotDesc.points)
     if (userInfo.coins >= winChatBotDesc.points) {
       const data = {

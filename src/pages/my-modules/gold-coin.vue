@@ -11,13 +11,14 @@
 
   const { userInfo } = useUserStore()
   const { winCoinData } = useWindow()
-  const { appParams } = useJump()
+  const { appParams, ensureLoggedIn } = useJump()
 
   const formData = reactive({
     radio: winCoinData[0]?.key
   })
 
   const onRecharge = () => {
+    if (!ensureLoggedIn()) return
     appParams({ key: 'Recharge', value: formData.radio, state: 1 })
   }
 </script>

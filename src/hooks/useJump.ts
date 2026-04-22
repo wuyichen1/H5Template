@@ -93,6 +93,7 @@ export const useJump = () => {
 
   /** 跳转到充值页面 */
   const jumpToRecharge = () => {
+    if (!ensureLoggedIn()) return
     router.replace({
       path: '/gold-coin',
       query: { url: 'chat-view' }
