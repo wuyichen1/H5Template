@@ -17,10 +17,20 @@
 
   const { imgUrl, clickElement } = useFile()
 
+  const locationOptions = [
+    'Los Angeles',
+    'New York',
+    'London',
+    'Tokyo',
+    'Shanghai',
+    'Singapore',
+    'Sydney'
+  ]
+
   const form = reactive({
     name: '',
     birthday: '2003-01-01',
-    location: '',
+    location: locationOptions[0],
     gender: 'male' as 'male' | 'female'
   })
 
@@ -35,16 +45,6 @@
       return new Date(2003, 0, 1)
     return new Date(y, m - 1, d)
   })
-
-  const locationOptions = [
-    'Los Angeles',
-    'New York',
-    'London',
-    'Tokyo',
-    'Shanghai',
-    'Singapore',
-    'Sydney'
-  ]
 
   const locationActions = locationOptions.map(name => ({ name }))
 
