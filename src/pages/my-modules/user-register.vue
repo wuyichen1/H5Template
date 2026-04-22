@@ -98,7 +98,7 @@
       }
       return
     }
-    router.replace('/')
+    // router.replace('/')
     showSuccessToast('OK')
   }
 
