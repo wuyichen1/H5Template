@@ -12,12 +12,17 @@
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
 
-  const { onBack, queryId } = useJump()
+  const { onBack, queryId, ensureLoggedIn } = useJump()
 
   const { backIcon, reportIcon } = useAppImgStyle()
 
   // 举报弹框
   const isReport = ref(false)
+
+  const onNavReportClick = () => {
+    if (!ensureLoggedIn()) return
+    isReport.value = true
+  }
 
   const route = useRoute()
   const { t } = useI18n()
@@ -144,7 +149,7 @@
           width: 'var(--report-image-width)',
           height: 'var(--report-image-height)'
         }"
-        @click="isReport = true"
+        @click="onNavReportClick"
       />
     </template>
   </VanNavBar>

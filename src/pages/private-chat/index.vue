@@ -12,7 +12,7 @@
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
 
-  const { onBack, appParams, jumpToCall, queryId } = useJump()
+  const { onBack, appParams, jumpToCall, queryId, ensureLoggedIn } = useJump()
   const { winChatListData, winMessageData, winUserListData } = useWindow()
 
   const { userInfo } = useUserStore()
@@ -118,6 +118,13 @@
   onMounted(() => {
     getData()
   })
+
+  const openReportSheet = () => {
+    if (!ensureLoggedIn()) return
+    if (!viewInfo.value) return
+    detailId.value = viewInfo.value.userId
+    isReport.value = true
+  }
 </script>
 
 <template>
@@ -155,12 +162,7 @@
           :src="RightMore"
           h-8
           w-8
-          @click="
-            () => {
-              detailId = viewInfo.userId
-              isReport = true
-            }
-          "
+          @click="openReportSheet"
         />
       </template>
     </VanNavBar>

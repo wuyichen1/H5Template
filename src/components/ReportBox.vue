@@ -19,8 +19,14 @@
 
   const allUserList = ref<UserInfo[]>(winUserListData)
 
+  /** 任意入口把 show 设为 true 时，游客先走登录弹窗，不打开举报/拉黑面板 */
+  watch(show, (visible) => {
+    if (visible && !ensureLoggedIn()) {
+      show.value = false
+    }
+  })
+
   const onReport = () => {
-    if (!ensureLoggedIn()) return
     router
       .replace({
         path: '/report-index',
@@ -32,7 +38,6 @@
   }
 
   const onShield = async () => {
-    if (!ensureLoggedIn()) return
     // 1. 显示 Loading（手动关闭）
     showLoadingToast({
       message: 'Blocking...',
