@@ -556,31 +556,29 @@
     position: relative;
     width: min(86vw, 360px);
     min-height: 230px;
-    padding: 54px 28px 28px;
+    padding: 54px 48px 28px 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 36px;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(75, 141, 255, 0.28), transparent 28%),
-      linear-gradient(150deg, #89bdff 0%, #eff7ff 100%);
+    background: url('@/assets/public/addfrienddialog.png') center / 100% 100% no-repeat;
     box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
 
-    &::before {
-      content: '';
-      position: absolute;
-      top: -14px;
-      left: -14px;
-      width: 44px;
-      height: 44px;
-      border: 8px solid #ff7b2f;
-      border-right-color: #2b82ff;
-      border-bottom-color: transparent;
-      border-radius: 50%;
-      transform: rotate(18deg);
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: -14px;
+    //   left: -14px;
+    //   width: 44px;
+    //   height: 44px;
+    //   border: 8px solid #ff7b2f;
+    //   border-right-color: #2b82ff;
+    //   border-bottom-color: transparent;
+    //   border-radius: 50%;
+    //   transform: rotate(18deg);
+    // }
 
     &::after {
       content: '';
@@ -618,10 +616,10 @@
   }
 
   .friend-request-btn {
-    width: min(64vw, 280px);
-    height: 58px;
+    width: min(60vw, 260px);
+    height: 54px;
     margin-top: 26px;
-    border: 2px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 32px;
     color: #fff;
     font-size: 21px;
