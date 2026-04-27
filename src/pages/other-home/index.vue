@@ -1,7 +1,6 @@
 <script setup lang="ts">
   import { showLoadingToast, showToast } from 'vant'
   import otherHomeAddIcon from '@/assets/public/add.png'
-  import addFriendIcon from '@/assets/public/addfriend.png'
   import Head from '@/assets/public/Head.png'
   import likeIcon from '@/assets/public/like.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
@@ -336,7 +335,7 @@
       <div class="friend-request-mask" @click.stop>
         <div class="friend-request-card">
           <div class="friend-request-icon">
-            <van-image :src="addFriendIcon" fit="contain" class="friend-request-icon-image" />
+            <div class="friend-request-icon-placeholder" />
           </div>
           <p>
             You will chat with {{ userInfo.name }}.<br />
@@ -557,7 +556,7 @@
     position: relative;
     width: min(86vw, 360px);
     min-height: 230px;
-    padding: 54px 48px 28px 18px;
+    padding: 54px 58px 28px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -594,7 +593,7 @@
     // }
 
     p {
-      margin: 18px 0 0;
+      margin: 18px 0 0 18px;
       color: #0b0d13;
       font-size: 18px;
       line-height: 1.38;
@@ -616,7 +615,7 @@
     box-shadow: 0 12px 28px rgba(31, 91, 255, 0.38);
   }
 
-  .friend-request-icon-image {
+  .friend-request-icon-placeholder {
     width: 48px;
     height: 48px;
   }
