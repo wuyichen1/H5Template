@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { showLoadingToast, showToast } from 'vant'
   import otherHomeAddIcon from '@/assets/public/add.png'
+  import addFriendIcon from '@/assets/public/addfriend.png'
   import Head from '@/assets/public/Head.png'
   import likeIcon from '@/assets/public/like.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
@@ -335,7 +336,7 @@
       <div class="friend-request-mask" @click.stop>
         <div class="friend-request-card">
           <div class="friend-request-icon">
-            <van-icon name="friends-o" />
+            <van-image :src="addFriendIcon" fit="contain" class="friend-request-icon-image" />
           </div>
           <p>
             You will chat with {{ userInfo.name }}.<br />
@@ -556,15 +557,15 @@
     position: relative;
     width: min(86vw, 360px);
     min-height: 230px;
-    padding: 54px 48px 28px 28px;
+    padding: 54px 48px 28px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 36px;
+    // border: 2px solid rgba(255, 255, 255, 0.7);
+    // border-radius: 36px;
     background: url('@/assets/public/addfrienddialog.png') center / 100% 100% no-repeat;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+    // box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
 
     // &::before {
     //   content: '';
@@ -580,22 +581,22 @@
     //   transform: rotate(18deg);
     // }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #25160e;
-      box-shadow: inset 0 0 0 4px #fff;
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 18px;
+    //   left: 18px;
+    //   width: 22px;
+    //   height: 22px;
+    //   border-radius: 50%;
+    //   background: #25160e;
+    //   box-shadow: inset 0 0 0 4px #fff;
+    // }
 
     p {
       margin: 18px 0 0;
       color: #0b0d13;
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1.38;
       text-align: center;
       font-weight: 500;
@@ -615,15 +616,20 @@
     box-shadow: 0 12px 28px rgba(31, 91, 255, 0.38);
   }
 
+  .friend-request-icon-image {
+    width: 48px;
+    height: 48px;
+  }
+
   .friend-request-btn {
-    width: min(60vw, 260px);
-    height: 54px;
+    width: min(60vw, 240px);
+    height: 50px;
     margin-top: 26px;
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 32px;
     color: #fff;
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
 
     &.cancel {
       background: linear-gradient(112deg, #bd6123 0%, #001a3b 100%);
