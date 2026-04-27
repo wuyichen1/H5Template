@@ -66,6 +66,7 @@
     })
 
     syncUserList()
+    window.friendRequestJson = requestList.value
     appParams({ key: 'updateUser', value: allUserList.value, state: 1 })
     appParams({
       key: 'uploadFriendRequest',
