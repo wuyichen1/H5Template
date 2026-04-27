@@ -2,6 +2,7 @@ import chatJson from '~root/mock/modules/chat.mock'
 import CoinsJson from '~root/mock/modules/coins.mock'
 import CommentJson from '~root/mock/modules/comment.mock'
 import DynamicJson from '~root/mock/modules/dynamic.mock'
+import FriendRequestJson from '~root/mock/modules/friend-request.mock'
 import messageJson from '~root/mock/modules/message.mock'
 import ReportJson from '~root/mock/modules/report.mock'
 import StyleJson from '~root/mock/modules/style.mock'
@@ -28,6 +29,9 @@ window.chatListJson = window.chatListJson || chatJson
 
 /** 聊天消息列表 */
 window.messageListJson = window.messageListJson || messageJson
+
+/** 好友邀请列表 */
+window.friendRequestJson = window.friendRequestJson || FriendRequestJson
 
 /** 金币数据 */
 window.coinListJson = window.coinListJson || CoinsJson

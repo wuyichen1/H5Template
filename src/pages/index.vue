@@ -22,6 +22,7 @@ const menuItems = computed(() => [
   { title: t('navbar.SetupPage'), route: 'setup-page' },
   { title: t('navbar.Follow'), route: 'follow' },
   { title: t('navbar.Fans'), route: 'fans' },
+  { title: t('navbar.FriendRequests'), route: 'friend-requests' },
   { title: t('navbar.BlackList'), route: 'black-list' },
   { title: t('navbar.EditInfo'), route: 'edit-info' },
   { title: t('navbar.GoldCoin'), route: 'gold-coin' }

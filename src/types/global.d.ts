@@ -141,6 +141,20 @@ interface ChatInfo {
   lastSendUserId?: string
 }
 
+/** 好友邀请 */
+interface FriendRequestInfo {
+  /** 邀请 ID */
+  requestId: string
+  /** 发起人用户 ID */
+  fromUserId: string
+  /** 接收人用户 ID */
+  toUserId: string
+  /** 邀请状态 */
+  status: 'pending' | 'accepted' | 'rejected'
+  /** 创建时间 */
+  createTime?: string
+}
+
 /** 消息类型 */
 interface MessageInfo {
   /** 加载 */
@@ -409,6 +423,8 @@ interface Window {
   chatListJson: ChatInfo[]
   /** 消息表 */
   messageListJson: MessageInfo[]
+  /** 好友邀请列表 */
+  friendRequestJson: FriendRequestInfo[]
   /** 金币选项 */
   coinListJson: CoinInfo[]
   privacyAgreementJson: string

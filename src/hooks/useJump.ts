@@ -11,6 +11,7 @@ import { useWindow } from './useWindow'
  * deleteaccount: 删除账号
  * uploadMessage: 更新消息
  * uploadChat: 更新聊天室
+ * uploadFriendRequest: 更新好友邀请
  * Recharge: 充值选项
  */
 export type AppCommunication =
@@ -21,6 +22,7 @@ export type AppCommunication =
   | 'deleteaccount'
   | 'uploadMessage'
   | 'uploadChat'
+  | 'uploadFriendRequest'
   | 'Recharge'
   | 'toLogin'
 

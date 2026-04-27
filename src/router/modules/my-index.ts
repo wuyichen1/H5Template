@@ -24,6 +24,14 @@ export default [
     component: () => import('@/pages/my-modules/fans.vue')
   },
   {
+    path: '/friend-requests',
+    name: 'FriendRequests',
+    meta: {
+      title: 'Add Friend'
+    },
+    component: () => import('@/pages/my-modules/friend-requests.vue')
+  },
+  {
     path: '/black-list',
     name: 'BlackList',
     meta: {

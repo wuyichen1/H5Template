@@ -21,6 +21,9 @@ export const useWindow = () => {
   /** 消息数据 */
   const winMessageData: MessageInfo[] = window?.messageListJson ?? []
 
+  /** 好友邀请数据 */
+  const winFriendRequestData: FriendRequestInfo[] = window?.friendRequestJson ?? []
+
   /** 金币数据 */
   const winCoinData: CoinInfo[] = window?.coinListJson ?? []
 
@@ -34,5 +37,5 @@ export const useWindow = () => {
   /** 发布图片选项 */
   const winPublishImageListData: PublishImageInfo[] = window?.publishImageListJson ?? []
 
-  return { winUserData, winUserListData, winCommentData, winDynamicData, winChatBotDesc, winChatListData, winMessageData, winCoinData, winPrivacyAgreement, winUserAgreement, winReportListData, winPublishImageListData }
+  return { winUserData, winUserListData, winCommentData, winDynamicData, winChatBotDesc, winChatListData, winMessageData, winFriendRequestData, winCoinData, winPrivacyAgreement, winUserAgreement, winReportListData, winPublishImageListData }
 }

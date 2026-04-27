@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { showLoadingToast, showToast } from 'vant'
-    import otherHomeAddIcon from '@/assets/public/add.png'
+  import otherHomeAddIcon from '@/assets/public/add.png'
   import Head from '@/assets/public/Head.png'
   import likeIcon from '@/assets/public/like.png'
   import reportIcon from '@/assets/public/san_more_icon.png'
@@ -23,7 +23,7 @@
   } = useAppImgStyle()
   const { queryId, jumpToDetail, appParams, jumpToPrivateChat, ensureLoggedIn } =
     useJump()
-  const { winUserListData, winDynamicData, winChatListData, winPublishImageListData } = useWindow()
+  const { winUserListData, winDynamicData, winChatListData, winFriendRequestData, winPublishImageListData } = useWindow()
   const useData = useUserStore()
 
   const {
@@ -39,6 +39,8 @@
   /** 是否显示关注 */
   const isShowFollow = ref(false)
   const allUserList = ref<UserInfo[]>(winUserListData)
+  const friendRequestList = ref<FriendRequestInfo[]>(winFriendRequestData)
+  const showFriendRequestPopup = ref(false)
 
   const getData = () => {
     userInfo.value = winUserListData.find(v => v.userId === queryId.value)
@@ -59,19 +61,33 @@
     jumpToDetail(item.dynamicId, item.dynamicType, queryId.value)
   }
 
-  const onFollow = () => {
-    if (!ensureLoggedIn()) return
-    useData.userInfo.follow.push(userInfo.value.userId)
-    userInfo.value.fans.push(useData.userInfo.userId)
+  const syncUserList = () => {
     allUserList.value.forEach(v => {
       if (v.userId === useData.userInfo.userId) {
         v.follow = useData.userInfo.follow
+        v.fans = useData.userInfo.fans
       }
       if (v.userId === userInfo.value.userId) {
+        v.follow = userInfo.value.follow
         v.fans = userInfo.value.fans
       }
     })
+  }
+
+  const followTargetUser = () => {
+    useData.userInfo.follow = Array.from(
+      new Set([...(useData.userInfo.follow || []), userInfo.value.userId])
+    )
+    userInfo.value.fans = Array.from(
+      new Set([...(userInfo.value.fans || []), useData.userInfo.userId])
+    )
+    syncUserList()
     isShowFollow.value = true
+  }
+
+  const onFollow = () => {
+    if (!ensureLoggedIn()) return
+    followTargetUser()
     appParams({ key: 'updateUser', value: allUserList.value, state: 1 })
   }
 
@@ -93,7 +109,7 @@
       !!useData.userInfo.follow?.includes(userInfo.value.userId)
       && !!userInfo.value.follow?.includes(useData.userInfo.userId)
     if (!isMutualFollow) {
-      showToast('You need to follow each other before you can chat.')
+      showFriendRequestPopup.value = true
       return
     }
 
@@ -130,6 +146,39 @@
         }
       })
     }
+  }
+
+  const requestExists = computed(() => {
+    return friendRequestList.value.some(v => {
+      return v.fromUserId === useData.userInfo.userId
+        && v.toUserId === userInfo.value?.userId
+        && v.status !== 'rejected'
+    })
+  })
+
+  const onSendFriendRequest = () => {
+    if (!ensureLoggedIn()) return
+    const hasRequest = requestExists.value
+    followTargetUser()
+
+    if (!hasRequest) {
+      friendRequestList.value.push({
+        requestId: `${Date.now()}_friend_request`,
+        fromUserId: useData.userInfo.userId,
+        toUserId: userInfo.value.userId,
+        status: 'pending',
+        createTime: getCurrentDateTime()
+      })
+    }
+
+    appParams({ key: 'updateUser', value: allUserList.value, state: 1 })
+    appParams({
+      key: 'uploadFriendRequest',
+      value: friendRequestList.value,
+      state: 1
+    })
+    showFriendRequestPopup.value = false
+    showToast(hasRequest ? 'Request already sent.' : 'Request sent.')
   }
 
   onMounted(() => {
@@ -277,6 +326,30 @@
     </div>
 
     <report-box v-model:show="isReport" />
+
+    <van-overlay
+      :show="showFriendRequestPopup"
+      z-index="1001"
+      @click="showFriendRequestPopup = false"
+    >
+      <div class="friend-request-mask" @click.stop>
+        <div class="friend-request-card">
+          <div class="friend-request-icon">
+            <van-icon name="friends-o" />
+          </div>
+          <p>
+            You will chat with {{ userInfo.name }}.<br />
+            Friendship is required for private chat.
+          </p>
+        </div>
+        <button class="friend-request-btn cancel" @click="showFriendRequestPopup = false">
+          Cancel
+        </button>
+        <button class="friend-request-btn submit" @click="onSendFriendRequest">
+          Send Request
+        </button>
+      </div>
+    </van-overlay>
   </div>
 </template>
 
@@ -467,6 +540,100 @@
         justify-content: center;
         align-self: center;
       }
+    }
+  }
+
+  .friend-request-mask {
+    min-height: 100%;
+    padding: 28vh 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.58);
+  }
+
+  .friend-request-card {
+    position: relative;
+    width: min(86vw, 360px);
+    min-height: 230px;
+    padding: 54px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 36px;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(75, 141, 255, 0.28), transparent 28%),
+      linear-gradient(150deg, #89bdff 0%, #eff7ff 100%);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -14px;
+      left: -14px;
+      width: 44px;
+      height: 44px;
+      border: 8px solid #ff7b2f;
+      border-right-color: #2b82ff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      transform: rotate(18deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #25160e;
+      box-shadow: inset 0 0 0 4px #fff;
+    }
+
+    p {
+      margin: 18px 0 0;
+      color: #0b0d13;
+      font-size: 22px;
+      line-height: 1.38;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  .friend-request-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 52px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), #1e52ff);
+    box-shadow: 0 12px 28px rgba(31, 91, 255, 0.38);
+  }
+
+  .friend-request-btn {
+    width: min(64vw, 280px);
+    height: 58px;
+    margin-top: 26px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 32px;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 700;
+
+    &.cancel {
+      background: linear-gradient(112deg, #bd6123 0%, #001a3b 100%);
+    }
+
+    &.submit {
+      margin-top: 18px;
+      background: #2582f6;
     }
   }
 </style>
