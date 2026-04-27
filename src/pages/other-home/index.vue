@@ -556,7 +556,7 @@
     position: relative;
     width: min(86vw, 360px);
     min-height: 230px;
-    padding: 54px 58px 28px 18px;
+    padding: 54px 28px 28px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -564,6 +564,7 @@
     // border: 2px solid rgba(255, 255, 255, 0.7);
     // border-radius: 36px;
     background: url('@/assets/public/addfrienddialog.png') center / 100% 100% no-repeat;
+    margin-right: 20px;
     // box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
 
     // &::before {
@@ -611,8 +612,8 @@
     justify-content: center;
     color: #fff;
     font-size: 52px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), #1e52ff);
-    box-shadow: 0 12px 28px rgba(31, 91, 255, 0.38);
+    // background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), #1e52ff);
+    // box-shadow: 0 12px 28px rgba(31, 91, 255, 0.38);
   }
 
   .friend-request-icon-placeholder {
