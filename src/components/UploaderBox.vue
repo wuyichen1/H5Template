@@ -48,7 +48,7 @@
           fileList.value[fileList.value.length - files.length + index] = {
             ...file,
             status: 'failed',
-            message: '上传失败'
+            message: 'Upload failed'
           }
         })
     )
