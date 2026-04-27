@@ -12,7 +12,7 @@
     user?: UserInfo
   }
 
-  const { onBack, appParams, ensureLoggedIn } = useJump()
+  const { appParams, ensureLoggedIn } = useJump()
   const { userInfo } = useUserStore()
   const { winFriendRequestData, winUserListData } = useWindow()
 
@@ -90,13 +90,6 @@
 
 <template>
   <div safe-area-inset-top safe-area-inset-bottom class="friend-request-page">
-    <header class="friend-request-header">
-      <button class="back-btn" @click="onBack">
-        <van-icon name="arrow-left" />
-      </button>
-      <h1>Add Friend</h1>
-    </header>
-
     <main class="request-list">
       <empty v-if="receivedRequests.length === 0" />
       <div
@@ -130,61 +123,25 @@
 
 <style lang="less" scoped>
   .friend-request-page {
+    padding-top: calc(
+      var(--van-nav-bar-height) + var(--ai-view-padding-top)
+    );
     min-height: 100vh;
     background:
       linear-gradient(180deg, rgba(132, 62, 22, 0.98) 0%, rgba(36, 14, 6, 0.96) 36%, #001a38 100%);
     color: #fff;
   }
 
-  .friend-request-header {
-    height: 150px;
-    padding: 42px 26px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 22px;
-
-    h1 {
-      margin: 18px 0 0;
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 800;
-    }
-  }
-
-  .back-btn {
-    width: 56px;
-    height: 56px;
-    border: 0;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 28px;
-    background: rgba(255, 255, 255, 0.16);
-    box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.04);
-
-    :deep(.van-icon) {
-      width: 38px;
-      height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 4px solid #ff7b2f;
-      border-radius: 50%;
-    }
-  }
-
   .request-list {
-    padding: 0 26px 40px;
+    padding: 0 20px 40px;
   }
 
   .request-item {
-    min-height: 104px;
+    min-height: 94px;
     padding: 0 18px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto 48px;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
     border-radius: 24px;
     background: #001d40;
@@ -198,12 +155,12 @@
     min-width: 0;
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
 
     span {
       overflow: hidden;
       color: #fff;
-      font-size: 27px;
+      font-size: 18px;
       font-weight: 400;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -217,15 +174,15 @@
   }
 
   .accept-btn {
-    min-width: 94px;
-    height: 42px;
-    padding: 0 16px;
+    min-width: 84px;
+    height: 34px;
+    padding: 0 10px;
     border: 0;
     border-radius: 24px;
     background: #fff;
     color: #151515;
     font-size: 20px;
-    line-height: 42px;
+    line-height: 34px;
     font-weight: 400;
 
     &.accepted {
@@ -234,8 +191,8 @@
   }
 
   .remove-btn {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
     border: 0;
     border-radius: 50%;
     display: flex;
@@ -243,6 +200,6 @@
     justify-content: center;
     background: #fff;
     color: #111;
-    font-size: 26px;
+    font-size: 20px;
   }
 </style>

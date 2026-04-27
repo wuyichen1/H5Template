@@ -10,7 +10,7 @@ export const routeTopNavBar: readonly string[] = ['ArticleDetail', 'ChatView', '
 export const routeNoRightBtn: readonly string[] = ['SendDynamic', 'ChatView', 'ChatDetails', 'ShortVideo', 'PublishVideo', 'ReportIndex', 'PrivateChat', 'SetupPage', 'Follow', 'Fans', 'FriendRequests', 'BlackList', 'EditInfo', 'UserRegister', 'GoldCoin', 'UserAgreement', 'PrivacyAgreement', 'CallIndex']
 
 /** 不显示导航栏 */
-export const routeNoNavBar: readonly string[] = ['PrivateChat', 'CallIndex', 'FriendRequests']
+export const routeNoNavBar: readonly string[] = ['PrivateChat', 'CallIndex']
 
 /** 显示标题的路由 */
 export const routeShowTitle: readonly string[] = ['SetupPage', 'Follow', 'Fans', 'FriendRequests', 'BlackList', 'EditInfo', 'UserRegister', 'GoldCoin', 'ReportIndex', 'UserAgreement', 'PrivacyAgreement']
