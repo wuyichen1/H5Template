@@ -2,9 +2,11 @@
   import Head from '@/assets/public/Head.png'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
+  import { useUserStore } from '@/stores/modules/user'
 
   const { winUserListData } = useWindow()
   const { queryId, appParams } = useJump()
+  const { userInfo } = useUserStore()
 
   const listData = ref<UserInfo[]>([])
   const allListUser = ref<UserInfo[]>(winUserListData)
@@ -21,18 +23,13 @@
     }
   )
 
-  const rightIcon = computed(() => {
-    switch (props.type) {
-      case 'follow':
-        return 'minus'
-      case 'fans':
-        return 'plus'
-      case 'blackList':
-        return 'cross'
-      default:
-        return 'minus'
-    }
-  })
+  const isFollowing = (id: string) => userInfo.follow?.includes(id)
+
+  const getRightIcon = (item: UserInfo) => {
+    if (props.type === 'blackList') return 'cross'
+    if (props.type === 'fans') return isFollowing(item.userId) ? 'minus' : 'plus'
+    return 'minus'
+  }
 
   const itemUser = ref<UserInfo>(null)
   const getData = () => {
@@ -44,7 +41,47 @@
     itemUser.value = item
   }
 
-  const onClick = (id: string, index: number) => {
+  const syncUserList = () => {
+    allListUser.value.forEach(v => {
+      if (v.userId === itemUser.value?.userId) {
+        v.follow = itemUser.value.follow
+        v.fans = itemUser.value.fans
+        v.blockList = itemUser.value.blockList
+      }
+      if (v.userId === userInfo.userId) {
+        v.follow = userInfo.follow
+        v.fans = userInfo.fans
+      }
+    })
+    appParams({ key: 'updateUser', value: allListUser.value, state: 1 })
+  }
+
+  const toggleFollow = (targetUser: UserInfo) => {
+    if (targetUser.userId === userInfo.userId) return
+
+    const hasFollowed = isFollowing(targetUser.userId)
+
+    if (hasFollowed) {
+      userInfo.follow = (userInfo.follow || []).filter(
+        v => v !== targetUser.userId
+      )
+      targetUser.fans = (targetUser.fans || []).filter(
+        v => v !== userInfo.userId
+      )
+    }
+    else {
+      userInfo.follow = Array.from(
+        new Set([...(userInfo.follow || []), targetUser.userId])
+      )
+      targetUser.fans = Array.from(
+        new Set([...(targetUser.fans || []), userInfo.userId])
+      )
+    }
+
+    syncUserList()
+  }
+
+  const removeListItem = (id: string, index: number) => {
     const keyData = {
       follow: 'follow',
       fans: 'fans',
@@ -61,6 +98,15 @@
       }
     })
     appParams({ key: 'updateUser', value: allListUser.value, state: 1 })
+  }
+
+  const onClick = (item: UserInfo, index: number) => {
+    if (props.type === 'fans') {
+      toggleFollow(item)
+      return
+    }
+
+    removeListItem(item.userId, index)
   }
 
   onMounted(() => {
@@ -97,8 +143,8 @@
       </ul>
       <van-icon
         color="#fff"
-        :name="rightIcon"
-        @click="onClick(item.userId, index)"
+        :name="getRightIcon(item)"
+        @click="onClick(item, index)"
       />
     </div>
   </div>
