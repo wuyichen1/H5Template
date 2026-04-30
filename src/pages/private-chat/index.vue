@@ -151,13 +151,13 @@
       </template>
       <template #right>
         <van-image :src="ImgIcon" h-6 w-6 @click="clickElement" />
-        <van-image
+        <!-- <van-image
           mx-6
           :src="VideoIcon"
           h-6
           w-6
           @click="jumpToCall(viewInfo.userId, queryId)"
-        />
+        /> -->
         <van-image
           :src="RightMore"
           h-8
