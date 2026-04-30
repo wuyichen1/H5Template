@@ -151,7 +151,7 @@
         </div>
       </template>
       <template #right>
-        <van-image :src="ImgIcon" h-6 w-6 @click="clickElement" />
+        <van-image :src="ImgIcon" mr-2 h-6 w-6 @click="clickElement" />
         <!-- <van-image
           mx-6
           :src="VideoIcon"
