@@ -5,14 +5,15 @@
   // import RightMore from '@/assets/nav-bar/more.svg'
   import Head from '@/assets/public/Head.png'
   import ImgIcon from '@/assets/public/img-icon.png'
-  import VideoIcon from '@/assets/public/video-icon.png'
+  // import VideoIcon from '@/assets/public/video-icon.png'
   import { detailId } from '@/hooks/useDetail'
   import { useFile } from '@/hooks/useFile'
   import { useJump } from '@/hooks/useJump'
   import { useWindow } from '@/hooks/useWindow'
   import { useUserStore } from '@/stores'
 
-  const { onBack, appParams, jumpToCall, queryId, ensureLoggedIn } = useJump()
+  const { onBack, appParams, queryId, ensureLoggedIn } = useJump()
+  // const { onBack, appParams, jumpToCall, queryId, ensureLoggedIn } = useJump()
   const { winChatListData, winMessageData, winUserListData } = useWindow()
 
   const { userInfo } = useUserStore()
